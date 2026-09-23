@@ -7,128 +7,119 @@
 
 <style>
 *{box-sizing:border-box}
-
 body{
-margin:0;
-background:#080d1d;
-color:#fff;
-font-family:Arial,Tahoma,sans-serif
+  margin:0;
+  background:#080d1d;
+  color:#fff;
+  font-family:Arial,Tahoma,sans-serif
 }
-
 .container{
-max-width:850px;
-margin:auto;
-padding:24px 18px 60px
+  max-width:850px;
+  margin:auto;
+  padding:24px 18px 60px
 }
-
 .card{
-background:#111827;
-border:2px solid #263550;
-border-radius:28px;
-padding:28px
+  background:#111827;
+  border:2px solid #263550;
+  border-radius:28px;
+  padding:28px
 }
-
 h1{
-text-align:center;
-font-size:38px;
-margin:5px 0 10px
+  text-align:center;
+  font-size:38px;
+  margin:5px 0 10px
 }
-
 .subtitle{
-text-align:center;
-color:#9ca8bd;
-font-size:20px;
-margin-bottom:30px
+  text-align:center;
+  color:#9ca8bd;
+  font-size:20px;
+  margin-bottom:30px
 }
-
 button,.menu{
-width:100%;
-border:2px solid #33415d;
-background:#192235;
-color:#fff;
-border-radius:20px;
-padding:20px;
-margin:8px 0;
-font-size:23px;
-font-weight:700;
-cursor:pointer
+  width:100%;
+  border:2px solid #33415d;
+  background:#192235;
+  color:#fff;
+  border-radius:20px;
+  padding:20px;
+  margin:8px 0;
+  font-size:23px;
+  font-weight:700;
+  cursor:pointer
 }
-
 button:hover,.menu:hover{
-background:#202d46
+  background:#202d46
 }
-
 .back{
-width:auto;
-padding:12px 20px;
-font-size:17px
+  width:auto;
+  padding:12px 20px;
+  font-size:17px
 }
-
-.hidden{
-display:none!important
-}
-
+.hidden{display:none!important}
 label{
-display:block;
-margin:15px 0 7px;
-font-weight:700;
-font-size:17px
+  display:block;
+  margin:15px 0 7px;
+  font-weight:700;
+  font-size:17px
 }
-
 input,select,textarea{
-width:100%;
-padding:14px;
-border-radius:12px;
-border:1px solid #43516c;
-background:#0d1424;
-color:#fff;
-font-size:16px
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:1px solid #43516c;
+  background:#0d1424;
+  color:#fff;
+  font-size:16px
 }
-
-textarea{
-min-height:160px
-}
-
+textarea{min-height:140px}
 .action{
-background:#315fbd;
-border-color:#4675d0
+  background:#315fbd;
+  border-color:#4675d0
 }
-
 .copy{
-background:#1f7a55;
-border-color:#2e9b70
+  background:#1f7a55;
+  border-color:#2e9b70
 }
-
 .output{
-margin-top:20px
+  margin-top:20px;
+  white-space:pre-wrap;
+  direction:rtl;
+  text-align:right;
+  background:#080d1d;
+  border:1px solid #33415d;
+  border-radius:15px;
+  padding:18px;
+  line-height:1.7;
+  font-family:Arial,Tahoma,sans-serif
 }
-
 .section-title{
-text-align:center;
-font-size:28px;
-margin:10px 0 20px
+  text-align:center;
+  font-size:28px;
+  margin:10px 0 20px
 }
-
 .notice{
-background:#172033;
-border:1px solid #33415d;
-padding:13px;
-border-radius:12px;
-color:#cbd5e1;
-margin:12px 0
+  background:#172033;
+  border:1px solid #33415d;
+  padding:13px;
+  border-radius:12px;
+  color:#cbd5e1;
+  margin:12px 0
 }
-
 .link{
-display:block;
-text-align:center;
-color:#8ab4ff;
-margin:18px 0;
-text-decoration:none
+  display:block;
+  text-align:center;
+  color:#8ab4ff;
+  margin:18px 0;
+  text-decoration:none
 }
-
+.small{
+  color:#9ca8bd;
+  font-size:14px;
+  margin-top:6px
+}
 @media(max-width:600px){
-h1{font-size:30px}
-.menu,button{font-size:19px}
+  h1{font-size:30px}
+  .menu,button{font-size:19px}
 }
 </style>
 </head>
@@ -138,62 +129,38 @@ h1{font-size:30px}
 <div class="container">
 
 <!-- الرئيسية -->
-
 <div id="home" class="card">
+  <h1>🏛️ الشؤون الإدارية</h1>
+  <div class="subtitle">لوحة القرارات الإدارية</div>
 
-<h1>🏛️ الشؤون الإدارية</h1>
+  <button class="menu" onclick="showSection('resignation')">📄 قرارات الاستقالة</button>
+  <button class="menu" onclick="showSection('dismissal')">📄 قرارات الفصل</button>
+  <button class="menu" onclick="showSection('fines')">⚠️ الغرامات والإنذارات</button>
+  <button class="menu" onclick="showSection('leaves')">🏖️ نظام الإجازات</button>
+  <button class="menu" onclick="showSection('roles')">🎫 طلب رول</button>
 
-<div class="subtitle">
-لوحة القرارات الإدارية
-</div>
-
-<button class="menu" onclick="showSection('resignation')">
-📄 قرارات الاستقالة
-</button>
-
-<button class="menu" onclick="showSection('dismissal')">
-📄 قرارات الفصل
-</button>
-
-<button class="menu" onclick="showSection('fines')">
-⚠️ الغرامات والإنذارات
-</button>
-
-<button class="menu" onclick="showSection('leaves')">
-🏖️ نظام الإجازات
-</button>
-
-<button class="menu" disabled style="opacity:.45">
-📄 قرارات الترقيات — قريباً
-</button>
-
+  <button class="menu" disabled style="opacity:.45">
+    📄 قرارات الترقيات — قريباً
+  </button>
 </div>
 
 
-<!-- الاستقالة -->
-
+<!-- ================= الاستقالة ================= -->
 <div id="resignation" class="card hidden">
-
-<button class="back" onclick="showSection('home')">
-← رجوع
-</button>
-
-<h2 class="section-title">
-قرارات الاستقالة
-</h2>
+<button class="back" onclick="goHome()">← الرئيسية</button>
+<h2 class="section-title">قرارات الاستقالة</h2>
 
 <label>معرف المسعف Discord ID</label>
-<input id="r_id">
-
-<label>اسم المسعف</label>
-<input id="r_name">
+<input id="r_id" placeholder="مثال: 838894876137357312">
 
 <label>الكود</label>
-<input id="r_code">
+<input id="r_code" placeholder="مثال: E-020">
 
-<label>المستوى</label>
+<label>اسم المسعف</label>
+<input id="r_name" placeholder="اكتب الاسم">
 
-<select id="r_level" onchange="toggleResignationFine()">
+<label>مستوى المسعف</label>
+<select id="r_level">
 <option value="trainee">متدرب</option>
 <option value="1">مستوى 1</option>
 <option value="2">مستوى 2</option>
@@ -208,477 +175,430 @@ h1{font-size:30px}
 </select>
 
 <label>سبب إنهاء الخدمة</label>
-<textarea id="r_reason"></textarea>
+<textarea id="r_reason" placeholder="اكتب السبب"></textarea>
 
-<label>معرف الاعتماد</label>
-<input id="r_approval">
-
-<div id="r_fine_box">
-
+<div id="r_payment_box">
 <label>نوع السحب</label>
-
-<select id="r_withdraw" onchange="toggleInvoice('r')">
+<select id="r_payment" onchange="toggleInvoice('r')">
 <option value="رقابي">رقابي</option>
 <option value="فاتورة">فاتورة</option>
 </select>
 
 <div id="r_invoice_box" class="hidden">
-
 <label>رابط الفاتورة</label>
-<input id="r_invoice">
-
+<input id="r_invoice" placeholder="ضع رابط الفاتورة">
+</div>
 </div>
 
+<label>معرف المعتمد</label>
+<input id="r_approval" placeholder="Discord ID">
+
+<button class="action" onclick="generateResignation()">توليد القرار</button>
+<button class="copy" onclick="copyOutput('resignation_output')">نسخ القرار</button>
+
+<pre id="resignation_output" class="output"></pre>
 </div>
 
-<button class="action" onclick="makeResignation()">
-إنشاء القرار
-</button>
 
-<div id="r_output" class="output"></div>
-
-</div>
-
-
-<!-- الفصل -->
-
+<!-- ================= الفصل ================= -->
 <div id="dismissal" class="card hidden">
-
-<button class="back" onclick="showSection('home')">
-← رجوع
-</button>
-
-<h2 class="section-title">
-قرارات الفصل
-</h2>
+<button class="back" onclick="goHome()">← الرئيسية</button>
+<h2 class="section-title">قرارات الفصل</h2>
 
 <label>معرف المسعف Discord ID</label>
-<input id="d_id">
-
-<label>اسم المسعف</label>
-<input id="d_name">
+<input id="d_id" placeholder="Discord ID">
 
 <label>الكود</label>
-<input id="d_code">
+<input id="d_code" placeholder="مثال: E-020">
+
+<label>اسم المسعف</label>
+<input id="d_name" placeholder="اسم المسعف">
 
 <label>سبب الفصل</label>
-<textarea id="d_reason"></textarea>
-
-<label>معرف الاعتماد</label>
-<input id="d_approval">
+<textarea id="d_reason" placeholder="اكتب سبب الفصل"></textarea>
 
 <label>نوع السحب</label>
-
-<select id="d_withdraw" onchange="toggleInvoice('d')">
+<select id="d_payment" onchange="toggleInvoice('d')">
 <option value="رقابي">رقابي</option>
 <option value="فاتورة">فاتورة</option>
 </select>
 
 <div id="d_invoice_box" class="hidden">
-
 <label>رابط الفاتورة</label>
-<input id="d_invoice">
-
+<input id="d_invoice" placeholder="ضع رابط الفاتورة">
 </div>
 
-<button class="action" onclick="makeDismissal()">
-إنشاء القرار
-</button>
+<label>معرف المعتمد</label>
+<input id="d_approval" placeholder="Discord ID">
 
-<div id="d_output" class="output"></div>
+<button class="action" onclick="generateDismissal()">توليد القرار</button>
+<button class="copy" onclick="copyOutput('dismissal_output')">نسخ القرار</button>
 
+<pre id="dismissal_output" class="output"></pre>
 </div>
 
 
-<!-- الغرامات -->
-
+<!-- ================= الغرامات ================= -->
 <div id="fines" class="card hidden">
+<button class="back" onclick="goHome()">← الرئيسية</button>
+<h2 class="section-title">الغرامات والإنذارات</h2>
 
-<button class="back" onclick="showSection('home')">
-← رجوع
-</button>
-
-<h2 class="section-title">
-⚠️ الغرامات والإنذارات
-</h2>
-
-<div class="notice">
-اختر نوع الإنذار ثم أدخل قيمة الغرامة حسب المخالفة.
-</div>
-
-<button class="menu" onclick="showSection('verbal')">
-🟡 إنذار شفهي
-</button>
-
-<button class="menu" onclick="showSection('firstWarning')">
-🟠 إنذار وظيفي أول
-</button>
-
-<button class="menu" onclick="showSection('secondWarning')">
-🟠 إنذار وظيفي ثاني
-</button>
-
-<button class="menu" onclick="showSection('finalWarning')">
-🔴 إنذار نهائي بالفصل
-</button>
-
-</div>
+<button class="menu" onclick="showFine('verbal')">إنذار شفهي</button>
+<button class="menu" onclick="showFine('first')">إنذار وظيفي أول</button>
+<button class="menu" onclick="showFine('second')">إنذار وظيفي ثاني</button>
+<button class="menu" onclick="showFine('final')">إنذار نهائي</button>
 
 
-<!-- إنذار شفهي -->
+<!-- شفهي -->
+<div id="fine_verbal" class="hidden">
 
-<div id="verbal" class="card hidden">
+<h2 class="section-title">إنذار شفهي</h2>
 
-<button class="back" onclick="showSection('fines')">
-← رجوع
-</button>
-
-<h2 class="section-title">
-إنذار شفهي
-</h2>
-
-<label>معرف المسعف Discord ID</label>
-<input id="v_id">
-
-<label>قيمة الغرامة المالية</label>
-<input id="v_amount" placeholder="اكتب قيمة الغرامة">
+<label>معرف المسعف</label>
+<input id="v_id" placeholder="Discord ID">
 
 <label>سبب الإنذار</label>
-<textarea id="v_reason" placeholder="اكتب سبب الإنذار"></textarea>
+<textarea id="v_reason" placeholder="اكتب السبب"></textarea>
 
-<label>معرف توقيع واعتماد</label>
-<input id="v_approval">
+<label>معرف المعتمد</label>
+<input id="v_approval" placeholder="Discord ID">
 
-<button class="action" onclick="makeVerbal()">
-إنشاء القرار
-</button>
+<button class="action" onclick="generateVerbal()">توليد القرار</button>
+<button class="copy" onclick="copyOutput('v_output')">نسخ القرار</button>
 
-<div id="v_output" class="output"></div>
-
+<pre id="v_output" class="output"></pre>
 </div>
 
 
-<!-- إنذار وظيفي أول -->
+<!-- أول -->
+<div id="fine_first" class="hidden">
 
-<div id="firstWarning" class="card hidden">
+<h2 class="section-title">إنذار وظيفي أول</h2>
 
-<button class="back" onclick="showSection('fines')">
-← رجوع
-</button>
+<label>معرف المسعف</label>
+<input id="f1_id" placeholder="Discord ID">
 
-<h2 class="section-title">
-إنذار وظيفي أول
-</h2>
-
-<label>معرف المسعف Discord ID</label>
-<input id="f1_id">
-
-<label>قيمة الغرامة المالية</label>
+<label>قيمة الغرامة</label>
 <input id="f1_amount" placeholder="اكتب قيمة الغرامة">
 
 <label>سبب الإنذار</label>
-<textarea id="f1_reason" placeholder="اكتب سبب الإنذار"></textarea>
+<textarea id="f1_reason" placeholder="اكتب السبب"></textarea>
 
-<label>معرف توقيع واعتماد</label>
-<input id="f1_approval">
+<label>معرف المعتمد</label>
+<input id="f1_approval" placeholder="Discord ID">
 
-<button class="action" onclick="makeFirstWarning()">
-إنشاء القرار
-</button>
+<button class="action" onclick="generateFirst()">توليد القرار</button>
+<button class="copy" onclick="copyOutput('f1_output')">نسخ القرار</button>
 
-<div id="f1_output" class="output"></div>
-
+<pre id="f1_output" class="output"></pre>
 </div>
 
 
-<!-- إنذار وظيفي ثاني -->
+<!-- ثاني -->
+<div id="fine_second" class="hidden">
 
-<div id="secondWarning" class="card hidden">
+<h2 class="section-title">إنذار وظيفي ثاني</h2>
 
-<button class="back" onclick="showSection('fines')">
-← رجوع
-</button>
+<label>معرف المسعف</label>
+<input id="f2_id" placeholder="Discord ID">
 
-<h2 class="section-title">
-إنذار وظيفي ثاني
-</h2>
-
-<label>معرف المسعف Discord ID</label>
-<input id="f2_id">
-
-<label>قيمة الغرامة المالية</label>
+<label>قيمة الغرامة</label>
 <input id="f2_amount" placeholder="اكتب قيمة الغرامة">
 
 <label>سبب الإنذار</label>
-<textarea id="f2_reason" placeholder="اكتب سبب الإنذار"></textarea>
+<textarea id="f2_reason" placeholder="اكتب السبب"></textarea>
 
-<label>معرف توقيع واعتماد</label>
-<input id="f2_approval">
+<label>معرف المعتمد</label>
+<input id="f2_approval" placeholder="Discord ID">
 
-<button class="action" onclick="makeSecondWarning()">
-إنشاء القرار
-</button>
+<button class="action" onclick="generateSecond()">توليد القرار</button>
+<button class="copy" onclick="copyOutput('f2_output')">نسخ القرار</button>
 
-<div id="f2_output" class="output"></div>
-
+<pre id="f2_output" class="output"></pre>
 </div>
 
 
-<!-- إنذار نهائي -->
+<!-- نهائي -->
+<div id="fine_final" class="hidden">
 
-<div id="finalWarning" class="card hidden">
+<h2 class="section-title">إنذار نهائي</h2>
 
-<button class="back" onclick="showSection('fines')">
-← رجوع
-</button>
+<label>معرف المسعف</label>
+<input id="ff_id" placeholder="Discord ID">
 
-<h2 class="section-title">
-إنذار نهائي بالفصل
-</h2>
-
-<label>معرف المسعف Discord ID</label>
-<input id="ff_id">
-
-<label>قيمة الغرامة المالية</label>
+<label>قيمة الغرامة</label>
 <input id="ff_amount" placeholder="اكتب قيمة الغرامة">
 
 <label>سبب الإنذار</label>
-<textarea id="ff_reason" placeholder="اكتب سبب الإنذار"></textarea>
+<textarea id="ff_reason" placeholder="اكتب السبب"></textarea>
 
-<label>معرف توقيع واعتماد</label>
-<input id="ff_approval">
+<label>معرف المعتمد</label>
+<input id="ff_approval" placeholder="Discord ID">
 
-<button class="action" onclick="makeFinalWarning()">
-إنشاء القرار
-</button>
+<button class="action" onclick="generateFinal()">توليد القرار</button>
+<button class="copy" onclick="copyOutput('ff_output')">نسخ القرار</button>
 
-<div id="ff_output" class="output"></div>
+<pre id="ff_output" class="output"></pre>
+</div>
 
 </div>
 
 
-<!-- الإجازات -->
-
+<!-- ================= الإجازات ================= -->
 <div id="leaves" class="card hidden">
+<button class="back" onclick="goHome()">← الرئيسية</button>
+<h2 class="section-title">نظام الإجازات</h2>
 
-<button class="back" onclick="showSection('home')">
-← رجوع
-</button>
-
-<h2 class="section-title">
-🏖️ نظام الإجازات
-</h2>
-
-<div class="notice">
-التاريخ والوقت يتم تحديدهما تلقائياً من وقت إنشاء القرار على جهازك.
-</div>
-
-<button class="menu" onclick="showSection('internal')">
-⏱️ إجازات داخلية
-</button>
-
-<button class="menu" onclick="showSection('outside')">
-🌙 إجازة داخلية (خارج شفت)
-</button>
-
-<button class="menu" onclick="showSection('trader')">
-💼 إجازة داخلية (تاجر)
-</button>
-
-<button class="menu" onclick="showSection('external')">
-🌍 إجازات خارجية
-</button>
-
-<button class="menu" onclick="showSection('extension')">
-📅 تمديد إجازة خارجية — للقيادة فقط
-</button>
-
-</div>
+<button class="menu" onclick="showLeave('external')">🏖️ إجازة خارجية</button>
+<button class="menu" onclick="showLeave('internal')">🕐 إجازة داخلية</button>
+<button class="menu" onclick="showLeave('offshift')">🕐 إجازة داخلية خارج شفت</button>
+<button class="menu" onclick="showLeave('trader')">💼 إجازة داخلية تاجر</button>
+<button class="menu" onclick="showLeave('extension')">📅 تمديد إجازة خارجية</button>
 
 
-<!-- إجازة داخلية -->
+<div id="leave_external" class="hidden">
+<h2 class="section-title">إجازة خارجية</h2>
 
-<div id="internal" class="card hidden">
-
-<button class="back" onclick="showSection('leaves')">
-← رجوع
-</button>
-
-<h2 class="section-title">
-إجازة داخلية
-</h2>
-
-<label>معرف المسعف Discord ID</label>
-<input id="i_id">
-
-<label>مدة الإجازة بالساعات</label>
-<input id="i_hours" type="number" min="1">
-
-<label>الرصيد المتبقي قبل الإجازة بالساعات</label>
-<input id="i_balance" type="number" min="0">
-
-<label>معرف الاعتماد</label>
-<input id="i_approval">
-
-<a class="link"
-href="https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104"
-target="_blank">
-يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة
-</a>
-
-<button class="action" onclick="makeInternal()">
-إنشاء القرار
-</button>
-
-<div id="i_output"></div>
-
-</div>
-
-
-<!-- خارج شفت -->
-
-<div id="outside" class="card hidden">
-
-<button class="back" onclick="showSection('leaves')">
-← رجوع
-</button>
-
-<h2 class="section-title">
-إجازة داخلية (خارج شفت)
-</h2>
-
-<label>معرف المسعف Discord ID</label>
-<input id="o_id">
-
-<label>مدة الإجازة بالساعات</label>
-<input id="o_hours" type="number" min="1">
-
-<label>معرف الاعتماد</label>
-<input id="o_approval">
-
-<a class="link"
-href="https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104"
-target="_blank">
-يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة
-</a>
-
-<button class="action" onclick="makeOutside()">
-إنشاء القرار
-</button>
-
-<div id="o_output"></div>
-
-</div>
-
-
-<!-- تاجر -->
-
-<div id="trader" class="card hidden">
-
-<button class="back" onclick="showSection('leaves')">
-← رجوع
-</button>
-
-<h2 class="section-title">
-إجازة داخلية (تاجر)
-</h2>
-
-<label>معرف المسعف Discord ID</label>
-<input id="t_id">
-
-<label>مدة الإجازة بالساعات</label>
-<input id="t_hours" type="number" min="1">
-
-<label>معرف الاعتماد</label>
-<input id="t_approval">
-
-<a class="link"
-href="https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104"
-target="_blank">
-يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة
-</a>
-
-<button class="action" onclick="makeTrader()">
-إنشاء القرار
-</button>
-
-<div id="t_output"></div>
-
-</div>
-
-
-<!-- خارجي -->
-
-<div id="external" class="card hidden">
-
-<button class="back" onclick="showSection('leaves')">
-← رجوع
-</button>
-
-<h2 class="section-title">
-إجازة خارجية
-</h2>
-
-<label>معرف المسعف Discord ID</label>
-<input id="e_id">
+<label>معرف المسعف</label>
+<input id="le_id" placeholder="Discord ID">
 
 <label>مدة الإجازة بالأيام</label>
-<input id="e_days" type="number" min="1">
+<input id="le_days" type="number" min="1" placeholder="مثال: 3">
 
-<label>معرف الاعتماد</label>
-<input id="e_approval">
+<label>معرف المعتمد</label>
+<input id="le_approval" placeholder="Discord ID">
 
-<a class="link"
-href="https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104"
-target="_blank">
-يرجى قراءه القوانين قبل اخذ اجازه خارجية
-</a>
+<button class="action" onclick="generateExternal()">توليد الإجازة</button>
+<button class="copy" onclick="copyOutput('le_output')">نسخ</button>
 
-<button class="action" onclick="makeExternal()">
-إنشاء القرار
-</button>
-
-<div id="e_output"></div>
-
+<pre id="le_output" class="output"></pre>
 </div>
 
 
-<!-- تمديد -->
+<div id="leave_internal" class="hidden">
+<h2 class="section-title">إجازة داخلية</h2>
 
-<div id="extension" class="card hidden">
+<label>معرف المسعف</label>
+<input id="li_id" placeholder="Discord ID">
 
-<button class="back" onclick="showSection('leaves')">
-← رجوع
-</button>
+<label>مدة الإجازة بالساعات</label>
+<input id="li_hours" type="number" min="1" placeholder="مثال: 4">
 
-<h2 class="section-title">
-تمديد إجازة خارجية
-</h2>
+<label>الرصيد المتبقي بعد الإجازة</label>
+<input id="li_balance" placeholder="مثال: 5 ساعة">
+
+<label>معرف المعتمد</label>
+<input id="li_approval" placeholder="Discord ID">
+
+<button class="action" onclick="generateInternal()">توليد الإجازة</button>
+<button class="copy" onclick="copyOutput('li_output')">نسخ</button>
+
+<pre id="li_output" class="output"></pre>
+</div>
+
+
+<div id="leave_offshift" class="hidden">
+<h2 class="section-title">إجازة داخلية خارج شفت</h2>
+
+<label>معرف المسعف</label>
+<input id="lo_id" placeholder="Discord ID">
+
+<label>مدة الإجازة بالساعات</label>
+<input id="lo_hours" type="number" min="1" placeholder="مثال: 3">
+
+<label>معرف المعتمد</label>
+<input id="lo_approval" placeholder="Discord ID">
+
+<button class="action" onclick="generateOffshift()">توليد الإجازة</button>
+<button class="copy" onclick="copyOutput('lo_output')">نسخ</button>
+
+<pre id="lo_output" class="output"></pre>
+</div>
+
+
+<div id="leave_trader" class="hidden">
+<h2 class="section-title">إجازة داخلية تاجر</h2>
+
+<label>معرف المسعف</label>
+<input id="lt_id" placeholder="Discord ID">
+
+<label>مدة الإجازة بالساعات</label>
+<input id="lt_hours" type="number" min="1" placeholder="مثال: 3">
+
+<label>معرف المعتمد</label>
+<input id="lt_approval" placeholder="Discord ID">
+
+<button class="action" onclick="generateTrader()">توليد الإجازة</button>
+<button class="copy" onclick="copyOutput('lt_output')">نسخ</button>
+
+<pre id="lt_output" class="output"></pre>
+</div>
+
+
+<div id="leave_extension" class="hidden">
+<h2 class="section-title">تمديد إجازة خارجية</h2>
 
 <div class="notice">
-هذا القسم مخصص للقيادة فقط.
+هذا النموذج مخصص للقيادة فقط.
 </div>
 
-<label>معرف المسعف Discord ID</label>
-<input id="x_id">
+<label>معرف المسعف</label>
+<input id="lx_id" placeholder="Discord ID">
 
 <label>مدة التمديد بالأيام</label>
-<input id="x_days" type="number" min="1">
+<input id="lx_days" type="number" min="1" placeholder="مثال: 10">
 
-<label>معرف الاعتماد</label>
-<input id="x_approval">
+<label>معرف المعتمد</label>
+<input id="lx_approval" placeholder="Discord ID">
 
-<a class="link"
-href="https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104"
-target="_blank">
-يرجى قراءه القوانين قبل اخذ اجازه خارجية
-</a>
+<button class="action" onclick="generateExtension()">توليد التمديد</button>
+<button class="copy" onclick="copyOutput('lx_output')">نسخ</button>
 
-<button class="action" onclick="makeExtension()">
-إنشاء القرار
-</button>
+<pre id="lx_output" class="output"></pre>
+</div>
 
-<div id="x_output"></div>
+</div>
+
+
+<!-- ================= طلب رول ================= -->
+<div id="roles" class="card hidden">
+<button class="back" onclick="goHome()">← الرئيسية</button>
+
+<h2 class="section-title">طلب رول</h2>
+
+<div class="notice">
+اختر نوع طلب الرول ثم أدخل البيانات المطلوبة.
+</div>
+
+<button class="menu" onclick="showRole('fire')">🔴 فصل</button>
+<button class="menu" onclick="showRole('resign')">🟠 استقالة</button>
+<button class="menu" onclick="showRole('approved')">🟢 تعيين معتمد</button>
+<button class="menu" onclick="showRole('ticket')">🔵 توظيف تكت</button>
+<button class="menu" onclick="showRole('jobleave')">🟣 إجازة وظيفية</button>
+<button class="menu" onclick="showRole('returnleave')">🟡 عودة من إجازة وظيفية</button>
+
+
+<!-- فصل -->
+<div id="role_fire" class="hidden">
+<h2 class="section-title">طلب رول — فصل</h2>
+
+<label>معرف المسعف</label>
+<input id="rf_id" placeholder="Discord ID">
+
+<label>معرف مقدم الطلب</label>
+<input id="rf_requester" placeholder="Discord ID">
+
+<label>نوع الطلب</label>
+<input value="ازالة الاسم , ازاله رولات الهلال , منع توظيف 14 يوم" readonly>
+
+<button class="action" onclick="generateRoleFire()">توليد الطلب</button>
+<button class="copy" onclick="copyOutput('rf_output')">نسخ</button>
+
+<pre id="rf_output" class="output"></pre>
+</div>
+
+
+<!-- استقالة -->
+<div id="role_resign" class="hidden">
+<h2 class="section-title">طلب رول — استقالة</h2>
+
+<label>معرف المسعف</label>
+<input id="rr_id" placeholder="Discord ID">
+
+<label>مستوى الاستقالة</label>
+<input id="rr_level" placeholder="مثال: 5">
+
+<label>معرف مقدم الطلب</label>
+<input id="rr_requester" placeholder="Discord ID">
+
+<label>نوع الطلب</label>
+<input value="ازالة الاسم , ازاله رولات الهلال" readonly>
+
+<button class="action" onclick="generateRoleResign()">توليد الطلب</button>
+<button class="copy" onclick="copyOutput('rr_output')">نسخ</button>
+
+<pre id="rr_output" class="output"></pre>
+</div>
+
+
+<!-- تعيين معتمد -->
+<div id="role_approved" class="hidden">
+<h2 class="section-title">طلب رول — تعيين معتمد</h2>
+
+<label>معرف المسعف</label>
+<input id="ra_id" placeholder="Discord ID">
+
+<label>مستوى المعتمد</label>
+<input id="ra_level" placeholder="اكتب المستوى">
+
+<label>الاسم</label>
+<input id="ra_name" placeholder="اسم المسعف">
+
+<label>معرف مقدم الطلب</label>
+<input id="ra_requester" placeholder="Discord ID">
+
+<button class="action" onclick="generateRoleApproved()">توليد الطلب</button>
+<button class="copy" onclick="copyOutput('ra_output')">نسخ</button>
+
+<pre id="ra_output" class="output"></pre>
+</div>
+
+
+<!-- توظيف تكت -->
+<div id="role_ticket" class="hidden">
+<h2 class="section-title">طلب رول — توظيف تكت</h2>
+
+<label>معرف المسعف</label>
+<input id="rt_id" placeholder="Discord ID">
+
+<label>المستوى</label>
+<input id="rt_level" placeholder="اكتب المستوى">
+
+<label>الاسم</label>
+<input id="rt_name" placeholder="اسم المسعف">
+
+<label>معرف مقدم الطلب</label>
+<input id="rt_requester" placeholder="Discord ID">
+
+<button class="action" onclick="generateRoleTicket()">توليد الطلب</button>
+<button class="copy" onclick="copyOutput('rt_output')">نسخ</button>
+
+<pre id="rt_output" class="output"></pre>
+</div>
+
+
+<!-- إجازة وظيفية -->
+<div id="role_jobleave" class="hidden">
+<h2 class="section-title">طلب رول — إجازة وظيفية</h2>
+
+<label>معرف المسعف</label>
+<input id="rj_id" placeholder="Discord ID">
+
+<label>معرف مقدم الطلب</label>
+<input id="rj_requester" placeholder="Discord ID">
+
+<button class="action" onclick="generateRoleJobLeave()">توليد الطلب</button>
+<button class="copy" onclick="copyOutput('rj_output')">نسخ</button>
+
+<pre id="rj_output" class="output"></pre>
+</div>
+
+
+<!-- عودة من إجازة -->
+<div id="role_returnleave" class="hidden">
+<h2 class="section-title">طلب رول — عودة من إجازة وظيفية</h2>
+
+<label>معرف المسعف</label>
+<input id="rx_id" placeholder="Discord ID">
+
+<label>معرف مقدم الطلب</label>
+<input id="rx_requester" placeholder="Discord ID">
+
+<button class="action" onclick="generateRoleReturn()">توليد الطلب</button>
+<button class="copy" onclick="copyOutput('rx_output')">نسخ</button>
+
+<pre id="rx_output" class="output"></pre>
+</div>
 
 </div>
 
@@ -687,818 +607,729 @@ target="_blank">
 
 <script>
 
-const ROLE_ID="1404535885864632340";
+const ORIGINAL_ROLE="<@&1404535885864632340>";
 
-const LEAVE_LINK=
-"https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104";
+const FINE_LINK="https://ptb.discord.com/channels/1404512396923375696/1404536350614491238/1466234198389035257";
 
-const FINE_LINK=
-"https://ptb.discord.com/channels/1404512396923375696/1404536350614491238/1466234198389035257";
+const LEAVE_LINK="https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104";
+
+const ROLE1="<@&1404535891351048413>";
+const ROLE2="<@&1404535891376214137>";
+const ROLE3="<@&1404535891401117767>";
 
 
 function showSection(id){
-
-document.querySelectorAll(".card").forEach(function(el){
-el.classList.add("hidden");
-});
-
-const el=document.getElementById(id);
-
-if(el){
-el.classList.remove("hidden");
-}
-
-window.scrollTo(0,0);
+  document.querySelectorAll(".card").forEach(x=>x.classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
 }
 
 
-function v(id){
-return document.getElementById(id).value.trim();
-}
-
-
-function mention(id){
-return "<@"+id+">";
-}
-
-
-function approval(id){
-return "<@"+id+">";
-}
-
-
-function pad(n){
-return String(n).padStart(2,"0");
-}
-
-
-function dateText(d){
-
-return d.getFullYear()+"/"+
-pad(d.getMonth()+1)+"/"+
-pad(d.getDate());
-
-}
-
-
-function timeText(d){
-
-let h=d.getHours();
-
-let m=pad(d.getMinutes());
-
-let ap=h>=12?"م":"ص";
-
-let hh=h%12;
-
-if(hh===0)hh=12;
-
-return pad(hh)+":"+m+" "+ap;
-
-}
-
-
-function copyBox(text,id){
-
-const box=document.getElementById(id);
-
-box.innerHTML="";
-
-const area=document.createElement("textarea");
-
-area.value=text;
-
-area.readOnly=true;
-
-box.appendChild(area);
-
-const btn=document.createElement("button");
-
-btn.className="copy";
-
-btn.innerText="📋 نسخ القرار";
-
-btn.onclick=function(){
-
-navigator.clipboard.writeText(text).then(function(){
-
-alert("تم نسخ القرار");
-
-}).catch(function(){
-
-area.select();
-
-document.execCommand("copy");
-
-alert("تم نسخ القرار");
-
-});
-
-};
-
-box.appendChild(btn);
-
+function goHome(){
+  document.querySelectorAll(".card").forEach(x=>x.classList.add("hidden"));
+  document.getElementById("home").classList.remove("hidden");
 }
 
 
 function toggleInvoice(prefix){
+  const type=document.getElementById(prefix+"_payment").value;
+  document.getElementById(prefix+"_invoice_box")
+    .classList.toggle("hidden",type!=="فاتورة");
+}
 
-const box=document.getElementById(prefix+"_invoice_box");
 
-const select=document.getElementById(prefix+"_withdraw");
+function copyOutput(id){
+  const text=document.getElementById(id).textContent;
 
-box.classList.toggle(
-"hidden",
-select.value!=="فاتورة"
+  if(!text.trim()){
+    alert("قم بتوليد القرار أولاً");
+    return;
+  }
+
+  navigator.clipboard.writeText(text)
+    .then(()=>alert("تم نسخ القرار"));
+}
+
+
+function discordMention(id){
+  return `<@${id}>`;
+}
+
+
+function now(){
+  return new Date();
+}
+
+
+function pad(n){
+  return String(n).padStart(2,"0");
+}
+
+
+function formatDate(d){
+  return `${d.getFullYear()}/${pad(d.getMonth()+1)}/${pad(d.getDate())}`;
+}
+
+
+function formatTime(d){
+  let h=d.getHours();
+  const m=pad(d.getMinutes());
+  const ap=h>=12?"م":"ص";
+
+  h=h%12;
+  if(h===0)h=12;
+
+  return `${pad(h)}:${m} ${ap}`;
+}
+
+
+function addHours(date,hours){
+  return new Date(date.getTime()+hours*60*60*1000);
+}
+
+
+function addDays(date,days){
+  const d=new Date(date);
+  d.setDate(d.getDate()+Number(days));
+  return d;
+}
+
+
+/* ================= الاستقالة ================= */
+
+function generateResignation(){
+
+  const id=document.getElementById("r_id").value.trim();
+  const code=document.getElementById("r_code").value.trim();
+  const name=document.getElementById("r_name").value.trim();
+  const level=document.getElementById("r_level").value;
+  const reason=document.getElementById("r_reason").value.trim();
+  const approval=document.getElementById("r_approval").value.trim();
+
+  if(!id||!code||!name||!reason||!approval){
+    alert("يرجى تعبئة جميع البيانات");
+    return;
+  }
+
+  const needsFine=(level==="trainee"||level==="1");
+
+  let paymentText="";
+
+  if(needsFine){
+
+    const payment=document.getElementById("r_payment").value;
+
+    if(payment==="فاتورة"){
+      const invoice=document.getElementById("r_invoice").value.trim();
+
+      if(!invoice){
+        alert("يرجى وضع رابط الفاتورة");
+        return;
+      }
+
+      paymentText=`\`نوع السحب :\` [فاتورة](${invoice})`;
+    }else{
+      paymentText=`\`نوع السحب :\` رقابي`;
+    }
+  }
+
+  let text=
+`*** ▬▬▬ ﷽ ▬▬
+
+\`\`\`diff
+-الموضوع : قرار انهاء خدمات
+\`\`\`
+
+\`\`\`cs
+# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي 
+ 
+اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه
+`;
+
+  if(needsFine){
+    text+=`
+ثانيا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
+
+ثالثا: منع توظيف 14 يوم
+`;
+  }
+
+  text+=`
+\`\`\`
+
+${discordMention(id)}
+[${code}] ${name}
+
+\`\`\`وذلك بسبب : ${reason} \`\`\`
+
+`;
+
+  if(needsFine){
+    text+=paymentText+`\n\n`;
+  }
+
+  text+=
+`\`اعتماد:\` ${discordMention(approval)}      
+
+يرسل الاصل الى :
+${ORIGINAL_ROLE}***`;
+
+  document.getElementById("resignation_output").textContent=text;
+}
+
+
+/* ================= الفصل ================= */
+
+function generateDismissal(){
+
+  const id=document.getElementById("d_id").value.trim();
+  const code=document.getElementById("d_code").value.trim();
+  const name=document.getElementById("d_name").value.trim();
+  const reason=document.getElementById("d_reason").value.trim();
+  const approval=document.getElementById("d_approval").value.trim();
+  const payment=document.getElementById("d_payment").value;
+
+  if(!id||!code||!name||!reason||!approval){
+    alert("يرجى تعبئة جميع البيانات");
+    return;
+  }
+
+  let paymentText=`\`نوع السحب :\` رقابي`;
+
+  if(payment==="فاتورة"){
+    const invoice=document.getElementById("d_invoice").value.trim();
+
+    if(!invoice){
+      alert("يرجى وضع رابط الفاتورة");
+      return;
+    }
+
+    paymentText=`\`نوع السحب :\` [فاتورة](${invoice})`;
+  }
+
+  const text=
+`*** ▬▬▬ ﷽ ▬▬
+
+\`\`\`diff
+-الموضوع : قرار فصل
+\`\`\`
+
+\`\`\`cs
+# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من قيادة الهلال الاحمر قررنا مايلي 
+ 
+أولًا: تنهى خدمات المسعف ادناه اعتبارا من تاريخه
+ثانيا: منع توظيف 14 يوم
+ثالثا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
+\`\`\`
+
+${discordMention(id)}
+[${code}] ${name}
+
+\`\`\`وذلك بسبب : ${reason} \`\`\`
+
+${paymentText}
+
+\`اعتماد:\` ${discordMention(approval)}               
+
+يرسل الاصل الى :
+${ORIGINAL_ROLE}***`;
+
+  document.getElementById("dismissal_output").textContent=text;
+}
+
+
+/* ================= الغرامات ================= */
+
+function showFine(type){
+
+  ["verbal","first","second","final"].forEach(x=>{
+    document.getElementById("fine_"+x).classList.add("hidden");
+  });
+
+  document.getElementById("fine_"+type).classList.remove("hidden");
+}
+
+
+function fineBase(subject,body,id,reason,approval,amount){
+
+  let text=
+`*** ▬▬▬ ﷽ ▬▬
+
+\`\`\`diff
+-الموضوع : ${subject}
+\`\`\`
+
+\`\`\`cs
+# بعد الاطلاع على نظام المخالفات والعقوبات الصادر من ادارة الهلال الاحمر قررنا مايلي 
+ 
+${body}
+`;
+
+  if(amount){
+    text+=`ثانياً: غرامة مالية قدرها ${amount} تسلم الى خزينة الهلال الأحمر
+`;
+  }
+
+  text+=
+`\`\`\`
+
+${discordMention(id)}
+
+\`\`\`وذلك بسبب : ${reason} \`\`\`
+`;
+
+  if(amount){
+    text+=`
+\` ملاحظه : \`  [يرجى فتح تكت تواصل مع الشؤون الإدارية لتسديد الغرامة](${FINE_LINK}) 
+
+`;
+  }
+
+  text+=
+`\` توقيع واعتماد : \`  ${discordMention(approval)}   
+
+\` يرسل الاصل الى : \` ${ORIGINAL_ROLE}***`;
+
+  return text;
+}
+
+
+function generateVerbal(){
+
+  const id=document.getElementById("v_id").value.trim();
+  const reason=document.getElementById("v_reason").value.trim();
+  const approval=document.getElementById("v_approval").value.trim();
+
+  if(!id||!reason||!approval){
+    alert("يرجى تعبئة جميع البيانات");
+    return;
+  }
+
+  const text=fineBase(
+    "انذار شفهي",
+    "اولاً : انذار شفهي",
+    id,
+    reason,
+    approval,
+    null
+  );
+
+  document.getElementById("v_output").textContent=text;
+}
+
+
+function generateFirst(){
+
+  const id=document.getElementById("f1_id").value.trim();
+  const amount=document.getElementById("f1_amount").value.trim();
+  const reason=document.getElementById("f1_reason").value.trim();
+  const approval=document.getElementById("f1_approval").value.trim();
+
+  if(!id||!amount||!reason||!approval){
+    alert("يرجى تعبئة جميع البيانات");
+    return;
+  }
+
+  document.getElementById("f1_output").textContent=fineBase(
+    "انذار وظيفي",
+    "اولاً : انذار وظيفي أول",
+    id,reason,approval,amount
+  );
+}
+
+
+function generateSecond(){
+
+  const id=document.getElementById("f2_id").value.trim();
+  const amount=document.getElementById("f2_amount").value.trim();
+  const reason=document.getElementById("f2_reason").value.trim();
+  const approval=document.getElementById("f2_approval").value.trim();
+
+  if(!id||!amount||!reason||!approval){
+    alert("يرجى تعبئة جميع البيانات");
+    return;
+  }
+
+  document.getElementById("f2_output").textContent=fineBase(
+    "انذار وظيفي",
+    "اولاً : انذار وظيفي ثاني",
+    id,reason,approval,amount
+  );
+}
+
+
+function generateFinal(){
+
+  const id=document.getElementById("ff_id").value.trim();
+  const amount=document.getElementById("ff_amount").value.trim();
+  const reason=document.getElementById("ff_reason").value.trim();
+  const approval=document.getElementById("ff_approval").value.trim();
+
+  if(!id||!amount||!reason||!approval){
+    alert("يرجى تعبئة جميع البيانات");
+    return;
+  }
+
+  document.getElementById("ff_output").textContent=fineBase(
+    "انذار نهائي",
+    "اولاً : انذار نهائي بالفصل",
+    id,reason,approval,amount
+  );
+}
+
+
+/* ================= الإجازات ================= */
+
+function showLeave(type){
+
+  ["external","internal","offshift","trader","extension"].forEach(x=>{
+    document.getElementById("leave_"+x).classList.add("hidden");
+  });
+
+  document.getElementById("leave_"+type).classList.remove("hidden");
+}
+
+
+function leaveHeader(subject,id){
+  return `***﷽
+
+\` الموضوع :\` ${subject}
+
+\` للمسعف المحترم :\` ${discordMention(id)}
+
+`;
+}
+
+
+function leaveFooter(){
+  return `[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة](${LEAVE_LINK})
+
+\` يرسل الاصل الى :\` ${ORIGINAL_ROLE}***`;
+}
+
+
+function generateInternal(){
+
+  const id=document.getElementById("li_id").value.trim();
+  const hours=Number(document.getElementById("li_hours").value);
+  const balance=document.getElementById("li_balance").value.trim();
+  const approval=document.getElementById("li_approval").value.trim();
+
+  if(!id||!hours||!balance||!approval){
+    alert("يرجى تعبئة جميع البيانات");
+    return;
+  }
+
+  const start=now();
+  const end=addHours(start,hours);
+
+  const text=
+leaveHeader("إجازة داخلية",id)+
+`\` مدة الإجازة :\`  ${hours} ساعة 
+
+\` الرصيد المتبقي :\`  ${balance}
+
+\` من الساعة :\` ${formatTime(start)} | ${formatDate(start)}
+
+\` إلى الساعة :\` ${formatTime(end)} | ${formatDate(end)}
+
+\` اعتماد :\` ${discordMention(approval)}
+
+`+
+leaveFooter();
+
+  document.getElementById("li_output").textContent=text;
+}
+
+
+function generateOffshift(){
+
+  const id=document.getElementById("lo_id").value.trim();
+  const hours=Number(document.getElementById("lo_hours").value);
+  const approval=document.getElementById("lo_approval").value.trim();
+
+  if(!id||!hours||!approval){
+    alert("يرجى تعبئة جميع البيانات");
+    return;
+  }
+
+  const start=now();
+  const end=addHours(start,hours);
+
+  const text=
+leaveHeader("إجازة داخلية ( خارج شفت )",id)+
+`\` مدة الإجازة :\`  ${hours} ساعة 
+
+\` الرصيد المتبقي :\`  خارج شفت
+
+\` من الساعة :\` ${formatTime(start)} | ${formatDate(start)}
+
+\` إلى الساعة :\` ${formatTime(end)} | ${formatDate(end)}
+
+\` اعتماد :\` ${discordMention(approval)}
+
+`+
+leaveFooter();
+
+  document.getElementById("lo_output").textContent=text;
+}
+
+
+function generateTrader(){
+
+  const id=document.getElementById("lt_id").value.trim();
+  const hours=Number(document.getElementById("lt_hours").value);
+  const approval=document.getElementById("lt_approval").value.trim();
+
+  if(!id||!hours||!approval){
+    alert("يرجى تعبئة جميع البيانات");
+    return;
+  }
+
+  const start=now();
+  const end=addHours(start,hours);
+
+  const text=
+leaveHeader("إجازة داخلية ( تاجر )",id)+
+`\` مدة الإجازة :\`  ${hours} ساعة 
+
+\` الرصيد المتبقي :\`  إجازة تاجر
+
+\` من الساعة :\` ${formatTime(start)} | ${formatDate(start)}
+
+\` إلى الساعة :\` ${formatTime(end)} | ${formatDate(end)}
+
+\` اعتماد :\` ${discordMention(approval)}
+
+`+
+leaveFooter();
+
+  document.getElementById("lt_output").textContent=text;
+}
+
+
+function generateExternal(){
+
+  const id=document.getElementById("le_id").value.trim();
+  const days=Number(document.getElementById("le_days").value);
+  const approval=document.getElementById("le_approval").value.trim();
+
+  if(!id||!days||!approval){
+    alert("يرجى تعبئة جميع البيانات");
+    return;
+  }
+
+  const start=now();
+  const end=addDays(start,days);
+
+  const text=
+`***﷽
+
+\` الموضوع :\` إجازة خارجيه
+
+\` للمسعف المحترم :\` ${discordMention(id)}
+
+\` مدة الإجازة :\`  ${days} يوم 
+
+\` من تاريخ :\`  ${formatDate(start)}
+
+\` إلى تاريخ :\` ${formatDate(end)}
+
+\` اعتماد :\` ${discordMention(approval)}
+
+[يرجى قراءه القوانين قبل اخذ اجازه خارجية](${LEAVE_LINK})
+
+\` يرسل الاصل الى :\` ${ORIGINAL_ROLE}***`;
+
+  document.getElementById("le_output").textContent=text;
+}
+
+
+function generateExtension(){
+
+  const id=document.getElementById("lx_id").value.trim();
+  const days=Number(document.getElementById("lx_days").value);
+  const approval=document.getElementById("lx_approval").value.trim();
+
+  if(!id||!days||!approval){
+    alert("يرجى تعبئة جميع البيانات");
+    return;
+  }
+
+  const start=now();
+  const end=addDays(start,days);
+
+  const text=
+`***﷽
+
+\` الموضوع :\` تمديد إجازة خارجية
+
+\` للمسعف المحترم :\` ${discordMention(id)}  
+
+\` مدة التمديد :\`  ${days} يوم 
+
+\` إلى تاريخ :\` ${formatDate(end)}
+
+\` اعتماد :\` ${discordMention(approval)}
+
+[يرجى قراءه القوانين قبل اخذ اجازه خارجية](${LEAVE_LINK})
+
+\` يرسل الاصل الى :\` ${ORIGINAL_ROLE}***`;
+
+  document.getElementById("lx_output").textContent=text;
+}
+
+
+/* ================= طلب رول ================= */
+
+function showRole(type){
+
+  [
+    "fire",
+    "resign",
+    "approved",
+    "ticket",
+    "jobleave",
+    "returnleave"
+  ].forEach(x=>{
+    document.getElementById("role_"+x).classList.add("hidden");
+  });
+
+  document.getElementById("role_"+type).classList.remove("hidden");
+}
+
+
+function roleBase(id,type,reason,extra=""){
+
+  return `***السلام عليكم ورحمة الله وبركاته ,,
+
+\`القيادة الموقرة نطلب منكم للمسعف : \` ( ${discordMention(id)} )
+
+نوع الطلب : ( ${type} )
+
+${extra}
+
+\`وذلك بسبب :\` ( ${reason} )
+
+*** للعلم مع التحية /***
+${ROLE1}  
+${ROLE2} 
+${ROLE3}`;
+}
+
+
+function generateRoleFire(){
+
+  const id=document.getElementById("rf_id").value.trim();
+
+  if(!id){
+    alert("يرجى إدخال معرف المسعف");
+    return;
+  }
+
+  document.getElementById("rf_output").textContent=
+roleBase(
+  id,
+  "ازالة الاسم , ازاله رولات الهلال , منع توظيف 14 يوم",
+  "فصل"
 );
-
 }
 
 
-function toggleResignationFine(){
+function generateRoleResign(){
 
-const level=v("r_level");
+  const id=document.getElementById("rr_id").value.trim();
+  const level=document.getElementById("rr_level").value.trim();
 
-document
-.getElementById("r_fine_box")
-.classList
-.toggle(
-"hidden",
-!(level==="trainee"||level==="1")
+  if(!id||!level){
+    alert("يرجى تعبئة جميع البيانات");
+    return;
+  }
+
+  document.getElementById("rr_output").textContent=
+roleBase(
+  id,
+  "ازالة الاسم , ازاله رولات الهلال",
+  `استقالة بمستوى ${level}`
 );
-
 }
 
 
-/* الاستقالة */
-
-function makeResignation(){
-
-const id=v("r_id");
-const name=v("r_name");
-const code=v("r_code");
-const reason=v("r_reason");
-const app=v("r_approval");
-
-if(!id||!name||!code||!reason||!app){
-
-alert("عبّي جميع الخانات المطلوبة");
-
-return;
-
-}
-
-const level=v("r_level");
-
-let text=
-"*** ▬▬▬ ﷽ ▬▬\n"+
-"```diff\n"+
-"-الموضوع : قرار انهاء خدمات \n"+
-"```\n\n";
-
-text+=
-"```cs\n"+
-"# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي \n\n"+
-"اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه\n\n";
-
-if(level==="trainee"||level==="1"){
-
-text+=
-"ثانيا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر\n\n\n"+
-"ثالثا: منع توظيف 14 يوم\n\n\n";
-
-}
-
-text+="```\n\n";
-
-text+=mention(id)+"\n";
-
-text+="["+code+"] "+name+"\n\n";
-
-text+="```وذلك بسبب :"+reason+"```\n\n";
-
-if(level==="trainee"||level==="1"){
-
-const type=v("r_withdraw");
-
-if(type==="فاتورة"){
-
-const invoice=v("r_invoice");
-
-if(!invoice){
-
-alert("ضع رابط الفاتورة");
-
-return;
-
-}
-
-text+="`نوع السحب :` [فاتورة]("+invoice+")\n\n";
-
-}else{
-
-text+="`نوع السحب :` رقابي\n\n";
-
-}
-
-}
-
-text+="`اعتماد:` "+approval(app)+"      \n\n";
-
-text+="يرسل الاصل الى :\n";
-
-text+="||<@&"+ROLE_ID+">||***";
-
-copyBox(text,"r_output");
-
-}
-
-
-/* الفصل */
-
-function makeDismissal(){
-
-const id=v("d_id");
-const name=v("d_name");
-const code=v("d_code");
-const reason=v("d_reason");
-const app=v("d_approval");
-
-if(!id||!name||!code||!reason||!app){
-
-alert("عبّي جميع الخانات المطلوبة");
-
-return;
-
-}
-
-const type=v("d_withdraw");
-
-if(type==="فاتورة"&&!v("d_invoice")){
-
-alert("ضع رابط الفاتورة");
-
-return;
-
-}
-
-let text=
-"*** ▬▬▬ ﷽ ▬▬\n"+
-"```diff\n"+
-"-الموضوع : قرار فصل \n"+
-"```\n\n"+
-"```cs\n"+
-"# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من قيادة الهلال الاحمر قررنا مايلي \n\n"+
-"أولًا: تنهى خدمات المسعف ادناه اعتبارا من تاريخه\n\n"+
-"ثانيا: منع توظيف 14 يوم\n\n"+
-"ثالثا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر\n\n\n"+
-"```\n\n";
-
-text+=mention(id)+"\n";
-
-text+="["+code+"] "+name+"\n\n";
-
-text+="```وذلك بسبب :"+reason+"```\n\n";
-
-if(type==="فاتورة"){
-
-text+="`نوع السحب :` [فاتورة]("+v("d_invoice")+")\n\n";
-
-}else{
-
-text+="`نوع السحب :` رقابي\n\n";
-
-}
-
-text+="`اعتماد:` "+approval(app)+"      \n\n";
-
-text+="يرسل الاصل الى :\n";
-
-text+="||<@&"+ROLE_ID+">||***";
-
-copyBox(text,"d_output");
-
-}
-
-
-/* الغرامات */
-
-function makeVerbal(){
-
-const id=v("v_id");
-const amount=v("v_amount");
-const reason=v("v_reason");
-const app=v("v_approval");
-
-if(!id||!amount||!reason||!app){
-
-alert("عبّي جميع الخانات المطلوبة");
-
-return;
-
-}
-
-let text=
-"*** ▬▬▬ ﷽ ▬▬\n\n"+
-"```diff\n"+
-"-الموضوع : انذار شفهي\n"+
-"```\n"+
-"```cs\n"+
-"# بعد الاطلاع على نظام المخالفات والعقوبات الصادر من ادارة الهلال الاحمر قررنا مايلي \n\n"+
-"اولاً : انذار شفهي\n"+
-"ثانياً: غرامة مالية قدرها "+amount+" تسلم الى خزينة الهلال الأحمر\n"+
-"```\n";
-
-text+=mention(id)+"\n\n";
-
-text+="```وذلك بسبب : "+reason+" ```\n";
-
-text+=
-"` ملاحظه : `  [يرجى فتح تكت تواصل مع الشؤون الإدارية لتسديد الغرامة]("+
-FINE_LINK+
-") \n\n";
-
-text+=
-"` توقيع واعتماد : `  "+
-approval(app)+
-"   \n\n";
-
-text+=
-"` يرسل الاصل الى : ` <@&"+
-ROLE_ID+
-">***";
-
-copyBox(text,"v_output");
-
-}
-
-
-function makeFirstWarning(){
-
-const id=v("f1_id");
-const amount=v("f1_amount");
-const reason=v("f1_reason");
-const app=v("f1_approval");
-
-if(!id||!amount||!reason||!app){
-
-alert("عبّي جميع الخانات المطلوبة");
-
-return;
-
-}
-
-let text=
-"*** ▬▬▬ ﷽ ▬▬\n\n"+
-"```diff\n"+
-"-الموضوع : انذار وظيفي\n"+
-"```\n"+
-"```cs\n"+
-"# بعد الاطلاع على نظام المخالفات والعقوبات الصادر من ادارة الهلال الاحمر قررنا مايلي \n\n"+
-"اولاً : انذار وظيفي أول\n"+
-"ثانياً: غرامة مالية قدرها "+amount+" تسلم الى خزينة الهلال الأحمر\n"+
-"```\n";
-
-text+=mention(id)+"\n\n";
-
-text+="```وذلك بسبب : "+reason+"```\n";
-
-text+=
-"` ملاحظه : `  [يرجى فتح تكت تواصل مع الشؤون الإدارية لتسديد الغرامة]("+
-FINE_LINK+
-") \n\n";
-
-text+=
-"` توقيع واعتماد : `  "+
-approval(app)+
-"    \n\n";
-
-text+=
-"` يرسل الاصل الى : ` <@&"+
-ROLE_ID+
-">***";
-
-copyBox(text,"f1_output");
-
-}
-
-
-function makeSecondWarning(){
-
-const id=v("f2_id");
-const amount=v("f2_amount");
-const reason=v("f2_reason");
-const app=v("f2_approval");
-
-if(!id||!amount||!reason||!app){
-
-alert("عبّي جميع الخانات المطلوبة");
-
-return;
-
-}
-
-let text=
-"*** ▬▬▬ ﷽ ▬▬\n\n"+
-"```diff\n"+
-"-الموضوع : انذار وظيفي\n"+
-"```\n"+
-"```cs\n"+
-"# بعد الاطلاع على نظام المخالفات والعقوبات الصادر من ادارة الهلال الاحمر قررنا مايلي \n\n"+
-"اولاً : انذار وظيفي ثاني\n"+
-"ثانياً: غرامة مالية قدرها "+amount+" تسلم الى خزينة الهلال الأحمر\n"+
-"```\n";
-
-text+=mention(id)+"\n\n";
-
-text+="```وذلك بسبب : "+reason+"```\n";
-
-text+=
-"` ملاحظه : `  [يرجى فتح تكت تواصل مع الشؤون الإدارية لتسديد الغرامة]("+
-FINE_LINK+
-") \n\n";
-
-text+=
-"` توقيع واعتماد : `  "+
-approval(app)+
-" \n\n";
-
-text+=
-"` يرسل الاصل الى : ` <@&"+
-ROLE_ID+
-">***";
-
-copyBox(text,"f2_output");
-
-}
-
-
-function makeFinalWarning(){
-
-const id=v("ff_id");
-const amount=v("ff_amount");
-const reason=v("ff_reason");
-const app=v("ff_approval");
-
-if(!id||!amount||!reason||!app){
-
-alert("عبّي جميع الخانات المطلوبة");
-
-return;
-
-}
-
-let text=
-"*** ▬▬▬ ﷽ ▬▬\n\n"+
-"```diff\n"+
-"-الموضوع : انذار نهائي\n"+
-"```\n"+
-"```cs\n"+
-"# بعد الاطلاع على نظام المخالفات والعقوبات الصادر من ادارة الهلال الاحمر قررنا مايلي \n\n"+
-"اولاً : انذار نهائي بالفصل\n"+
-"ثانياً: غرامة مالية قدرها "+amount+" تسلم الى خزينة الهلال الأحمر\n"+
-"```\n";
-
-text+=mention(id)+"\n\n";
-
-text+="```وذلك بسبب : "+reason+"```\n";
-
-text+=
-"` ملاحظه : `  [يرجى فتح تكت تواصل مع الشؤون الإدارية لتسديد الغرامة]("+
-FINE_LINK+
-") \n\n";
-
-text+=
-"` توقيع واعتماد : `  "+
-approval(app)+
-"   \n\n";
-
-text+=
-"` يرسل الاصل الى : ` <@&"+
-ROLE_ID+
-">***";
-
-copyBox(text,"ff_output");
-
-}
-
-
-/* الإجازات */
-
-function hourRange(hours){
-
-const start=new Date();
-
-const end=new Date(
-start.getTime()+
-hours*60*60*1000
+function generateRoleApproved(){
+
+  const id=document.getElementById("ra_id").value.trim();
+  const level=document.getElementById("ra_level").value.trim();
+  const name=document.getElementById("ra_name").value.trim();
+
+  if(!id||!level||!name){
+    alert("يرجى تعبئة جميع البيانات");
+    return;
+  }
+
+  document.getElementById("ra_output").textContent=
+roleBase(
+  id,
+  `اضافة رول الهلال + مستوى ${level}`,
+  "تعيين معتمد",
+  `\`الاسم :\` ${name}`
 );
-
-return{
-start:start,
-end:end
-};
-
 }
 
 
-function dayRange(days){
+function generateRoleTicket(){
 
-const start=new Date();
+  const id=document.getElementById("rt_id").value.trim();
+  const level=document.getElementById("rt_level").value.trim();
+  const name=document.getElementById("rt_name").value.trim();
 
-start.setHours(0,0,0,0);
+  if(!id||!level||!name){
+    alert("يرجى تعبئة جميع البيانات");
+    return;
+  }
 
-const end=new Date(start);
-
-end.setDate(
-end.getDate()+days
+  document.getElementById("rt_output").textContent=
+roleBase(
+  id,
+  `اضافة رول الهلال + مستوى ${level}`,
+  "تعيين تيكت",
+  `\`الاسم :\` ${name}`
 );
-
-return{
-start:start,
-end:end
-};
-
 }
 
 
-function makeInternal(){
+function generateRoleJobLeave(){
 
-const id=v("i_id");
-const hours=Number(v("i_hours"));
-const balance=Number(v("i_balance"));
-const app=v("i_approval");
+  const id=document.getElementById("rj_id").value.trim();
 
-if(!id||!hours||hours<1||isNaN(balance)||!app){
+  if(!id){
+    alert("يرجى إدخال معرف المسعف");
+    return;
+  }
 
-alert("عبّي جميع الخانات المطلوبة");
-
-return;
-
-}
-
-if(hours>balance){
-
-alert("مدة الإجازة أكبر من الرصيد المتبقي");
-
-return;
-
-}
-
-const r=hourRange(hours);
-
-const remaining=balance-hours;
-
-let text=
-"***﷽\n\n"+
-"` الموضوع :` إجازة داخلية\n\n"+
-"` للمسعف المحترم :` "+mention(id)+"\n\n"+
-"` مدة الإجازة :`  "+hours+" ساعة \n\n"+
-"` الرصيد المتبقي :`  "+remaining+" ساعة \n\n";
-
-text+=
-"` من الساعة :` "+
-timeText(r.start)+
-" | "+
-dateText(r.start)+
-"\n\n";
-
-text+=
-"` إلى الساعة :` "+
-timeText(r.end)+
-" | "+
-dateText(r.end)+
-"\n\n";
-
-text+=
-"[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة]("+
-LEAVE_LINK+
-")\n\n";
-
-text+=
-"` اعتماد :` "+
-approval(app)+
-"\n\n";
-
-text+=
-"` يرسل الاصل الى :` <@&"+
-ROLE_ID+
-">***";
-
-copyBox(text,"i_output");
-
+  document.getElementById("rj_output").textContent=
+roleBase(
+  id,
+  "اضافة رول اجازه وظيفيه",
+  "اجازه خارجيه"
+);
 }
 
 
-function makeOutside(){
+function generateRoleReturn(){
 
-const id=v("o_id");
-const hours=Number(v("o_hours"));
-const app=v("o_approval");
+  const id=document.getElementById("rx_id").value.trim();
 
-if(!id||!hours||hours<1||!app){
+  if(!id){
+    alert("يرجى إدخال معرف المسعف");
+    return;
+  }
 
-alert("عبّي جميع الخانات المطلوبة");
-
-return;
-
+  document.getElementById("rx_output").textContent=
+roleBase(
+  id,
+  "ازالة رول اجازه وظيفيه",
+  "عودة من اجازه خارجيه"
+);
 }
-
-const r=hourRange(hours);
-
-let text=
-"***﷽\n\n"+
-"` الموضوع :` إجازة داخلية ( خارج شفت )\n\n"+
-"` للمسعف المحترم :` "+mention(id)+"\n\n"+
-"` مدة الإجازة :`  "+hours+" ساعة \n\n"+
-"` الرصيد المتبقي :`  خارج شفت\n\n";
-
-text+=
-"` من الساعة :` "+
-timeText(r.start)+
-" | "+
-dateText(r.start)+
-"\n\n";
-
-text+=
-"` إلى الساعة :` "+
-timeText(r.end)+
-" | "+
-dateText(r.end)+
-"\n\n";
-
-text+=
-"[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة]("+
-LEAVE_LINK+
-")\n\n";
-
-text+=
-"` اعتماد :` "+
-approval(app)+
-"\n\n";
-
-text+=
-"` يرسل الاصل الى :` <@&"+
-ROLE_ID+
-">***";
-
-copyBox(text,"o_output");
-
-}
-
-
-function makeTrader(){
-
-const id=v("t_id");
-const hours=Number(v("t_hours"));
-const app=v("t_approval");
-
-if(!id||!hours||hours<1||!app){
-
-alert("عبّي جميع الخانات المطلوبة");
-
-return;
-
-}
-
-const r=hourRange(hours);
-
-let text=
-"***﷽\n\n"+
-"` الموضوع :` إجازة داخلية ( تاجر )\n\n"+
-"` للمسعف المحترم :` "+mention(id)+"\n\n"+
-"` مدة الإجازة :`  "+hours+" ساعة \n\n"+
-"` الرصيد المتبقي :`  إجازة تاجر\n\n";
-
-text+=
-"` من الساعة :` "+
-timeText(r.start)+
-" | "+
-dateText(r.start)+
-"\n\n";
-
-text+=
-"` إلى الساعة :` "+
-timeText(r.end)+
-" | "+
-dateText(r.end)+
-"\n\n";
-
-text+=
-"[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة]("+
-LEAVE_LINK+
-")\n\n";
-
-text+=
-"` اعتماد :` "+
-approval(app)+
-"\n\n";
-
-text+=
-"` يرسل الاصل الى :` <@&"+
-ROLE_ID+
-">***";
-
-copyBox(text,"t_output");
-
-}
-
-
-function makeExternal(){
-
-const id=v("e_id");
-const days=Number(v("e_days"));
-const app=v("e_approval");
-
-if(!id||!days||days<1||!app){
-
-alert("عبّي جميع الخانات المطلوبة");
-
-return;
-
-}
-
-const r=dayRange(days);
-
-let text=
-"***﷽\n\n"+
-"` الموضوع :` إجازة خارجيه\n\n"+
-"` للمسعف المحترم :` "+mention(id)+"\n\n"+
-"` مدة الإجازة :`  "+days+" يوم \n\n";
-
-text+=
-"` من تاريخ :`  "+
-dateText(r.start)+
-"\n\n";
-
-text+=
-"` إلى تاريخ :`  "+
-dateText(r.end)+
-"\n\n";
-
-text+=
-"[يرجى قراءه القوانين قبل اخذ اجازه خارجية]("+
-LEAVE_LINK+
-")\n\n";
-
-text+=
-"` اعتماد :` "+
-approval(app)+
-"\n\n";
-
-text+=
-"` يرسل الاصل الى :` <@&"+
-ROLE_ID+
-">***";
-
-copyBox(text,"e_output");
-
-}
-
-
-function makeExtension(){
-
-const id=v("x_id");
-const days=Number(v("x_days"));
-const app=v("x_approval");
-
-if(!id||!days||days<1||!app){
-
-alert("عبّي جميع الخانات المطلوبة");
-
-return;
-
-}
-
-const r=dayRange(days);
-
-let text=
-"***﷽\n\n"+
-"` الموضوع :` تمديد إجازة خارجية\n\n"+
-"` للمسعف المحترم :` "+mention(id)+"  \n\n"+
-"` مدة التمديد :`  "+days+" يوم \n\n"+
-"` إلى تاريخ :`  "+dateText(r.end)+"\n\n";
-
-text+=
-"[يرجى قراءه القوانين قبل اخذ اجازه خارجية]("+
-LEAVE_LINK+
-")\n\n";
-
-text+=
-"` اعتماد :` "+
-approval(app)+
-"\n\n";
-
-text+=
-"` يرسل الاصل الى :` <@&"+
-ROLE_ID+
-">***";
-
-copyBox(text,"x_output");
-
-}
-
-showSection("home");
 
 </script>
 
