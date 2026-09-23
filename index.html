@@ -198,7 +198,7 @@ grid-column:auto
 
 <div class="container">
 
-<!-- الصفحة الرئيسية -->
+<!-- ================= الرئيسية ================= -->
 
 <section id="home" class="card">
 
@@ -231,7 +231,7 @@ grid-column:auto
 </section>
 
 
-<!-- ==================== الاستقالة ==================== -->
+<!-- ================= الاستقالة ================= -->
 
 <section id="endServices" class="card hidden">
 
@@ -325,7 +325,7 @@ grid-column:auto
 </section>
 
 
-<!-- ==================== الفصل ==================== -->
+<!-- ================= الفصل ================= -->
 
 <section id="dismissal" class="card hidden">
 
@@ -421,7 +421,7 @@ grid-column:auto
 </section>
 
 
-<!-- ==================== نظام الإجازات ==================== -->
+<!-- ================= نظام الإجازات ================= -->
 
 <section id="leaves" class="card hidden">
 
@@ -460,7 +460,7 @@ grid-column:auto
 </section>
 
 
-<!-- ==================== إجازة داخلية ==================== -->
+<!-- ================= الإجازة الداخلية ================= -->
 
 <section id="internal" class="card hidden">
 
@@ -501,13 +501,23 @@ target="_blank">
 </div>
 
 <div class="auto-time">
-بداية الإجازة تلقائيًا: <strong id="intStartPreview">سيتم تحديدها عند إنشاء القرار</strong>
+
+بداية الإجازة:
+<strong id="intStartPreview">
+تلقائي عند إنشاء القرار
+</strong>
+
 <br>
-نهاية الإجازة تلقائيًا: <strong id="intEndPreview">سيتم حسابها تلقائيًا</strong>
+
+نهاية الإجازة:
+<strong id="intEndPreview">
+تلقائي حسب المدة
+</strong>
+
 </div>
 
 <div class="info">
-أدخل مدة الإجازة فقط. وقت وتاريخ البداية والنهاية يتم تحديدها تلقائيًا عند إنشاء القرار.
+أدخل مدة الإجازة فقط. وقت وتاريخ البداية والنهاية يتم حسابها تلقائيًا.
 </div>
 
 <button class="primary" onclick="generateInternal()">
@@ -525,7 +535,7 @@ target="_blank">
 </section>
 
 
-<!-- ==================== خارج الشفت ==================== -->
+<!-- ================= خارج الشفت ================= -->
 
 <section id="outsideShift" class="card hidden">
 
@@ -561,9 +571,19 @@ target="_blank">
 </div>
 
 <div class="auto-time">
-بداية الإجازة تلقائيًا: <strong id="shiftStartPreview">سيتم تحديدها عند إنشاء القرار</strong>
+
+بداية الإجازة:
+<strong id="shiftStartPreview">
+تلقائي عند إنشاء القرار
+</strong>
+
 <br>
-نهاية الإجازة تلقائيًا: <strong id="shiftEndPreview">سيتم حسابها تلقائيًا</strong>
+
+نهاية الإجازة:
+<strong id="shiftEndPreview">
+تلقائي حسب المدة
+</strong>
+
 </div>
 
 <div class="info">
@@ -585,7 +605,7 @@ target="_blank">
 </section>
 
 
-<!-- ==================== التاجر ==================== -->
+<!-- ================= التاجر ================= -->
 
 <section id="trader" class="card hidden">
 
@@ -621,9 +641,19 @@ target="_blank">
 </div>
 
 <div class="auto-time">
-بداية الإجازة تلقائيًا: <strong id="traderStartPreview">سيتم تحديدها عند إنشاء القرار</strong>
+
+بداية الإجازة:
+<strong id="traderStartPreview">
+تلقائي عند إنشاء القرار
+</strong>
+
 <br>
-نهاية الإجازة تلقائيًا: <strong id="traderEndPreview">سيتم حسابها تلقائيًا</strong>
+
+نهاية الإجازة:
+<strong id="traderEndPreview">
+تلقائي حسب المدة
+</strong>
+
 </div>
 
 <div class="info">
@@ -645,7 +675,7 @@ target="_blank">
 </section>
 
 
-<!-- ==================== الخارجية ==================== -->
+<!-- ================= الإجازة الخارجية ================= -->
 
 <section id="external" class="card hidden">
 
@@ -675,14 +705,23 @@ target="_blank">
 </div>
 
 <div class="auto-time">
-بداية الإجازة تلقائيًا: <strong id="extStartPreview">سيتم تحديدها عند إنشاء القرار</strong>
+
+بداية الإجازة:
+<strong id="extStartPreview">
+تاريخ اليوم تلقائيًا
+</strong>
+
 <br>
-نهاية الإجازة تلقائيًا: <strong id="extEndPreview">سيتم حسابها تلقائيًا</strong>
+
+نهاية الإجازة:
+<strong id="extEndPreview">
+تحسب حسب عدد الأيام
+</strong>
+
 </div>
 
 <div class="info">
-أدخل عدد الأيام فقط. تاريخ البداية هو تاريخ إنشاء القرار، وتاريخ النهاية يحسب تلقائيًا.
-الإجازة الخارجية لا تخصم من الرصيد.
+أدخل عدد الأيام فقط. تاريخ البداية هو تاريخ إنشاء القرار، والنهاية تحسب تلقائيًا. الإجازة الخارجية لا تخصم من الرصيد.
 </div>
 
 <button class="primary" onclick="generateExternal()">
@@ -700,7 +739,7 @@ target="_blank">
 </section>
 
 
-<!-- ==================== تمديد الخارجية ==================== -->
+<!-- ================= تمديد الخارجية ================= -->
 
 <section id="externalExtend" class="card hidden">
 
@@ -734,7 +773,12 @@ target="_blank">
 </div>
 
 <div class="auto-time">
-تاريخ نهاية التمديد تلقائيًا: <strong id="extendEndPreview">سيتم حسابه عند إنشاء القرار</strong>
+
+تاريخ نهاية التمديد:
+<strong id="extendEndPreview">
+يحسب تلقائيًا حسب المدة
+</strong>
+
 </div>
 
 <a class="instructions"
@@ -762,7 +806,7 @@ target="_blank">
 
 <script>
 
-/* ==================== إعدادات ==================== */
+/* ================= الإعدادات ================= */
 
 const instructionsLink =
 "https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104";
@@ -773,11 +817,9 @@ return document.getElementById(id).value.trim();
 }
 
 
-/* ==================== التنقل ==================== */
+/* ================= التنقل ================= */
 
-function allSections(){
-
-return [
+const sections=[
 "home",
 "endServices",
 "dismissal",
@@ -789,47 +831,33 @@ return [
 "externalExtend"
 ];
 
-}
-
-
-function goHome(){
-
-allSections().forEach(id=>{
+function hideAll(){
+sections.forEach(id=>{
 document.getElementById(id).classList.add("hidden");
 });
-
-document.getElementById("home").classList.remove("hidden");
-
 }
 
+function goHome(){
+hideAll();
+document.getElementById("home").classList.remove("hidden");
+}
 
 function openSection(id){
-
-allSections().forEach(section=>{
-document.getElementById(section).classList.add("hidden");
-});
-
+hideAll();
 document.getElementById(id).classList.remove("hidden");
 
 if(id==="endServices"){
 updateEndFields();
 }
-
 }
-
 
 function openLeave(id){
-
-allSections().forEach(section=>{
-document.getElementById(section).classList.add("hidden");
-});
-
+hideAll();
 document.getElementById(id).classList.remove("hidden");
-
 }
 
 
-/* ==================== الاستقالة ==================== */
+/* ================= الاستقالة ================= */
 
 function updateEndFields(){
 
@@ -843,21 +871,17 @@ document
 .classList.toggle("hidden",!charged);
 
 if(!charged){
-
 document
 .getElementById("endInvoiceWrap")
 .classList.add("hidden");
-
 }
 
 document.getElementById("endInfo").textContent=
-
 charged
 ?
 "غرامة 1,000,000 + منع توظيف 14 يوم. اختر نوع السحب."
 :
 "هذا المستوى بدون غرامة وبدون سحب.";
-
 }
 
 
@@ -867,22 +891,17 @@ let select;
 let box;
 
 if(type==="end"){
-
 select=document.getElementById("endWithdrawType");
 box=document.getElementById("endInvoiceWrap");
-
 }else{
-
 select=document.getElementById("fireWithdrawType");
 box=document.getElementById("fireInvoiceWrap");
-
 }
 
 box.classList.toggle(
 "hidden",
 select.value!=="فاتورة"
 );
-
 }
 
 
@@ -892,31 +911,23 @@ let select;
 let invoice;
 
 if(type==="end"){
-
 select=value("endWithdrawType");
 invoice=value("endInvoice");
-
 }else{
-
 select=value("fireWithdrawType");
 invoice=value("fireInvoice");
-
 }
 
 if(select==="فاتورة"){
 
 if(invoice){
-
 return "`نوع السحب :` [فاتورة]("+invoice+")";
-
 }
 
 return "`نوع السحب :` فاتورة";
-
 }
 
 return "`نوع السحب :` رقابي";
-
 }
 
 
@@ -969,11 +980,10 @@ ${withdrawal}
 ||<@&1404535885864632340>||***`;
 
 document.getElementById("endOutput").textContent=decision;
-
 }
 
 
-/* ==================== الفصل ==================== */
+/* ================= الفصل ================= */
 
 function generateDismissal(){
 
@@ -995,381 +1005,4 @@ const decision=`*** ▬▬▬ ﷽ ▬▬
  
 أولًا: تنهى خدمات المسعف ادناه اعتبارا من تاريخه
 ثانيا: منع توظيف 14 يوم
-ثالثا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
-
-\`\`\`
-
-<@${id}>
-[${code}] ${name}
-
-\`\`\`وذلك بسبب : ${reason} \`\`\`
-
-${withdrawal}
-
-\`اعتماد:\` <@${approve}>               
-
-يرسل الاصل الى :
-||<@&1404535885864632340>||***`;
-
-document.getElementById("fireOutput").textContent=decision;
-
-}
-
-
-/* ==================== التاريخ والوقت ==================== */
-
-function pad(number){
-
-return String(number).padStart(2,"0");
-
-}
-
-
-function formatDate(date){
-
-return date.getFullYear()+"/"+
-pad(date.getMonth()+1)+"/"+
-pad(date.getDate());
-
-}
-
-
-function formatTime(date){
-
-let hour=date.getHours();
-const minute=pad(date.getMinutes());
-
-const suffix=
-hour>=12 ? "م" : "ص";
-
-hour=hour%12;
-
-if(hour===0){
-hour=12;
-}
-
-return pad(hour)+":"+minute+" "+suffix;
-
-}
-
-
-function formatDateTime(date){
-
-return formatTime(date)+" | "+formatDate(date);
-
-}
-
-
-/* ==================== حساب وقت نهاية الإجازة ==================== */
-
-/*
-الإجازة الداخلية:
-
-المستخدم يدخل المدة فقط.
-
-الموقع يأخذ لحظة الضغط على "إنشاء الإجازة"
-كوقت وتاريخ بداية.
-
-ثم يضيف عدد الساعات ويحسب النهاية.
-*/
-
-function calculateHourlyLeave(duration){
-
-const hours=parseFloat(duration);
-
-if(!hours || hours<=0){
-return null;
-}
-
-const start=new Date();
-
-const end=
-new Date(
-start.getTime()+
-hours*60*60*1000
-);
-
-return {
-start:start,
-end:end
-};
-
-}
-
-
-/* ==================== عرض الوقت تلقائيًا ==================== */
-
-function previewHourly(type){
-
-let durationId;
-let startPreview;
-let endPreview;
-
-if(type==="internal"){
-
-durationId="intDuration";
-startPreview="intStartPreview";
-endPreview="intEndPreview";
-
-}
-
-if(type==="shift"){
-
-durationId="shiftDuration";
-startPreview="shiftStartPreview";
-endPreview="shiftEndPreview";
-
-}
-
-if(type==="trader"){
-
-durationId="traderDuration";
-startPreview="traderStartPreview";
-endPreview="traderEndPreview";
-
-}
-
-const duration=value(durationId);
-
-if(!duration){
-
-document.getElementById(startPreview).textContent=
-"سيتم تحديدها عند إنشاء القرار";
-
-document.getElementById(endPreview).textContent=
-"سيتم حسابها تلقائيًا";
-
-return;
-
-}
-
-const result=
-calculateHourlyLeave(duration);
-
-if(!result){
-
-return;
-
-}
-
-document.getElementById(startPreview).textContent=
-formatDateTime(result.start);
-
-document.getElementById(endPreview).textContent=
-formatDateTime(result.end);
-
-}
-
-
-/* تحديث المعاينة أثناء الكتابة */
-
-document
-.getElementById("intDuration")
-.addEventListener(
-"input",
-()=>previewHourly("internal")
-);
-
-document
-.getElementById("shiftDuration")
-.addEventListener(
-"input",
-()=>previewHourly("shift")
-);
-
-document
-.getElementById("traderDuration")
-.addEventListener(
-"input",
-()=>previewHourly("trader")
-);
-
-
-/* ==================== الإجازة الداخلية ==================== */
-
-function generateInternal(){
-
-const id=value("intId");
-const duration=value("intDuration");
-const balance=value("intBalance");
-const approve=value("intApprove");
-
-if(!duration){
-
-alert("أدخل مدة الإجازة أولًا.");
-
-return;
-
-}
-
-const result=
-calculateHourlyLeave(duration);
-
-if(!result){
-
-alert("مدة الإجازة غير صحيحة.");
-
-return;
-
-}
-
-const decision=`***﷽
-
-\` الموضوع :\` إجازة داخلية
-
-\` للمسعف المحترم :\` <@${id}>
-
-\` مدة الإجازة :\`  ${duration} ساعة 
-
-\` الرصيد المتبقي :\`  ${balance} 
-
-\` من الساعة :\` ${formatDateTime(result.start)}
-
-\` إلى الساعة :\` ${formatDateTime(result.end)}
-
-[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة](${instructionsLink})
-
-\`اعتماد:\` <@${approve}>
-
-\` يرسل الاصل الى :\` <@&1404535885864632340>***`;
-
-document.getElementById("intOutput").textContent=
-decision;
-
-}
-
-
-/* ==================== خارج الشفت ==================== */
-
-function generateOutsideShift(){
-
-const id=value("shiftId");
-const duration=value("shiftDuration");
-const approve=value("shiftApprove");
-
-if(!duration){
-
-alert("أدخل مدة الإجازة أولًا.");
-
-return;
-
-}
-
-const result=
-calculateHourlyLeave(duration);
-
-if(!result){
-
-alert("مدة الإجازة غير صحيحة.");
-
-return;
-
-}
-
-const decision=`***﷽
-
-\` الموضوع :\` إجازة داخلية ( خارج شفت )
-
-\` للمسعف المحترم :\` <@${id}>
-
-\` مدة الإجازة :\`  ${duration} ساعة 
-
-\` الرصيد المتبقي :\`  خارج شفت
-
-\` من الساعة :\` ${formatDateTime(result.start)}
-
-\` إلى الساعة :\` ${formatDateTime(result.end)}
-
-[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة](${instructionsLink})
-
-\`اعتماد:\` <@${approve}>
-
-\` يرسل الاصل الى :\` <@&1404535885864632340>***`;
-
-document.getElementById("shiftOutput").textContent=
-decision;
-
-}
-
-
-/* ==================== التاجر ==================== */
-
-function generateTrader(){
-
-const id=value("traderId");
-const duration=value("traderDuration");
-const approve=value("traderApprove");
-
-if(!duration){
-
-alert("أدخل مدة الإجازة أولًا.");
-
-return;
-
-}
-
-const result=
-calculateHourlyLeave(duration);
-
-if(!result){
-
-alert("مدة الإجازة غير صحيحة.");
-
-return;
-
-}
-
-const decision=`***﷽
-
-\` الموضوع :\` إجازة داخلية ( تاجر )
-
-\` للمسعف المحترم :\` <@${id}>
-
-\` مدة الإجازة :\`  ${duration} ساعة 
-
-\` الرصيد المتبقي :\`  إجازة تاجر
-
-\` من الساعة :\` ${formatDateTime(result.start)}
-
-\` إلى الساعة :\` ${formatDateTime(result.end)}
-
-[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة](${instructionsLink})
-
-\`اعتماد:\` <@${approve}>
-
-\` يرسل الاصل الى :\` <@&1404535885864632340>***`;
-
-document.getElementById("traderOutput").textContent=
-decision;
-
-}
-
-
-/* ==================== الإجازة الخارجية ==================== */
-
-/*
-الخارجية:
-المستخدم يدخل عدد الأيام فقط.
-
-تاريخ البداية = تاريخ اليوم.
-
-تاريخ النهاية = تاريخ اليوم + عدد الأيام.
-*/
-
-function calculateExternal(){
-
-const duration=
-parseInt(value("extDuration"));
-
-if(!duration || duration<=0){
-
-return null;
-
-}
-
-const start=new Date();
-
-start.setHours(0,0,0,0);
-
-const end=
-new Date(start);
+ثالثا: غرامه مالية قدرها 1,000,000
