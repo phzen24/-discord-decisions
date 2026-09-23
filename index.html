@@ -137,7 +137,6 @@ h1{font-size:30px}
 
 <div class="container">
 
-<!-- الرئيسية -->
 <div id="home" class="card">
 
 <h1>🏛️ الشؤون الإدارية</h1>
@@ -165,7 +164,6 @@ h1{font-size:30px}
 </div>
 
 
-<!-- الاستقالة -->
 <div id="resignation" class="card hidden">
 
 <button class="back" onclick="showSection('home')">
@@ -234,7 +232,6 @@ h1{font-size:30px}
 </div>
 
 
-<!-- الفصل -->
 <div id="dismissal" class="card hidden">
 
 <button class="back" onclick="showSection('home')">
@@ -283,7 +280,6 @@ h1{font-size:30px}
 </div>
 
 
-<!-- نظام الاجازات -->
 <div id="leaves" class="card hidden">
 
 <button class="back" onclick="showSection('home')">
@@ -321,7 +317,6 @@ h1{font-size:30px}
 </div>
 
 
-<!-- داخلية -->
 <div id="internal" class="card hidden">
 
 <button class="back" onclick="showSection('leaves')">
@@ -347,9 +342,7 @@ h1{font-size:30px}
 <a class="link"
 href="https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104"
 target="_blank">
-
 يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة
-
 </a>
 
 <button class="action" onclick="makeInternal()">
@@ -361,7 +354,6 @@ target="_blank">
 </div>
 
 
-<!-- خارج شفت -->
 <div id="outside" class="card hidden">
 
 <button class="back" onclick="showSection('leaves')">
@@ -384,9 +376,7 @@ target="_blank">
 <a class="link"
 href="https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104"
 target="_blank">
-
 يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة
-
 </a>
 
 <button class="action" onclick="makeOutside()">
@@ -398,7 +388,6 @@ target="_blank">
 </div>
 
 
-<!-- تاجر -->
 <div id="trader" class="card hidden">
 
 <button class="back" onclick="showSection('leaves')">
@@ -421,9 +410,7 @@ target="_blank">
 <a class="link"
 href="https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104"
 target="_blank">
-
 يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة
-
 </a>
 
 <button class="action" onclick="makeTrader()">
@@ -435,7 +422,6 @@ target="_blank">
 </div>
 
 
-<!-- خارجي -->
 <div id="external" class="card hidden">
 
 <button class="back" onclick="showSection('leaves')">
@@ -458,9 +444,7 @@ target="_blank">
 <a class="link"
 href="https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104"
 target="_blank">
-
 يرجى قراءه القوانين قبل اخذ اجازه خارجية
-
 </a>
 
 <button class="action" onclick="makeExternal()">
@@ -472,7 +456,6 @@ target="_blank">
 </div>
 
 
-<!-- تمديد -->
 <div id="extension" class="card hidden">
 
 <button class="back" onclick="showSection('leaves')">
@@ -499,9 +482,7 @@ target="_blank">
 <a class="link"
 href="https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104"
 target="_blank">
-
 يرجى قراءه القوانين قبل اخذ اجازه خارجية
-
 </a>
 
 <button class="action" onclick="makeExtension()">
@@ -662,6 +643,7 @@ if(!id||!name||!code||!reason||!app){
 alert("عبّي جميع الخانات المطلوبة");
 
 return;
+
 }
 
 const level=v("r_level");
@@ -673,7 +655,7 @@ let text=
 "```\n\n";
 
 text+=
-"# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي\n\n";
+"بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي\n\n";
 
 text+=
 "اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه\n";
@@ -765,7 +747,7 @@ let text=
 "```\n\n";
 
 text+=
-"# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من قيادة الهلال الاحمر قررنا مايلي\n\n";
+"بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من قيادة الهلال الاحمر قررنا مايلي\n\n";
 
 text+=
 "أولًا: تنهى خدمات المسعف ادناه اعتبارا من تاريخه\n";
