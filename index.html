@@ -55,6 +55,10 @@ text-align:right;
 cursor:pointer;
 }
 
+.menu button:hover{
+background:#1e293b;
+}
+
 .back{
 background:#475569;
 color:white;
@@ -71,7 +75,9 @@ grid-template-columns:repeat(2,1fr);
 gap:15px;
 }
 
-.full{grid-column:1/-1}
+.full{
+grid-column:1/-1;
+}
 
 label{
 display:block;
@@ -128,7 +134,9 @@ direction:rtl;
 text-align:right;
 }
 
-.hidden{display:none}
+.hidden{
+display:none;
+}
 
 .info{
 margin-top:15px;
@@ -140,8 +148,13 @@ font-size:14px;
 }
 
 @media(max-width:650px){
-.menu,.grid{grid-template-columns:1fr}
-.full{grid-column:auto}
+.menu,.grid{
+grid-template-columns:1fr;
+}
+
+.full{
+grid-column:auto;
+}
 }
 </style>
 </head>
@@ -149,6 +162,8 @@ font-size:14px;
 <body>
 
 <div class="container">
+
+<!-- الصفحة الرئيسية -->
 
 <section id="home" class="card">
 
@@ -177,17 +192,22 @@ font-size:14px;
 </button>
 
 </div>
+
 </section>
 
 
+<!-- قرارات الاستقالة -->
+
 <section id="endServices" class="card hidden">
 
-<button class="back" onclick="goHome()">← العودة</button>
+<button class="back" onclick="goHome()">
+← العودة
+</button>
 
 <h2>📄 قرارات الاستقالة</h2>
 
 <div class="subtitle">
-المتدرب والمستوى 1 عليهم غرامة، والمستويات 2 إلى 10 بدون غرامة.
+المتدرب والمستوى 1 عليهم غرامة مليون ومنع توظيف 14 يوم.
 </div>
 
 <div class="grid">
@@ -208,9 +228,11 @@ font-size:14px;
 </div>
 
 <div>
+
 <label>المستوى</label>
 
 <select id="endLevel" onchange="updateEndFields()">
+
 <option value="متدرب">متدرب</option>
 <option value="1">مستوى 1</option>
 <option value="2">مستوى 2</option>
@@ -222,49 +244,79 @@ font-size:14px;
 <option value="8">مستوى 8</option>
 <option value="9">مستوى 9</option>
 <option value="10">مستوى 10</option>
+
 </select>
+
 </div>
 
 <div class="full">
+
 <label>سبب الاستقالة</label>
-<textarea id="endReason" placeholder="مثال: استقالة برتبة مستوى (4) بناءً على طلبه"></textarea>
+
+<textarea id="endReason"
+placeholder="مثال: استقالة برتبة مستوى (4) بناءً على طلبه">
+</textarea>
+
 </div>
+
+
+<!-- السحب للاستقالة -->
 
 <div id="endWithdrawal" class="full">
 
 <label>نوع السحب</label>
 
-<select id="endWithdrawType" onchange="toggleInvoice('end')">
+<select id="endWithdrawType"
+onchange="toggleInvoice('end')">
+
 <option value="رقابي">رقابي</option>
 <option value="فاتورة">فاتورة</option>
+
 </select>
 
 </div>
+
 
 <div id="endInvoiceWrap" class="full hidden">
 
 <label>رابط الفاتورة</label>
 
-<input id="endInvoice" placeholder="ألصق رابط الفاتورة هنا">
+<input id="endInvoice"
+placeholder="ضع رابط الفاتورة هنا">
 
 </div>
+
 
 <div>
+
 <label>Discord ID اعتماد</label>
-<input id="endApprove" placeholder="مثال: 1302748392887156809">
+
+<input id="endApprove"
+placeholder="مثال: 1302748392887156809">
+
 </div>
 
 </div>
+
 
 <div id="endInfo" class="info"></div>
 
-<button class="primary" onclick="generateEndService()">
+
+<button class="primary"
+onclick="generateEndService()">
+
 إنشاء القرار
+
 </button>
 
-<button class="secondary" onclick="copyDecision('endOutput')">
+
+<button class="secondary"
+onclick="copyDecision('endOutput')">
+
 نسخ القرار
+
 </button>
+
 
 <div id="endOutput" class="output">
 سيظهر القرار هنا.
@@ -273,37 +325,58 @@ font-size:14px;
 </section>
 
 
+<!-- قرارات الفصل -->
+
 <section id="dismissal" class="card hidden">
 
-<button class="back" onclick="goHome()">← العودة</button>
+<button class="back" onclick="goHome()">
+← العودة
+</button>
 
 <h2>📄 قرارات الفصل</h2>
 
 <div class="subtitle">
-الفصل يتضمن غرامة 1,000,000 ومنع توظيف 14 يوم.
+غرامة مليون + منع توظيف 14 يوم.
 </div>
 
 <div class="grid">
 
 <div>
+
 <label>Discord ID للشخص</label>
-<input id="fireId" placeholder="مثال: 1188040679348240415">
+
+<input id="fireId"
+placeholder="مثال: 1188040679348240415">
+
 </div>
 
+
 <div>
+
 <label>الكود</label>
-<input id="fireCode" placeholder="مثال: E-901">
+
+<input id="fireCode"
+placeholder="مثال: E-901">
+
 </div>
 
+
 <div>
+
 <label>اسم المسعف</label>
-<input id="fireName" placeholder="مثال: روري بنت عبدالله">
+
+<input id="fireName"
+placeholder="مثال: روري بنت عبدالله">
+
 </div>
 
+
 <div>
+
 <label>المستوى</label>
 
 <select id="fireLevel">
+
 <option value="متدرب">متدرب</option>
 <option value="1">مستوى 1</option>
 <option value="2">مستوى 2</option>
@@ -315,58 +388,87 @@ font-size:14px;
 <option value="8">مستوى 8</option>
 <option value="9">مستوى 9</option>
 <option value="10">مستوى 10</option>
+
 </select>
+
 </div>
+
 
 <div class="full">
 
 <label>سبب الفصل</label>
 
-<textarea id="fireReason" placeholder="اكتب سبب الفصل"></textarea>
+<textarea id="fireReason"
+placeholder="اكتب سبب الفصل">
+</textarea>
 
 </div>
+
+
+<!-- السحب للفصل -->
 
 <div class="full">
 
 <label>نوع السحب</label>
 
-<select id="fireWithdrawType" onchange="toggleInvoice('fire')">
+<select id="fireWithdrawType"
+onchange="toggleInvoice('fire')">
+
 <option value="رقابي">رقابي</option>
 <option value="فاتورة">فاتورة</option>
+
 </select>
 
 </div>
+
 
 <div id="fireInvoiceWrap" class="full hidden">
 
 <label>رابط الفاتورة</label>
 
-<input id="fireInvoice" placeholder="ألصق رابط الفاتورة هنا">
+<input id="fireInvoice"
+placeholder="ضع رابط الفاتورة هنا">
 
 </div>
+
 
 <div>
 
 <label>Discord ID اعتماد</label>
 
-<input id="fireApprove" placeholder="مثال: 763021705047965717">
+<input id="fireApprove"
+placeholder="مثال: 763021705047965717">
 
 </div>
 
 </div>
+
 
 <div class="info">
-ثابت في قرار الفصل: غرامة 1,000,000 + منع توظيف 14 يوم.
-نوع السحب تختاره من القائمة.
+
+قرار الفصل:
+غرامة 1,000,000 + منع توظيف 14 يوم.
+
+اختر نوع السحب رقابي أو فاتورة.
+
 </div>
 
-<button class="primary" onclick="generateDismissal()">
+
+<button class="primary"
+onclick="generateDismissal()">
+
 إنشاء القرار
+
 </button>
 
-<button class="secondary" onclick="copyDecision('fireOutput')">
+
+<button class="secondary"
+onclick="copyDecision('fireOutput')">
+
 نسخ القرار
+
 </button>
+
 
 <div id="fireOutput" class="output">
 سيظهر القرار هنا.
@@ -381,24 +483,31 @@ font-size:14px;
 
 function goHome(){
 
-document.getElementById("home").classList.remove("hidden");
+document.getElementById("home")
+.classList.remove("hidden");
 
-document.getElementById("endServices").classList.add("hidden");
+document.getElementById("endServices")
+.classList.add("hidden");
 
-document.getElementById("dismissal").classList.add("hidden");
+document.getElementById("dismissal")
+.classList.add("hidden");
 
 }
 
 
 function openSection(id){
 
-document.getElementById("home").classList.add("hidden");
+document.getElementById("home")
+.classList.add("hidden");
 
-document.getElementById("endServices").classList.add("hidden");
+document.getElementById("endServices")
+.classList.add("hidden");
 
-document.getElementById("dismissal").classList.add("hidden");
+document.getElementById("dismissal")
+.classList.add("hidden");
 
-document.getElementById(id).classList.remove("hidden");
+document.getElementById(id)
+.classList.remove("hidden");
 
 if(id==="endServices"){
 updateEndFields();
@@ -414,17 +523,22 @@ return document.getElementById(id).value.trim();
 }
 
 
+/* تحديد هل المستوى عليه غرامة */
+
 function updateEndFields(){
 
 const level=value("endLevel");
 
-const charged=(level==="متدرب" || level==="1");
+const charged=
+(level==="متدرب" || level==="1");
 
-document.getElementById("endWithdrawal").classList.toggle("hidden",!charged);
+document.getElementById("endWithdrawal")
+.classList.toggle("hidden",!charged);
 
 if(!charged){
 
-document.getElementById("endInvoiceWrap").classList.add("hidden");
+document.getElementById("endInvoiceWrap")
+.classList.add("hidden");
 
 }
 
@@ -434,67 +548,90 @@ charged
 
 ?
 
-"هذا المستوى عليه غرامة 1,000,000 + منع توظيف 14 يوم. اختر نوع السحب: رقابي أو فاتورة."
+"غرامة 1,000,000 + منع توظيف 14 يوم. اختر نوع السحب."
 
 :
 
-"هذا المستوى لا توجد عليه غرامة ولا سحب.";
+"هذا المستوى بدون غرامة وبدون سحب.";
 
 }
 
+
+/* إظهار الفاتورة فقط عند اختيار فاتورة */
 
 function toggleInvoice(type){
 
-const select=document.getElementById(
-type==="end" ? "endWithdrawType" : "fireWithdrawType"
-);
+let select;
+let invoiceBox;
 
-const wrap=document.getElementById(
-type==="end" ? "endInvoiceWrap" : "fireInvoiceWrap"
-);
+if(type==="end"){
 
-wrap.classList.toggle(
-"hidden",
-select.value!=="فاتورة"
-);
+select=document.getElementById("endWithdrawType");
+
+invoiceBox=document.getElementById("endInvoiceWrap");
+
+}else{
+
+select=document.getElementById("fireWithdrawType");
+
+invoiceBox=document.getElementById("fireInvoiceWrap");
+
+}
+
+if(select.value==="فاتورة"){
+
+invoiceBox.classList.remove("hidden");
+
+}else{
+
+invoiceBox.classList.add("hidden");
+
+}
 
 }
 
 
-function withdrawalText(type){
+/* نص السحب */
 
-const selectId=
-type==="end"
-?
-"endWithdrawType"
-:
-"fireWithdrawType";
+function getWithdrawal(type){
 
-const invoiceId=
-type==="end"
-?
-"endInvoice"
-:
-"fireInvoice";
+let select;
+let invoice;
 
-const selected=value(selectId);
+if(type==="end"){
 
-if(selected==="فاتورة"){
+select=value("endWithdrawType");
+invoice=value("endInvoice");
 
-const invoice=value(invoiceId);
+}else{
 
-return invoice
-?
-`\`نوع السحب :\` [فاتورة](${invoice})`
-:
-`\`نوع السحب :\` فاتورة`;
+select=value("fireWithdrawType");
+invoice=value("fireInvoice");
 
 }
+
+
+if(select==="فاتورة"){
+
+if(invoice){
+
+return `\`نوع السحب :\` [فاتورة](${invoice})`;
+
+}else{
+
+return `\`نوع السحب :\` فاتورة`;
+
+}
+
+}
+
 
 return `\`نوع السحب :\` رقابي`;
 
 }
 
+
+/* إنشاء قرار الاستقالة */
 
 function generateEndService(){
 
@@ -513,24 +650,25 @@ const approve=value("endApprove");
 const charged=
 (level==="متدرب" || level==="1");
 
-let clauses="";
+
+let extra="";
+
+let withdrawal="";
+
 
 if(charged){
 
-clauses=`
+extra=`
 
 ثانيا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
 
 ثالثا: منع توظيف 14 يوم`;
 
-}
+withdrawal=`
 
-let withdraw=
-charged
-?
-`\n\n${withdrawalText("end")}`
-:
-"";
+${getWithdrawal("end")}`;
+
+}
 
 
 const decision=`*** ▬▬▬ ﷽ ▬▬
@@ -542,23 +680,28 @@ const decision=`*** ▬▬▬ ﷽ ▬▬
 \`\`\`cs
 # بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي 
  
-اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه${clauses}
+اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه${extra}
 \`\`\`
 
 <@${id}>
 [${code}] ${name}
 
-\`\`\`وذلك بسبب :${reason}\`\`\`${withdraw}
+\`\`\`وذلك بسبب : ${reason} \`\`\`
+${withdrawal}
 
-\`اعتماد:\`  <@${approve}>      
-   
+\`اعتماد:\` <@${approve}>      
+
 يرسل الاصل الى :
 ||<@&1404535885864632340>||***`;
 
-document.getElementById("endOutput").textContent=decision;
+
+document.getElementById("endOutput")
+.textContent=decision;
 
 }
 
+
+/* إنشاء قرار الفصل */
 
 function generateDismissal(){
 
@@ -572,7 +715,8 @@ const reason=value("fireReason");
 
 const approve=value("fireApprove");
 
-const withdraw=withdrawalText("fire");
+const withdrawal=
+getWithdrawal("fire");
 
 
 const decision=`*** ▬▬▬ ﷽ ▬▬
@@ -585,7 +729,9 @@ const decision=`*** ▬▬▬ ﷽ ▬▬
 # بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من قيادة الهلال الاحمر قررنا مايلي 
  
 أولًا: تنهى خدمات المسعف ادناه اعتبارا من تاريخه
+
 ثانيا: منع توظيف 14 يوم
+
 ثالثا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
 
 \`\`\`
@@ -595,21 +741,28 @@ const decision=`*** ▬▬▬ ﷽ ▬▬
 
 \`\`\`وذلك بسبب : ${reason} \`\`\`
 
-${withdraw}
+${withdrawal}
 
 \`اعتماد:\` <@${approve}>               
 
 يرسل الاصل الى :
 ||<@&1404535885864632340>||***`;
 
-document.getElementById("fireOutput").textContent=decision;
+
+document.getElementById("fireOutput")
+.textContent=decision;
 
 }
 
 
+/* النسخ */
+
 async function copyDecision(id){
 
-const text=document.getElementById(id).textContent;
+const output=
+document.getElementById(id);
+
+const text=output.textContent;
 
 if(!text || text==="سيظهر القرار هنا."){
 
@@ -625,9 +778,7 @@ await navigator.clipboard.writeText(text);
 
 alert("تم نسخ القرار ✅");
 
-}
-
-catch(error){
+}catch(error){
 
 alert("تعذر النسخ تلقائيًا، حدد النص وانسخه يدويًا.");
 
