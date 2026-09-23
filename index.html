@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة القرارات الإدارية</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Tahoma, sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 25px 15px;
+}
+
+.card {
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 18px;
+    padding: 22px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.subtitle {
+    color: #94a3b8;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 13px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #475569;
+    background: #020617;
+    color: white;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 90px;
+}
+
+button {
+    border: 0;
+    border-radius: 10px;
+    padding: 13px 20px;
+    margin-top: 18px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.generate {
+    background: white;
+    color: #111827;
+}
+
+.copy {
+    background: #334155;
+    color: white;
+    margin-right: 8px;
+}
+
+.preview {
+    margin-top: 25px;
+}
+
+.output {
+    background: #020617;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 18px;
+    white-space: pre-wrap;
+    line-height: 1.8;
+    direction: rtl;
+    text-align: right;
+    overflow-x: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>لوحة القرارات الإدارية</h1>
+
+<div class="subtitle">
+مولّد قرارات جاهزة للنسخ واللصق في Discord
+</div>
+
+<label>Discord ID للشخص</label>
+<input id="personId" placeholder="مثال: 1188040679348240415">
+
+<label>الكود</label>
+<input id="code" placeholder="مثال: E - 901">
+
+<label>اسم الشخص</label>
+<input id="name" placeholder="مثال: روري بنت عبدالله">
+
+<label>سبب الفصل</label>
+<textarea id="reason" placeholder="اكتب سبب الفصل"></textarea>
+
+<label>Discord ID للمعتمد</label>
+<input id="approverId" placeholder="مثال: 763021705047965717">
+
+<br>
+
+<button class="generate" onclick="generateDecision()">
+إنشاء القرار
+</button>
+
+<button class="copy" onclick="copyDecision()">
+نسخ القرار
+</button>
+
+<div class="preview">
+
+<h3>القرار الجاهز</h3>
+
+<div id="output" class="output">
+اضغط «إنشاء القرار» لإظهار القرار هنا
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function generateDecision() {
+
+    const personId =
+        document.getElementById("personId").value.trim();
+
+    const code =
+        document.getElementById("code").value.trim();
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const reason =
+        document.getElementById("reason").value.trim();
+
+    const approverId =
+        document.getElementById("approverId").value.trim();
+
+    const decision = `*** ▬▬▬ ﷽ ▬▬
+\`\`\`diff
+-الموضوع : قرار فصل 
+\`\`\`
+\`\`\`cs
+# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من قيادة الهلال الاحمر قررنا مايلي 
+ 
+أولًا: تنهى خدمات المسعف ادناه اعتبارا من تاريخه
+
+\`\`\`
+
+<@${personId}>
+[${code}] ${name}
+
+\`\`\`وذلك بسبب : ${reason} \`\`\`
+
+\`اعتماد:\` <@${approverId}>               
+
+يرسل الاصل الى : <@&1404535885864632340> ***`;
+
+    document.getElementById("output").textContent = decision;
+}
+
+async function copyDecision() {
+
+    const text =
+        document.getElementById("output").textContent;
+
+    if (
+        !text ||
+        text === "اضغط «إنشاء القرار» لإظهار القرار هنا"
+    ) {
+        generateDecision();
+    }
+
+    await navigator.clipboard.writeText(
+        document.getElementById("output").textContent
+    );
+
+    alert("تم نسخ القرار ✅");
+}
+
+</script>
+
+</body>
+</html>
