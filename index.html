@@ -6,19 +6,21 @@
 <title>الشؤون الإدارية</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+box-sizing:border-box;
+}
 
 body{
 margin:0;
 font-family:Tahoma,Arial,sans-serif;
 background:#0b1120;
-color:#fff
+color:#fff;
 }
 
 .container{
 max-width:900px;
 margin:auto;
-padding:25px 15px
+padding:25px 15px;
 }
 
 .card{
@@ -26,21 +28,27 @@ background:#111827;
 border:1px solid #263244;
 border-radius:18px;
 padding:22px;
-margin-bottom:18px
+margin-bottom:18px;
 }
 
-h1{margin-top:0;font-size:28px}
-h2{margin-top:0}
+h1{
+margin-top:0;
+font-size:28px;
+}
+
+h2{
+margin-top:0;
+}
 
 .subtitle{
 color:#94a3b8;
-margin-bottom:25px
+margin-bottom:25px;
 }
 
 .menu{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:15px
+gap:15px;
 }
 
 .menu button{
@@ -52,16 +60,16 @@ border-radius:12px;
 font-size:16px;
 font-weight:bold;
 text-align:right;
-cursor:pointer
+cursor:pointer;
 }
 
 .menu button:hover{
-background:#1e293b
+background:#1e293b;
 }
 
 .menu button:disabled{
 opacity:.5;
-cursor:not-allowed
+cursor:not-allowed;
 }
 
 .back{
@@ -71,59 +79,62 @@ border:0;
 padding:11px 18px;
 border-radius:10px;
 margin-bottom:20px;
-cursor:pointer
+cursor:pointer;
 }
 
 .grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:15px
+gap:15px;
 }
 
 .full{
-grid-column:1/-1
+grid-column:1/-1;
 }
 
 label{
 display:block;
 margin-bottom:7px;
 color:#cbd5e1;
-font-size:14px
+font-size:14px;
 }
 
-input,select,textarea{
+input,
+select,
+textarea{
 width:100%;
 padding:13px;
 border-radius:10px;
 border:1px solid #334155;
 background:#020617;
 color:white;
-font-size:15px
+font-size:15px;
 }
 
 textarea{
 min-height:90px;
-resize:vertical
+resize:vertical;
 }
 
-.primary,.secondary{
+.primary,
+.secondary{
 border:0;
 padding:13px 20px;
 border-radius:10px;
 font-weight:bold;
 margin-top:18px;
-cursor:pointer
+cursor:pointer;
 }
 
 .primary{
 background:white;
-color:#111827
+color:#111827;
 }
 
 .secondary{
 background:#334155;
 color:white;
-margin-right:8px
+margin-right:8px;
 }
 
 .output{
@@ -136,11 +147,11 @@ white-space:pre-wrap;
 line-height:1.8;
 overflow:auto;
 direction:rtl;
-text-align:right
+text-align:right;
 }
 
 .hidden{
-display:none
+display:none !important;
 }
 
 .info{
@@ -149,7 +160,8 @@ padding:12px;
 border-radius:10px;
 background:#172033;
 color:#cbd5e1;
-font-size:14px
+font-size:14px;
+line-height:1.7;
 }
 
 .instructions{
@@ -161,35 +173,38 @@ background:#172033;
 color:#fff;
 text-decoration:none;
 text-align:center;
-border:1px solid #334155
+border:1px solid #334155;
 }
 
 .instructions:hover{
-background:#1e293b
+background:#1e293b;
 }
 
-.auto-time{
+.auto-box{
 margin-top:15px;
 padding:14px;
 border-radius:10px;
 background:#172033;
 border:1px solid #334155;
 color:#cbd5e1;
-line-height:1.8
+line-height:1.9;
 }
 
-.auto-time strong{
-color:#fff
+.auto-box strong{
+color:#fff;
 }
 
 @media(max-width:650px){
-.menu,.grid{
-grid-template-columns:1fr
+
+.menu,
+.grid{
+grid-template-columns:1fr;
 }
 
 .full{
-grid-column:auto
+grid-column:auto;
 }
+
 }
 </style>
 </head>
@@ -198,7 +213,7 @@ grid-column:auto
 
 <div class="container">
 
-<!-- ================= الرئيسية ================= -->
+<!-- ================= الصفحة الرئيسية ================= -->
 
 <section id="home" class="card">
 
@@ -247,23 +262,24 @@ grid-column:auto
 
 <div>
 <label>Discord ID للشخص</label>
-<input id="endId">
+<input id="endId" placeholder="Discord ID">
 </div>
 
 <div>
 <label>الكود</label>
-<input id="endCode">
+<input id="endCode" placeholder="E-141">
 </div>
 
 <div>
 <label>اسم المسعف</label>
-<input id="endName">
+<input id="endName" placeholder="اسم المسعف">
 </div>
 
 <div>
 <label>المستوى</label>
 
 <select id="endLevel" onchange="updateEndFields()">
+
 <option value="متدرب">متدرب</option>
 <option value="1">مستوى 1</option>
 <option value="2">مستوى 2</option>
@@ -275,12 +291,17 @@ grid-column:auto
 <option value="8">مستوى 8</option>
 <option value="9">مستوى 9</option>
 <option value="10">مستوى 10</option>
+
 </select>
 </div>
 
 <div class="full">
+
 <label>سبب الاستقالة</label>
-<textarea id="endReason"></textarea>
+
+<textarea id="endReason"
+placeholder="سبب الاستقالة"></textarea>
+
 </div>
 
 <div id="endWithdrawal" class="full">
@@ -288,8 +309,10 @@ grid-column:auto
 <label>نوع السحب</label>
 
 <select id="endWithdrawType" onchange="toggleInvoice('end')">
+
 <option value="رقابي">رقابي</option>
 <option value="فاتورة">فاتورة</option>
+
 </select>
 
 </div>
@@ -297,13 +320,19 @@ grid-column:auto
 <div id="endInvoiceWrap" class="full hidden">
 
 <label>رابط الفاتورة</label>
-<input id="endInvoice">
+
+<input id="endInvoice"
+placeholder="ضع رابط الفاتورة">
 
 </div>
 
 <div>
+
 <label>Discord ID اعتماد</label>
-<input id="endApprove">
+
+<input id="endApprove"
+placeholder="Discord ID الاعتماد">
+
 </div>
 
 </div>
@@ -340,24 +369,35 @@ grid-column:auto
 <div class="grid">
 
 <div>
+
 <label>Discord ID للشخص</label>
+
 <input id="fireId">
+
 </div>
 
 <div>
+
 <label>الكود</label>
+
 <input id="fireCode">
+
 </div>
 
 <div>
+
 <label>اسم المسعف</label>
+
 <input id="fireName">
+
 </div>
 
 <div>
+
 <label>المستوى</label>
 
 <select id="fireLevel">
+
 <option value="متدرب">متدرب</option>
 <option value="1">مستوى 1</option>
 <option value="2">مستوى 2</option>
@@ -369,12 +409,17 @@ grid-column:auto
 <option value="8">مستوى 8</option>
 <option value="9">مستوى 9</option>
 <option value="10">مستوى 10</option>
+
 </select>
+
 </div>
 
 <div class="full">
+
 <label>سبب الفصل</label>
+
 <textarea id="fireReason"></textarea>
+
 </div>
 
 <div class="full">
@@ -382,8 +427,10 @@ grid-column:auto
 <label>نوع السحب</label>
 
 <select id="fireWithdrawType" onchange="toggleInvoice('fire')">
+
 <option value="رقابي">رقابي</option>
 <option value="فاتورة">فاتورة</option>
+
 </select>
 
 </div>
@@ -391,13 +438,17 @@ grid-column:auto
 <div id="fireInvoiceWrap" class="full hidden">
 
 <label>رابط الفاتورة</label>
+
 <input id="fireInvoice">
 
 </div>
 
 <div>
+
 <label>Discord ID اعتماد</label>
+
 <input id="fireApprove">
+
 </div>
 
 </div>
@@ -460,7 +511,7 @@ grid-column:auto
 </section>
 
 
-<!-- ================= الإجازة الداخلية ================= -->
+<!-- ================= الداخلية ================= -->
 
 <section id="internal" class="card hidden">
 
@@ -479,28 +530,46 @@ target="_blank">
 <div class="grid">
 
 <div>
+
 <label>Discord ID للمسعف</label>
+
 <input id="intId">
+
 </div>
 
 <div>
+
 <label>مدة الإجازة بالساعات</label>
-<input id="intDuration" type="number" min="1" placeholder="مثال: 4">
+
+<input
+id="intDuration"
+type="number"
+min="1"
+placeholder="مثال: 4">
+
 </div>
 
 <div>
+
 <label>الرصيد المتبقي</label>
-<input id="intBalance" placeholder="مثال: 5 ساعة">
+
+<input
+id="intBalance"
+placeholder="مثال: 5 ساعة">
+
 </div>
 
 <div>
+
 <label>Discord ID اعتماد</label>
+
 <input id="intApprove">
-</div>
 
 </div>
 
-<div class="auto-time">
+</div>
+
+<div class="auto-box">
 
 بداية الإجازة:
 <strong id="intStartPreview">
@@ -517,7 +586,10 @@ target="_blank">
 </div>
 
 <div class="info">
-أدخل مدة الإجازة فقط. وقت وتاريخ البداية والنهاية يتم حسابها تلقائيًا.
+
+أدخل مدة الإجازة فقط.
+وقت وتاريخ البداية والنهاية يتم تحديدها تلقائيًا من وقت إنشاء القرار.
+
 </div>
 
 <button class="primary" onclick="generateInternal()">
@@ -554,23 +626,36 @@ target="_blank">
 <div class="grid">
 
 <div>
+
 <label>Discord ID للمسعف</label>
+
 <input id="shiftId">
+
 </div>
 
 <div>
+
 <label>مدة الإجازة بالساعات</label>
-<input id="shiftDuration" type="number" min="1" placeholder="مثال: 3">
+
+<input
+id="shiftDuration"
+type="number"
+min="1"
+placeholder="مثال: 3">
+
 </div>
 
 <div>
+
 <label>Discord ID اعتماد</label>
+
 <input id="shiftApprove">
-</div>
 
 </div>
 
-<div class="auto-time">
+</div>
+
+<div class="auto-box">
 
 بداية الإجازة:
 <strong id="shiftStartPreview">
@@ -587,7 +672,9 @@ target="_blank">
 </div>
 
 <div class="info">
+
 خارج الشفت لا يخصم من رصيد الإجازات.
+
 </div>
 
 <button class="primary" onclick="generateOutsideShift()">
@@ -624,23 +711,36 @@ target="_blank">
 <div class="grid">
 
 <div>
+
 <label>Discord ID للمسعف</label>
+
 <input id="traderId">
+
 </div>
 
 <div>
+
 <label>مدة الإجازة بالساعات</label>
-<input id="traderDuration" type="number" min="1" placeholder="مثال: 3">
+
+<input
+id="traderDuration"
+type="number"
+min="1"
+placeholder="مثال: 3">
+
 </div>
 
 <div>
+
 <label>Discord ID اعتماد</label>
+
 <input id="traderApprove">
-</div>
 
 </div>
 
-<div class="auto-time">
+</div>
+
+<div class="auto-box">
 
 بداية الإجازة:
 <strong id="traderStartPreview">
@@ -657,7 +757,9 @@ target="_blank">
 </div>
 
 <div class="info">
+
 إجازة التاجر لا تخصم من رصيد الإجازات.
+
 </div>
 
 <button class="primary" onclick="generateTrader()">
@@ -675,7 +777,7 @@ target="_blank">
 </section>
 
 
-<!-- ================= الإجازة الخارجية ================= -->
+<!-- ================= الخارجية ================= -->
 
 <section id="external" class="card hidden">
 
@@ -688,23 +790,36 @@ target="_blank">
 <div class="grid">
 
 <div>
+
 <label>Discord ID للمسعف</label>
+
 <input id="extId">
+
 </div>
 
 <div>
+
 <label>مدة الإجازة بالأيام</label>
-<input id="extDuration" type="number" min="1" placeholder="مثال: 3">
+
+<input
+id="extDuration"
+type="number"
+min="1"
+placeholder="مثال: 3">
+
 </div>
 
 <div>
+
 <label>Discord ID اعتماد</label>
+
 <input id="extApprove">
-</div>
 
 </div>
 
-<div class="auto-time">
+</div>
+
+<div class="auto-box">
 
 بداية الإجازة:
 <strong id="extStartPreview">
@@ -715,13 +830,17 @@ target="_blank">
 
 نهاية الإجازة:
 <strong id="extEndPreview">
-تحسب حسب عدد الأيام
+تحسب تلقائيًا حسب المدة
 </strong>
 
 </div>
 
 <div class="info">
-أدخل عدد الأيام فقط. تاريخ البداية هو تاريخ إنشاء القرار، والنهاية تحسب تلقائيًا. الإجازة الخارجية لا تخصم من الرصيد.
+
+أدخل عدد الأيام فقط.
+تاريخ البداية هو تاريخ إنشاء القرار، وتاريخ النهاية يحسب تلقائيًا.
+الإجازة الخارجية لا تخصم من الرصيد.
+
 </div>
 
 <button class="primary" onclick="generateExternal()">
@@ -756,23 +875,36 @@ target="_blank">
 <div class="grid">
 
 <div>
+
 <label>Discord ID للمسعف</label>
+
 <input id="extendId">
+
 </div>
 
 <div>
+
 <label>مدة التمديد بالأيام</label>
-<input id="extendDuration" type="number" min="1" placeholder="مثال: 10">
+
+<input
+id="extendDuration"
+type="number"
+min="1"
+placeholder="مثال: 10">
+
 </div>
 
 <div>
+
 <label>Discord ID اعتماد</label>
+
 <input id="extendApprove">
-</div>
 
 </div>
 
-<div class="auto-time">
+</div>
+
+<div class="auto-box">
 
 تاريخ نهاية التمديد:
 <strong id="extendEndPreview">
@@ -806,20 +938,10 @@ target="_blank">
 
 <script>
 
-/* ================= الإعدادات ================= */
-
 const instructionsLink =
 "https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104";
 
-
-function value(id){
-return document.getElementById(id).value.trim();
-}
-
-
-/* ================= التنقل ================= */
-
-const sections=[
+const sections = [
 "home",
 "endServices",
 "dismissal",
@@ -831,8 +953,12 @@ const sections=[
 "externalExtend"
 ];
 
+function value(id){
+return document.getElementById(id).value.trim();
+}
+
 function hideAll(){
-sections.forEach(id=>{
+sections.forEach(function(id){
 document.getElementById(id).classList.add("hidden");
 });
 }
@@ -846,14 +972,13 @@ function openSection(id){
 hideAll();
 document.getElementById(id).classList.remove("hidden");
 
-if(id==="endServices"){
+if(id === "endServices"){
 updateEndFields();
 }
 }
 
 function openLeave(id){
-hideAll();
-document.getElementById(id).classList.remove("hidden");
+openSection(id);
 }
 
 
@@ -861,22 +986,24 @@ document.getElementById(id).classList.remove("hidden");
 
 function updateEndFields(){
 
-const level=value("endLevel");
+const level = value("endLevel");
 
-const charged=
-level==="متدرب" || level==="1";
+const charged =
+level === "متدرب" || level === "1";
 
 document
 .getElementById("endWithdrawal")
-.classList.toggle("hidden",!charged);
+.classList.toggle("hidden", !charged);
 
 if(!charged){
+
 document
 .getElementById("endInvoiceWrap")
 .classList.add("hidden");
+
 }
 
-document.getElementById("endInfo").textContent=
+document.getElementById("endInfo").textContent =
 charged
 ?
 "غرامة 1,000,000 + منع توظيف 14 يوم. اختر نوع السحب."
@@ -887,41 +1014,56 @@ charged
 
 function toggleInvoice(type){
 
-let select;
-let box;
+const select =
+document.getElementById(
+type === "end"
+?
+"endWithdrawType"
+:
+"fireWithdrawType"
+);
 
-if(type==="end"){
-select=document.getElementById("endWithdrawType");
-box=document.getElementById("endInvoiceWrap");
-}else{
-select=document.getElementById("fireWithdrawType");
-box=document.getElementById("fireInvoiceWrap");
-}
+const box =
+document.getElementById(
+type === "end"
+?
+"endInvoiceWrap"
+:
+"fireInvoiceWrap"
+);
 
 box.classList.toggle(
 "hidden",
-select.value!=="فاتورة"
+select.value !== "فاتورة"
 );
+
 }
 
 
 function getWithdrawal(type){
 
-let select;
-let invoice;
+const select = value(
+type === "end"
+?
+"endWithdrawType"
+:
+"fireWithdrawType"
+);
 
-if(type==="end"){
-select=value("endWithdrawType");
-invoice=value("endInvoice");
-}else{
-select=value("fireWithdrawType");
-invoice=value("fireInvoice");
-}
+const invoice = value(
+type === "end"
+?
+"endInvoice"
+:
+"fireInvoice"
+);
 
-if(select==="فاتورة"){
+if(select === "فاتورة"){
 
 if(invoice){
-return "`نوع السحب :` [فاتورة]("+invoice+")";
+
+return "`نوع السحب :` [فاتورة](" + invoice + ")";
+
 }
 
 return "`نوع السحب :` فاتورة";
@@ -931,78 +1073,568 @@ return "`نوع السحب :` رقابي";
 }
 
 
+/* ================= قرار الاستقالة ================= */
+
 function generateEndService(){
 
-const id=value("endId");
-const code=value("endCode");
-const name=value("endName");
-const level=value("endLevel");
-const reason=value("endReason");
-const approve=value("endApprove");
+const id = value("endId");
+const code = value("endCode");
+const name = value("endName");
+const level = value("endLevel");
+const reason = value("endReason");
+const approve = value("endApprove");
 
-const charged=
-level==="متدرب" || level==="1";
+const charged =
+level === "متدرب" || level === "1";
 
-let extra="";
-let withdrawal="";
+let extra = "";
+let withdrawal = "";
 
 if(charged){
 
-extra=`
-ثانيا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
-ثالثا: منع توظيف 14 يوم`;
+extra =
+"\nثانيا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر" +
+"\nثالثا: منع توظيف 14 يوم";
 
-withdrawal=`
-${getWithdrawal("end")}`;
+withdrawal =
+"\n" + getWithdrawal("end");
 
 }
 
-const decision=`*** ▬▬▬ ﷽ ▬▬
-\`\`\`diff
+const decision =
+"*** ▬▬▬ ﷽ ▬▬\n" +
 
--الموضوع : قرار انهاء خدمات 
-\`\`\`
-\`\`\`cs
-# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي 
- 
-اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه${extra}
-\`\`\`
+"```diff\n\n" +
+"-الموضوع : قرار انهاء خدمات \n" +
+"```\n" +
 
-<@${id}>
-[${code}] ${name}
+"```cs\n" +
+"# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي \n \n" +
+"اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه" +
+extra +
+"\n" +
+"```\n\n" +
 
-\`\`\`وذلك بسبب : ${reason} \`\`\`
-${withdrawal}
+"<@" + id + ">\n" +
+"[" + code + "] " + name +
 
-\`اعتماد:\`  <@${approve}>      
+"\n\n" +
 
-يرسل الاصل الى :
-||<@&1404535885864632340>||***`;
+"```وذلك بسبب : " +
+reason +
+" ```" +
 
-document.getElementById("endOutput").textContent=decision;
+withdrawal +
+
+"\n\n" +
+
+"`اعتماد:`  <@" +
+approve +
+">      \n\n" +
+
+"يرسل الاصل الى :\n" +
+"||<@&1404535885864632340>||***";
+
+document.getElementById("endOutput").textContent =
+decision;
 }
 
 
-/* ================= الفصل ================= */
+/* ================= قرار الفصل ================= */
 
 function generateDismissal(){
 
-const id=value("fireId");
-const code=value("fireCode");
-const name=value("fireName");
-const reason=value("fireReason");
-const approve=value("fireApprove");
+const id = value("fireId");
+const code = value("fireCode");
+const name = value("fireName");
+const reason = value("fireReason");
+const approve = value("fireApprove");
 
-const withdrawal=getWithdrawal("fire");
+const decision =
+"*** ▬▬▬ ﷽ ▬▬\n" +
 
-const decision=`*** ▬▬▬ ﷽ ▬▬
-\`\`\`diff
+"```diff\n\n" +
+"-الموضوع : قرار فصل \n" +
+"```\n" +
 
--الموضوع : قرار فصل 
-\`\`\`
-\`\`\`cs
-# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من قيادة الهلال الاحمر قررنا مايلي 
- 
-أولًا: تنهى خدمات المسعف ادناه اعتبارا من تاريخه
-ثانيا: منع توظيف 14 يوم
-ثالثا: غرامه مالية قدرها 1,000,000
+"```cs\n" +
+"# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من قيادة الهلال الاحمر قررنا مايلي \n \n" +
+"أولًا: تنهى خدمات المسعف ادناه اعتبارا من تاريخه\n" +
+"ثانيا: منع توظيف 14 يوم\n" +
+"ثالثا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر\n" +
+"```\n\n" +
+
+"<@" + id + ">\n" +
+"[" + code + "] " + name +
+
+"\n\n" +
+
+"```وذلك بسبب : " +
+reason +
+" ```\n\n" +
+
+getWithdrawal("fire") +
+
+"\n\n" +
+
+"`اعتماد:` <@" +
+approve +
+">\n\n" +
+
+"يرسل الاصل الى :\n" +
+"||<@&1404535885864632340>||***";
+
+document.getElementById("fireOutput").textContent =
+decision;
+}
+
+
+/* ================= التاريخ والوقت ================= */
+
+function pad(number){
+return String(number).padStart(2,"0");
+}
+
+function formatDate(date){
+
+return date.getFullYear() +
+"/" +
+pad(date.getMonth()+1) +
+"/" +
+pad(date.getDate());
+
+}
+
+function formatTime(date){
+
+let hour = date.getHours();
+
+const minute = pad(date.getMinutes());
+
+const suffix =
+hour >= 12
+?
+"م"
+:
+"ص";
+
+hour = hour % 12;
+
+if(hour === 0){
+hour = 12;
+}
+
+return pad(hour) + ":" + minute + " " + suffix;
+}
+
+function formatDateTime(date){
+return formatTime(date) + " | " + formatDate(date);
+}
+
+
+/* ================= الإجازات بالساعات ================= */
+
+/*
+وقت البداية = لحظة الضغط على إنشاء الإجازة.
+النهاية = البداية + مدة الإجازة.
+*/
+
+function calculateHours(duration){
+
+const hours = parseFloat(duration);
+
+if(!Number.isFinite(hours) || hours <= 0){
+return null;
+}
+
+const start = new Date();
+
+const end = new Date(
+start.getTime() +
+(hours * 60 * 60 * 1000)
+);
+
+return {
+start:start,
+end:end
+};
+
+}
+
+
+/* ================= معاينة داخلية ================= */
+
+function previewHours(durationId,startId,endId){
+
+const duration = value(durationId);
+
+if(!duration){
+
+document.getElementById(startId).textContent =
+"تلقائي عند إنشاء القرار";
+
+document.getElementById(endId).textContent =
+"تلقائي حسب المدة";
+
+return;
+}
+
+const result = calculateHours(duration);
+
+if(!result){
+return;
+}
+
+document.getElementById(startId).textContent =
+formatDateTime(result.start);
+
+document.getElementById(endId).textContent =
+formatDateTime(result.end);
+
+}
+
+
+document
+.getElementById("intDuration")
+.addEventListener("input",function(){
+
+previewHours(
+"intDuration",
+"intStartPreview",
+"intEndPreview"
+);
+
+});
+
+
+document
+.getElementById("shiftDuration")
+.addEventListener("input",function(){
+
+previewHours(
+"shiftDuration",
+"shiftStartPreview",
+"shiftEndPreview"
+);
+
+});
+
+
+document
+.getElementById("traderDuration")
+.addEventListener("input",function(){
+
+previewHours(
+"traderDuration",
+"traderStartPreview",
+"traderEndPreview"
+);
+
+});
+
+
+/* ================= الداخلية ================= */
+
+function generateInternal(){
+
+const id = value("intId");
+const duration = value("intDuration");
+const balance = value("intBalance");
+const approve = value("intApprove");
+
+const result =
+calculateHours(duration);
+
+if(!result){
+
+alert("أدخل مدة الإجازة أولًا.");
+
+return;
+}
+
+const decision =
+"***﷽\n\n" +
+
+"` الموضوع :` إجازة داخلية\n\n" +
+
+"` للمسعف المحترم :` <@" +
+id +
+">\n\n" +
+
+"` مدة الإجازة :`  " +
+duration +
+" ساعة \n\n" +
+
+"` الرصيد المتبقي :`  " +
+balance +
+" \n\n" +
+
+"` من الساعة :` " +
+formatDateTime(result.start) +
+"\n\n" +
+
+"` إلى الساعة :` " +
+formatDateTime(result.end) +
+"\n\n" +
+
+"[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة](" +
+instructionsLink +
+")\n\n" +
+
+"`اعتماد:` <@" +
+approve +
+">\n\n" +
+
+"` يرسل الاصل الى :` <@&1404535885864632340>***";
+
+document.getElementById("intOutput").textContent =
+decision;
+
+}
+
+
+/* ================= خارج الشفت ================= */
+
+function generateOutsideShift(){
+
+const id = value("shiftId");
+const duration = value("shiftDuration");
+const approve = value("shiftApprove");
+
+const result =
+calculateHours(duration);
+
+if(!result){
+
+alert("أدخل مدة الإجازة أولًا.");
+
+return;
+}
+
+const decision =
+"***﷽\n\n" +
+
+"` الموضوع :` إجازة داخلية ( خارج شفت )\n\n" +
+
+"` للمسعف المحترم :` <@" +
+id +
+">\n\n" +
+
+"` مدة الإجازة :`  " +
+duration +
+" ساعة \n\n" +
+
+"` الرصيد المتبقي :`  خارج شفت\n\n" +
+
+"` من الساعة :` " +
+formatDateTime(result.start) +
+"\n\n" +
+
+"` إلى الساعة :` " +
+formatDateTime(result.end) +
+"\n\n" +
+
+"[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة](" +
+instructionsLink +
+")\n\n" +
+
+"`اعتماد:` <@" +
+approve +
+">\n\n" +
+
+"` يرسل الاصل الى :` <@&1404535885864632340>***";
+
+document.getElementById("shiftOutput").textContent =
+decision;
+
+}
+
+
+/* ================= التاجر ================= */
+
+function generateTrader(){
+
+const id = value("traderId");
+const duration = value("traderDuration");
+const approve = value("traderApprove");
+
+const result =
+calculateHours(duration);
+
+if(!result){
+
+alert("أدخل مدة الإجازة أولًا.");
+
+return;
+}
+
+const decision =
+"***﷽\n\n" +
+
+"` الموضوع :` إجازة داخلية ( تاجر )\n\n" +
+
+"` للمسعف المحترم :` <@" +
+id +
+">\n\n" +
+
+"` مدة الإجازة :`  " +
+duration +
+" ساعة \n\n" +
+
+"` الرصيد المتبقي :`  إجازة تاجر\n\n" +
+
+"` من الساعة :` " +
+formatDateTime(result.start) +
+"\n\n" +
+
+"` إلى الساعة :` " +
+formatDateTime(result.end) +
+"\n\n" +
+
+"[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة](" +
+instructionsLink +
+")\n\n" +
+
+"`اعتماد:` <@" +
+approve +
+">\n\n" +
+
+"` يرسل الاصل الى :` <@&1404535885864632340>***";
+
+document.getElementById("traderOutput").textContent =
+decision;
+
+}
+
+
+/* ================= الخارجية ================= */
+
+function calculateDays(duration){
+
+const days =
+parseInt(duration,10);
+
+if(!Number.isFinite(days) || days <= 0){
+return null;
+}
+
+const start = new Date();
+
+start.setHours(0,0,0,0);
+
+const end = new Date(start);
+
+end.setDate(
+end.getDate() + days
+);
+
+return {
+start:start,
+end:end
+};
+
+}
+
+
+document
+.getElementById("extDuration")
+.addEventListener("input",function(){
+
+const result =
+calculateDays(value("extDuration"));
+
+if(!result){
+
+document.getElementById("extStartPreview").textContent =
+"تاريخ اليوم تلقائيًا";
+
+document.getElementById("extEndPreview").textContent =
+"تحسب تلقائيًا حسب المدة";
+
+return;
+}
+
+document.getElementById("extStartPreview").textContent =
+formatDate(result.start);
+
+document.getElementById("extEndPreview").textContent =
+formatDate(result.end);
+
+});
+
+
+function generateExternal(){
+
+const id = value("extId");
+const duration = value("extDuration");
+const approve = value("extApprove");
+
+const result =
+calculateDays(duration);
+
+if(!result){
+
+alert("أدخل مدة الإجازة أولًا.");
+
+return;
+}
+
+const decision =
+"***﷽\n\n" +
+
+"` الموضوع :` إجازة خارجيه\n\n" +
+
+"` للمسعف المحترم :` <@" +
+id +
+">\n\n" +
+
+"` مدة الإجازة :`  " +
+duration +
+" يوم \n\n" +
+
+"` من تاريخ :`  " +
+formatDate(result.start) +
+"\n\n" +
+
+"` إلى تاريخ :` " +
+formatDate(result.end) +
+"\n\n" +
+
+"[يرجى قراءه القوانين قبل اخذ اجازه خارجية](" +
+instructionsLink +
+")\n\n" +
+
+"`اعتماد:` <@" +
+approve +
+">\n\n" +
+
+"` يرسل الاصل الى :` <@&1404535885864632340>***";
+
+document.getElementById("extOutput").textContent =
+decision;
+
+}
+
+
+/* ================= تمديد الخارجية ================= */
+
+document
+.getElementById("extendDuration")
+.addEventListener("input",function(){
+
+const result =
+calculateDays(value("extendDuration"));
+
+document.getElementById("extendEndPreview").textContent =
+result
+?
+formatDate(result.end)
+:
+"يحسب تلقائيًا حسب المدة";
+
+});
+
+
+function generateExternalExtend(){
+
+const id = value
