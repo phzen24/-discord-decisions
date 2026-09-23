@@ -1,282 +1,654 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>الشؤون الإدارية</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#0b1120;color:#f8fafc}
-.container{max-width:900px;margin:auto;padding:24px 15px}
-.card{background:#111827;border:1px solid #263244;border-radius:18px;padding:22px;margin-bottom:18px}
-h1{margin:0 0 8px;font-size:28px}
-h2{margin-top:0}
-.sub{color:#94a3b8;margin-bottom:22px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-label{display:block;margin:4px 0 7px;color:#cbd5e1;font-size:14px}
-input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #334155;background:#020617;color:#fff;font-size:15px}
-textarea{min-height:80px}
-.full{grid-column:1/-1}
-button{border:0;border-radius:10px;padding:12px 18px;margin-top:16px;font-weight:bold;cursor:pointer}
-.primary{background:#fff;color:#111827}
-.secondary{background:#334155;color:#fff;margin-right:8px}
-.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.menu button{margin:0;background:#172033;color:#fff;border:1px solid #334155;text-align:right}
-.hidden{display:none}
-.output{background:#020617;border:1px solid #334155;border-radius:12px;padding:18px;white-space:pre-wrap;line-height:1.75;overflow:auto;direction:rtl;text-align:right}
-.back{background:#475569;color:white;margin-bottom:16px}
-@media(max-width:650px){
-.grid,.menu{grid-template-columns:1fr}
-.full{grid-column:auto}
+
+*{
+box-sizing:border-box;
 }
+
+body{
+margin:0;
+font-family:Tahoma,Arial,sans-serif;
+background:#0b1120;
+color:#fff;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 15px;
+}
+
+.card{
+background:#111827;
+border:1px solid #263244;
+border-radius:18px;
+padding:22px;
+margin-bottom:18px;
+}
+
+h1{
+margin-top:0;
+font-size:28px;
+}
+
+h2{
+margin-top:0;
+}
+
+.subtitle{
+color:#94a3b8;
+margin-bottom:25px;
+}
+
+.menu{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.menu button{
+background:#172033;
+color:white;
+border:1px solid #334155;
+padding:18px;
+border-radius:12px;
+font-size:16px;
+font-weight:bold;
+text-align:right;
+cursor:pointer;
+}
+
+.menu button:hover{
+background:#1e293b;
+}
+
+.back{
+background:#475569;
+color:white;
+border:0;
+padding:11px 18px;
+border-radius:10px;
+margin-bottom:20px;
+cursor:pointer;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.full{
+grid-column:1/-1;
+}
+
+label{
+display:block;
+margin-bottom:7px;
+color:#cbd5e1;
+font-size:14px;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:13px;
+border-radius:10px;
+border:1px solid #334155;
+background:#020617;
+color:white;
+font-size:15px;
+}
+
+textarea{
+min-height:90px;
+resize:vertical;
+}
+
+button{
+font-family:inherit;
+}
+
+.primary{
+background:white;
+color:#111827;
+border:0;
+padding:13px 20px;
+border-radius:10px;
+font-weight:bold;
+margin-top:18px;
+cursor:pointer;
+}
+
+.secondary{
+background:#334155;
+color:white;
+border:0;
+padding:13px 20px;
+border-radius:10px;
+font-weight:bold;
+margin-top:18px;
+margin-right:8px;
+cursor:pointer;
+}
+
+.output{
+margin-top:20px;
+background:#020617;
+border:1px solid #334155;
+border-radius:12px;
+padding:18px;
+white-space:pre-wrap;
+line-height:1.8;
+overflow:auto;
+direction:rtl;
+text-align:right;
+}
+
+.hidden{
+display:none;
+}
+
+.info{
+margin-top:15px;
+padding:12px;
+border-radius:10px;
+background:#172033;
+color:#cbd5e1;
+font-size:14px;
+}
+
+@media(max-width:650px){
+
+.menu{
+grid-template-columns:1fr;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.full{
+grid-column:auto;
+}
+
+}
+
 </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
+
+<!-- الصفحة الرئيسية -->
+
 <section id="home" class="card">
+
 <h1>🏛️ الشؤون الإدارية</h1>
-<div class="sub">لوحة القرارات الإدارية</div>
+
+<div class="subtitle">
+لوحة القرارات الإدارية
+</div>
+
 
 <div class="menu">
 
-<button onclick="openEnd()">
+<button onclick="openEndServices()">
 📄 قرارات إنهاء الخدمات
 </button>
 
-<button disabled>
-📄 قرارات الاستقالات — قريبًا
+
+<button onclick="openDismissal()">
+📄 قرارات الفصل
 </button>
 
-<button disabled>
-📄 قرارات الفصل — قريبًا
-</button>
 
 <button disabled>
 📄 قرارات الترقيات — قريبًا
 </button>
 
+
+<button disabled>
+📄 قرارات أخرى — قريبًا
+</button>
+
 </div>
+
 </section>
 
 
-<section id="end" class="card hidden">
 
-<button class="back" onclick="show('home')">
+<!-- إنهاء الخدمات -->
+
+<section id="endServices" class="card hidden">
+
+<button class="back" onclick="goHome()">
 ← العودة
 </button>
 
 <h2>📄 قرارات إنهاء الخدمات</h2>
 
-<div class="sub">
-اختر نوع القرار ثم أدخل البيانات المطلوبة.
+<div class="subtitle">
+قرارات الاستقالة حسب مستوى المسعف
 </div>
 
-<label>نوع القرار</label>
 
-<select id="type" onchange="renderFields()">
+<div class="grid">
 
-<option value="basic">
-إنهاء خدمات — بدون غرامة
+
+<div>
+
+<label>Discord ID للشخص</label>
+
+<input
+id="endId"
+placeholder="مثال: 1188040679348240415">
+
+</div>
+
+
+<div>
+
+<label>الكود</label>
+
+<input
+id="endCode"
+placeholder="مثال: E-141">
+
+</div>
+
+
+<div>
+
+<label>اسم المسعف</label>
+
+<input
+id="endName"
+placeholder="مثال: لارين القحطاني">
+
+</div>
+
+
+<div>
+
+<label>المستوى</label>
+
+<select id="endLevel">
+
+<option value="متدرب">
+متدرب
 </option>
 
-<option value="fine">
-إنهاء خدمات — غرامة مالية
+<option value="1">
+مستوى 1
 </option>
 
-<option value="fine14">
-إنهاء خدمات — منع توظيف 14 يوم + غرامة
+<option value="2">
+مستوى 2
+</option>
+
+<option value="3">
+مستوى 3
+</option>
+
+<option value="4">
+مستوى 4
+</option>
+
+<option value="5">
+مستوى 5
+</option>
+
+<option value="6">
+مستوى 6
+</option>
+
+<option value="7">
+مستوى 7
+</option>
+
+<option value="8">
+مستوى 8
+</option>
+
+<option value="9">
+مستوى 9
+</option>
+
+<option value="10">
+مستوى 10
 </option>
 
 </select>
 
-<div id="fields" class="grid" style="margin-top:15px"></div>
-
-<button class="primary" onclick="generate()">
-إنشاء القرار
-</button>
-
-<button class="secondary" onclick="copyDecision()">
-نسخ القرار
-</button>
-
-<div style="margin-top:22px">
-
-<h3>المعاينة</h3>
-
-<div id="output" class="output">
-سيظهر القرار هنا.
 </div>
 
-</div>
-
-</section>
-
-</div>
-
-
-<script>
-
-const $=id=>document.getElementById(id);
-
-function show(id){
-
-$('home').classList.toggle(
-'hidden',
-id!=='home'
-);
-
-$('end').classList.toggle(
-'hidden',
-id!=='end'
-);
-
-}
-
-function openEnd(){
-
-show('end');
-
-renderFields();
-
-}
-
-
-function renderFields(){
-
-const t=$('type').value;
-
-$('fields').innerHTML=`
-
-<div>
-<label>Discord ID للشخص</label>
-<input id="pid"
-placeholder="مثال: 1188040679348240415">
-</div>
-
-<div>
-<label>الكود</label>
-<input id="code"
-placeholder="مثال: E-141">
-</div>
-
-<div>
-<label>اسم المسعف</label>
-<input id="name"
-placeholder="مثال: لارين القحطاني">
-</div>
-
-<div>
-<label>الرتبة / المستوى</label>
-<input id="level"
-placeholder="مثال: مستوى (4)">
-</div>
 
 <div class="full">
-<label>سبب القرار</label>
 
-<textarea id="reason"
-placeholder="مثال: استقالة برتبة مستوى (4) بناءً على طلبه">
+<label>سبب الاستقالة</label>
+
+<textarea
+id="endReason"
+placeholder="مثال: استقالة بناءً على طلبه">
 </textarea>
 
 </div>
 
-${t!=='basic'?
-
-'<div>'+
-'<label>الغرامة المالية</label>'+
-'<input id="fine" value="1,000,000">'+
-'</div>'+
-
-'<div>'+
-'<label>نوع السحب</label>'+
-'<input id="withdraw" value="رقابي">'+
-'</div>'
-
-:''}
-
-${t==='fine14'?
-
-'<div class="full">'+
-'<label>رابط الفاتورة</label>'+
-'<input id="invoice" placeholder="ألصق رابط الفاتورة هنا">'+
-'</div>'
-
-:''}
 
 <div>
 
 <label>Discord ID اعتماد</label>
 
-<input id="approve"
+<input
+id="endApprove"
 placeholder="مثال: 1302748392887156809">
 
 </div>
 
+
+</div>
+
+
+<div class="info">
+
+المتدرب والمستوى 1:
+غرامة 1,000,000 + منع توظيف 14 يوم.
+
+المستويات من 2 إلى 10:
+بدون غرامة وبدون منع توظيف.
+
+</div>
+
+
+<button class="primary" onclick="generateEndService()">
+إنشاء القرار
+</button>
+
+
+<button class="secondary" onclick="copyDecision('endOutput')">
+نسخ القرار
+</button>
+
+
+<div
+id="endOutput"
+class="output">
+سيظهر القرار هنا.
+</div>
+
+</section>
+
+
+
+<!-- الفصل -->
+
+<section id="dismissal" class="card hidden">
+
+<button class="back" onclick="goHome()">
+← العودة
+</button>
+
+<h2>📄 قرارات الفصل</h2>
+
+<div class="subtitle">
+قرار فصل مع غرامة ومنع توظيف
+</div>
+
+
+<div class="grid">
+
+
+<div>
+
+<label>Discord ID للشخص</label>
+
+<input
+id="fireId"
+placeholder="مثال: 1188040679348240415">
+
+</div>
+
+
+<div>
+
+<label>الكود</label>
+
+<input
+id="fireCode"
+placeholder="مثال: E-901">
+
+</div>
+
+
+<div>
+
+<label>اسم المسعف</label>
+
+<input
+id="fireName"
+placeholder="مثال: روري بنت عبدالله">
+
+</div>
+
+
+<div>
+
+<label>المستوى</label>
+
+<select id="fireLevel">
+
+<option value="متدرب">
+متدرب
+</option>
+
+<option value="1">
+مستوى 1
+</option>
+
+<option value="2">
+مستوى 2
+</option>
+
+<option value="3">
+مستوى 3
+</option>
+
+<option value="4">
+مستوى 4
+</option>
+
+<option value="5">
+مستوى 5
+</option>
+
+<option value="6">
+مستوى 6
+</option>
+
+<option value="7">
+مستوى 7
+</option>
+
+<option value="8">
+مستوى 8
+</option>
+
+<option value="9">
+مستوى 9
+</option>
+
+<option value="10">
+مستوى 10
+</option>
+
+</select>
+
+</div>
+
+
+<div class="full">
+
+<label>سبب الفصل</label>
+
+<textarea
+id="fireReason"
+placeholder="اكتب سبب الفصل">
+</textarea>
+
+</div>
+
+
+<div>
+
+<label>Discord ID اعتماد</label>
+
+<input
+id="fireApprove"
+placeholder="مثال: 763021705047965717">
+
+</div>
+
+
+</div>
+
+
+<div class="info">
+
+قرار الفصل يتضمن تلقائيًا:
+غرامة مالية قدرها 1,000,000 + منع توظيف 14 يوم.
+
+</div>
+
+
+<button class="primary" onclick="generateDismissal()">
+إنشاء القرار
+</button>
+
+
+<button class="secondary" onclick="copyDecision('fireOutput')">
+نسخ القرار
+</button>
+
+
+<div
+id="fireOutput"
+class="output">
+سيظهر القرار هنا.
+</div>
+
+</section>
+
+
+</div>
+
+
+
+<script>
+
+
+function goHome(){
+
+document.getElementById("home").classList.remove("hidden");
+
+document.getElementById("endServices").classList.add("hidden");
+
+document.getElementById("dismissal").classList.add("hidden");
+
+}
+
+
+
+function openEndServices(){
+
+document.getElementById("home").classList.add("hidden");
+
+document.getElementById("endServices").classList.remove("hidden");
+
+}
+
+
+
+function openDismissal(){
+
+document.getElementById("home").classList.add("hidden");
+
+document.getElementById("dismissal").classList.remove("hidden");
+
+}
+
+
+
+function value(id){
+
+return document.getElementById(id).value.trim();
+
+}
+
+
+
+/* =========================
+   إنهاء الخدمات
+========================= */
+
+
+function generateEndService(){
+
+const id=value("endId");
+
+const code=value("endCode");
+
+const name=value("endName");
+
+const level=value("endLevel");
+
+const reason=value("endReason");
+
+const approve=value("endApprove");
+
+
+let financial="";
+
+let ban="";
+
+
+/*
+
+المتدرب والمستوى 1:
+
+غرامة + منع توظيف
+
+*/
+
+if(level==="متدرب" || level==="1"){
+
+financial=
+`
+ثانيا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
+
+`;
+
+ban=
+`
+ثالثا: منع توظيف 14 يوم
+
 `;
 
 }
 
 
-function v(id){
-
-return $(id)?.value.trim()||'';
-
-}
-
-
-function generate(){
-
-const t=$('type').value;
-
-const pid=v('pid');
-const code=v('code');
-const name=v('name');
-const reason=v('reason');
-const approve=v('approve');
-
-let extra='';
-
-if(t==='fine'){
-
-extra=`
-ثانيا: غرامه مالية قدرها ${v('fine')||'1,000,000'} تسلم الى خزينة الهلال الاحمر
-`;
-
-}
-
-if(t==='fine14'){
-
-extra=`
-ثانيا: منع توظيف 14 يوم
-ثالثا: غرامه مالية قدرها ${v('fine')||'1,000,000'} تسلم الى خزينة الهلال الاحمر
-`;
-
-}
-
-
-let withdraw='';
-
-if(t!=='basic'){
-
-const w=v('withdraw')||'رقابي';
-
-withdraw=`
-
-\`نوع السحب :\` ${
-t==='fine14' && v('invoice')
-? `[فاتورة](${v('invoice')})`
-: w
-}
-
-`;
-
-}
-
-
-const text=`*** ▬▬▬ ﷽ ▬▬
+let decision=`*** ▬▬▬ ﷽ ▬▬
 \`\`\`diff
 
 -الموضوع : قرار انهاء خدمات 
@@ -284,58 +656,116 @@ const text=`*** ▬▬▬ ﷽ ▬▬
 
 \`\`\`cs
 # بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي 
-
-اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه${extra}
+ 
+اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه
+${financial}${ban}
 \`\`\`
 
-<@${pid}>
+<@${id}>
 [${code}] ${name}
 
-\`\`\`وذلك بسبب :${reason} \`\`\`
-${withdraw}
+\`\`\`وذلك بسبب :${reason}\`\`\`
 
-\`اعتماد:\`  <@${approve}>      
+\`اعتماد:\` <@${approve}>      
 
 يرسل الاصل الى :
 ||<@&1404535885864632340>||***`;
 
 
-$('output').textContent=text;
+document.getElementById("endOutput").textContent=decision;
 
 }
 
 
-async function copyDecision(){
 
-if(
-!$('output').textContent ||
-$('output').textContent==='سيظهر القرار هنا.'
-){
+/* =========================
+   الفصل
+========================= */
 
-generate();
+
+function generateDismissal(){
+
+const id=value("fireId");
+
+const code=value("fireCode");
+
+const name=value("fireName");
+
+const level=value("fireLevel");
+
+const reason=value("fireReason");
+
+const approve=value("fireApprove");
+
+
+let decision=`*** ▬▬▬ ﷽ ▬▬
+\`\`\`diff
+
+-الموضوع : قرار فصل 
+\`\`\`
+
+\`\`\`cs
+# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من قيادة الهلال الاحمر قررنا مايلي 
+ 
+أولًا: تنهى خدمات المسعف ادناه اعتبارا من تاريخه
+ثانيا: منع توظيف 14 يوم
+ثالثا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
+
+\`\`\`
+
+<@${id}>
+[${code}] ${name}
+
+\`\`\`وذلك بسبب : ${reason} \`\`\`
+
+\`اعتماد:\` <@${approve}>               
+
+يرسل الاصل الى :
+||<@&1404535885864632340>||***`;
+
+
+document.getElementById("fireOutput").textContent=decision;
 
 }
+
+
+
+/* =========================
+   النسخ
+========================= */
+
+
+async function copyDecision(id){
+
+const output=document.getElementById(id);
+
+const text=output.textContent;
+
+
+if(!text || text==="سيظهر القرار هنا."){
+
+alert("أنشئ القرار أولًا");
+
+return;
+
+}
+
 
 try{
 
-await navigator.clipboard.writeText(
-$('output').textContent
-);
+await navigator.clipboard.writeText(text);
 
-alert('تم نسخ القرار ✅');
+alert("تم نسخ القرار ✅");
 
 }
 
-catch(e){
+catch(error){
 
-alert('حدد النص وانسخه يدويًا من المعاينة');
+alert("تعذر النسخ تلقائيًا، حدد النص وانسخه يدويًا.");
 
 }
 
 }
-
-
-renderFields();
 
 </script>
 
