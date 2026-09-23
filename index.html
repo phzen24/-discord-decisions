@@ -1,96 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>لوحة القرارات الإدارية</title>
-
+<title>الشؤون الإدارية</title>
 <style>
-body {
-    margin: 0;
-    font-family: Arial, Tahoma, sans-serif;
-    background: #0f172a;
-    color: white;
-}
-
-.container {
-    max-width: 700px;
-    margin: auto;
-    padding: 25px 15px;
-}
-
-.card {
-    background: #111827;
-    border: 1px solid #334155;
-    border-radius: 18px;
-    padding: 22px;
-}
-
-h1 {
-    margin-top: 0;
-}
-
-.subtitle {
-    color: #94a3b8;
-    margin-bottom: 25px;
-}
-
-label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 7px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 13px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    border: 1px solid #475569;
-    background: #020617;
-    color: white;
-    font-size: 15px;
-}
-
-textarea {
-    min-height: 90px;
-}
-
-button {
-    border: 0;
-    border-radius: 10px;
-    padding: 13px 20px;
-    margin-top: 18px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.generate {
-    background: white;
-    color: #111827;
-}
-
-.copy {
-    background: #334155;
-    color: white;
-    margin-right: 8px;
-}
-
-.preview {
-    margin-top: 25px;
-}
-
-.output {
-    background: #020617;
-    border: 1px solid #334155;
-    border-radius: 12px;
-    padding: 18px;
-    white-space: pre-wrap;
-    line-height: 1.8;
-    direction: rtl;
-    text-align: right;
-    overflow-x: auto;
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#0b1120;color:#f8fafc}
+.container{max-width:900px;margin:auto;padding:24px 15px}
+.card{background:#111827;border:1px solid #263244;border-radius:18px;padding:22px;margin-bottom:18px}
+h1{margin:0 0 8px;font-size:28px}
+h2{margin-top:0}
+.sub{color:#94a3b8;margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+label{display:block;margin:4px 0 7px;color:#cbd5e1;font-size:14px}
+input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #334155;background:#020617;color:#fff;font-size:15px}
+textarea{min-height:80px}
+.full{grid-column:1/-1}
+button{border:0;border-radius:10px;padding:12px 18px;margin-top:16px;font-weight:bold;cursor:pointer}
+.primary{background:#fff;color:#111827}
+.secondary{background:#334155;color:#fff;margin-right:8px}
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.menu button{margin:0;background:#172033;color:#fff;border:1px solid #334155;text-align:right}
+.hidden{display:none}
+.output{background:#020617;border:1px solid #334155;border-radius:12px;padding:18px;white-space:pre-wrap;line-height:1.75;overflow:auto;direction:rtl;text-align:right}
+.back{background:#475569;color:white;margin-bottom:16px}
+@media(max-width:650px){
+.grid,.menu{grid-template-columns:1fr}
+.full{grid-column:auto}
 }
 </style>
 </head>
@@ -99,113 +36,306 @@ button {
 
 <div class="container">
 
-<div class="card">
+<section id="home" class="card">
+<h1>🏛️ الشؤون الإدارية</h1>
+<div class="sub">لوحة القرارات الإدارية</div>
 
-<h1>لوحة القرارات الإدارية</h1>
+<div class="menu">
 
-<div class="subtitle">
-مولّد قرارات جاهزة للنسخ واللصق في Discord
+<button onclick="openEnd()">
+📄 قرارات إنهاء الخدمات
+</button>
+
+<button disabled>
+📄 قرارات الاستقالات — قريبًا
+</button>
+
+<button disabled>
+📄 قرارات الفصل — قريبًا
+</button>
+
+<button disabled>
+📄 قرارات الترقيات — قريبًا
+</button>
+
+</div>
+</section>
+
+
+<section id="end" class="card hidden">
+
+<button class="back" onclick="show('home')">
+← العودة
+</button>
+
+<h2>📄 قرارات إنهاء الخدمات</h2>
+
+<div class="sub">
+اختر نوع القرار ثم أدخل البيانات المطلوبة.
 </div>
 
-<label>Discord ID للشخص</label>
-<input id="personId" placeholder="مثال: 1188040679348240415">
+<label>نوع القرار</label>
 
-<label>الكود</label>
-<input id="code" placeholder="مثال: E - 901">
+<select id="type" onchange="renderFields()">
 
-<label>اسم الشخص</label>
-<input id="name" placeholder="مثال: روري بنت عبدالله">
+<option value="basic">
+إنهاء خدمات — بدون غرامة
+</option>
 
-<label>سبب الفصل</label>
-<textarea id="reason" placeholder="اكتب سبب الفصل"></textarea>
+<option value="fine">
+إنهاء خدمات — غرامة مالية
+</option>
 
-<label>Discord ID للمعتمد</label>
-<input id="approverId" placeholder="مثال: 763021705047965717">
+<option value="fine14">
+إنهاء خدمات — منع توظيف 14 يوم + غرامة
+</option>
 
-<br>
+</select>
 
-<button class="generate" onclick="generateDecision()">
+<div id="fields" class="grid" style="margin-top:15px"></div>
+
+<button class="primary" onclick="generate()">
 إنشاء القرار
 </button>
 
-<button class="copy" onclick="copyDecision()">
+<button class="secondary" onclick="copyDecision()">
 نسخ القرار
 </button>
 
-<div class="preview">
+<div style="margin-top:22px">
 
-<h3>القرار الجاهز</h3>
+<h3>المعاينة</h3>
 
 <div id="output" class="output">
-اضغط «إنشاء القرار» لإظهار القرار هنا
+سيظهر القرار هنا.
 </div>
 
 </div>
 
-</div>
+</section>
 
 </div>
+
 
 <script>
 
-function generateDecision() {
+const $=id=>document.getElementById(id);
 
-    const personId =
-        document.getElementById("personId").value.trim();
+function show(id){
 
-    const code =
-        document.getElementById("code").value.trim();
+$('home').classList.toggle(
+'hidden',
+id!=='home'
+);
 
-    const name =
-        document.getElementById("name").value.trim();
+$('end').classList.toggle(
+'hidden',
+id!=='end'
+);
 
-    const reason =
-        document.getElementById("reason").value.trim();
+}
 
-    const approverId =
-        document.getElementById("approverId").value.trim();
+function openEnd(){
 
-    const decision = `*** ▬▬▬ ﷽ ▬▬
+show('end');
+
+renderFields();
+
+}
+
+
+function renderFields(){
+
+const t=$('type').value;
+
+$('fields').innerHTML=`
+
+<div>
+<label>Discord ID للشخص</label>
+<input id="pid"
+placeholder="مثال: 1188040679348240415">
+</div>
+
+<div>
+<label>الكود</label>
+<input id="code"
+placeholder="مثال: E-141">
+</div>
+
+<div>
+<label>اسم المسعف</label>
+<input id="name"
+placeholder="مثال: لارين القحطاني">
+</div>
+
+<div>
+<label>الرتبة / المستوى</label>
+<input id="level"
+placeholder="مثال: مستوى (4)">
+</div>
+
+<div class="full">
+<label>سبب القرار</label>
+
+<textarea id="reason"
+placeholder="مثال: استقالة برتبة مستوى (4) بناءً على طلبه">
+</textarea>
+
+</div>
+
+${t!=='basic'?
+
+'<div>'+
+'<label>الغرامة المالية</label>'+
+'<input id="fine" value="1,000,000">'+
+'</div>'+
+
+'<div>'+
+'<label>نوع السحب</label>'+
+'<input id="withdraw" value="رقابي">'+
+'</div>'
+
+:''}
+
+${t==='fine14'?
+
+'<div class="full">'+
+'<label>رابط الفاتورة</label>'+
+'<input id="invoice" placeholder="ألصق رابط الفاتورة هنا">'+
+'</div>'
+
+:''}
+
+<div>
+
+<label>Discord ID اعتماد</label>
+
+<input id="approve"
+placeholder="مثال: 1302748392887156809">
+
+</div>
+
+`;
+
+}
+
+
+function v(id){
+
+return $(id)?.value.trim()||'';
+
+}
+
+
+function generate(){
+
+const t=$('type').value;
+
+const pid=v('pid');
+const code=v('code');
+const name=v('name');
+const reason=v('reason');
+const approve=v('approve');
+
+let extra='';
+
+if(t==='fine'){
+
+extra=`
+ثانيا: غرامه مالية قدرها ${v('fine')||'1,000,000'} تسلم الى خزينة الهلال الاحمر
+`;
+
+}
+
+if(t==='fine14'){
+
+extra=`
+ثانيا: منع توظيف 14 يوم
+ثالثا: غرامه مالية قدرها ${v('fine')||'1,000,000'} تسلم الى خزينة الهلال الاحمر
+`;
+
+}
+
+
+let withdraw='';
+
+if(t!=='basic'){
+
+const w=v('withdraw')||'رقابي';
+
+withdraw=`
+
+\`نوع السحب :\` ${
+t==='fine14' && v('invoice')
+? `[فاتورة](${v('invoice')})`
+: w
+}
+
+`;
+
+}
+
+
+const text=`*** ▬▬▬ ﷽ ▬▬
 \`\`\`diff
--الموضوع : قرار فصل 
+
+-الموضوع : قرار انهاء خدمات 
 \`\`\`
+
 \`\`\`cs
-# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من قيادة الهلال الاحمر قررنا مايلي 
- 
-أولًا: تنهى خدمات المسعف ادناه اعتبارا من تاريخه
+# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي 
 
+اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه${extra}
 \`\`\`
 
-<@${personId}>
+<@${pid}>
 [${code}] ${name}
 
-\`\`\`وذلك بسبب : ${reason} \`\`\`
+\`\`\`وذلك بسبب :${reason} \`\`\`
+${withdraw}
 
-\`اعتماد:\` <@${approverId}>               
+\`اعتماد:\`  <@${approve}>      
 
-يرسل الاصل الى : <@&1404535885864632340> ***`;
+يرسل الاصل الى :
+||<@&1404535885864632340>||***`;
 
-    document.getElementById("output").textContent = decision;
+
+$('output').textContent=text;
+
 }
 
-async function copyDecision() {
 
-    const text =
-        document.getElementById("output").textContent;
+async function copyDecision(){
 
-    if (
-        !text ||
-        text === "اضغط «إنشاء القرار» لإظهار القرار هنا"
-    ) {
-        generateDecision();
-    }
+if(
+!$('output').textContent ||
+$('output').textContent==='سيظهر القرار هنا.'
+){
 
-    await navigator.clipboard.writeText(
-        document.getElementById("output").textContent
-    );
+generate();
 
-    alert("تم نسخ القرار ✅");
 }
+
+try{
+
+await navigator.clipboard.writeText(
+$('output').textContent
+);
+
+alert('تم نسخ القرار ✅');
+
+}
+
+catch(e){
+
+alert('حدد النص وانسخه يدويًا من المعاينة');
+
+}
+
+}
+
+
+renderFields();
 
 </script>
 
