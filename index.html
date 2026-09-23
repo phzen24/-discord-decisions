@@ -137,6 +137,7 @@ h1{font-size:30px}
 
 <div class="container">
 
+<!-- الرئيسية -->
 <div id="home" class="card">
 
 <h1>🏛️ الشؤون الإدارية</h1>
@@ -164,6 +165,7 @@ h1{font-size:30px}
 </div>
 
 
+<!-- الاستقالة -->
 <div id="resignation" class="card hidden">
 
 <button class="back" onclick="showSection('home')">
@@ -232,6 +234,7 @@ h1{font-size:30px}
 </div>
 
 
+<!-- الفصل -->
 <div id="dismissal" class="card hidden">
 
 <button class="back" onclick="showSection('home')">
@@ -280,6 +283,7 @@ h1{font-size:30px}
 </div>
 
 
+<!-- نظام الإجازات -->
 <div id="leaves" class="card hidden">
 
 <button class="back" onclick="showSection('home')">
@@ -317,6 +321,7 @@ h1{font-size:30px}
 </div>
 
 
+<!-- داخلية -->
 <div id="internal" class="card hidden">
 
 <button class="back" onclick="showSection('leaves')">
@@ -354,6 +359,7 @@ target="_blank">
 </div>
 
 
+<!-- خارج شفت -->
 <div id="outside" class="card hidden">
 
 <button class="back" onclick="showSection('leaves')">
@@ -388,6 +394,7 @@ target="_blank">
 </div>
 
 
+<!-- تاجر -->
 <div id="trader" class="card hidden">
 
 <button class="back" onclick="showSection('leaves')">
@@ -422,6 +429,7 @@ target="_blank">
 </div>
 
 
+<!-- خارجي -->
 <div id="external" class="card hidden">
 
 <button class="back" onclick="showSection('leaves')">
@@ -456,6 +464,7 @@ target="_blank">
 </div>
 
 
+<!-- تمديد -->
 <div id="extension" class="card hidden">
 
 <button class="back" onclick="showSection('leaves')">
@@ -630,6 +639,8 @@ document
 }
 
 
+/* قرار إنهاء الخدمات */
+
 function makeResignation(){
 
 const id=v("r_id");
@@ -651,32 +662,37 @@ const level=v("r_level");
 let text=
 "*** ▬▬▬ ﷽ ▬▬\n"+
 "```diff\n"+
-"-الموضوع : قرار انهاء خدمات\n"+
+"-الموضوع : قرار انهاء خدمات \n"+
 "```\n\n";
 
 text+=
-"بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي\n\n";
+"```cs\n"+
+"# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي \n\n";
 
 text+=
-"اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه\n";
+"اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه\n\n";
 
 if(level==="trainee"||level==="1"){
 
 text+=
-"ثانيا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر\n";
+"ثانيا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر\n\n\n";
 
 text+=
-"ثالثا: منع توظيف 14 يوم\n";
+"ثالثا: منع توظيف 14 يوم\n\n\n";
 
 }
 
-text+="\n";
+text+=
+"```\n\n";
 
-text+=mention(id)+"\n";
+text+=
+mention(id)+"\n";
 
-text+="["+code+"] "+name+"\n\n";
+text+=
+"["+code+"] "+name+"\n\n";
 
-text+="```وذلك بسبب : "+reason+" ```\n";
+text+=
+"```وذلك بسبب :"+reason+"```\n\n";
 
 if(level==="trainee"||level==="1"){
 
@@ -694,25 +710,33 @@ return;
 
 }
 
-text+="\n`نوع السحب :` [فاتورة]("+invoice+")\n";
+text+=
+"`نوع السحب :` [فاتورة]("+invoice+")\n\n";
 
 }else{
 
-text+="\n`نوع السحب :` رقابي\n";
+text+=
+"`نوع السحب :` رقابي\n\n";
 
 }
 
 }
 
 text+=
-"\n`اعتماد:` "+approval(app)+
-"\n\nيرسل الاصل الى :\n"+
+"`اعتماد:` "+approval(app)+"      \n\n";
+
+text+=
+"يرسل الاصل الى :\n";
+
+text+=
 "||<@&"+ROLE_ID+">||***";
 
 copyBox(text,"r_output");
 
 }
 
+
+/* قرار الفصل */
 
 function makeDismissal(){
 
@@ -743,42 +767,53 @@ return;
 let text=
 "*** ▬▬▬ ﷽ ▬▬\n"+
 "```diff\n"+
-"-الموضوع : قرار فصل\n"+
+"-الموضوع : قرار فصل \n"+
 "```\n\n";
 
 text+=
-"بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من قيادة الهلال الاحمر قررنا مايلي\n\n";
+"```cs\n"+
+"# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من قيادة الهلال الاحمر قررنا مايلي \n\n";
 
 text+=
-"أولًا: تنهى خدمات المسعف ادناه اعتبارا من تاريخه\n";
+"أولًا: تنهى خدمات المسعف ادناه اعتبارا من تاريخه\n\n";
 
 text+=
-"ثانيا: منع توظيف 14 يوم\n";
+"ثانيا: منع توظيف 14 يوم\n\n";
 
 text+=
-"ثالثا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر\n\n";
+"ثالثا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر\n\n\n";
 
-text+=mention(id)+"\n";
+text+=
+"```\n\n";
 
-text+="["+code+"] "+name+"\n\n";
+text+=
+mention(id)+"\n";
 
-text+="```وذلك بسبب : "+reason+" ```\n";
+text+=
+"["+code+"] "+name+"\n\n";
+
+text+=
+"```وذلك بسبب :"+reason+"```\n\n";
 
 if(type==="فاتورة"){
 
 text+=
-"\n`نوع السحب :` [فاتورة]("+v("d_invoice")+")\n";
+"`نوع السحب :` [فاتورة]("+v("d_invoice")+")\n\n";
 
 }else{
 
 text+=
-"\n`نوع السحب :` رقابي\n";
+"`نوع السحب :` رقابي\n\n";
 
 }
 
 text+=
-"\n`اعتماد:` "+approval(app)+
-"\n\nيرسل الاصل الى :\n"+
+"`اعتماد:` "+approval(app)+"      \n\n";
+
+text+=
+"يرسل الاصل الى :\n";
+
+text+=
 "||<@&"+ROLE_ID+">||***";
 
 copyBox(text,"d_output");
