@@ -3,14 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>الشؤون الإدارية</title>
 
 <style>
-
-*{
-box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
 margin:0;
@@ -33,14 +29,8 @@ padding:22px;
 margin-bottom:18px;
 }
 
-h1{
-margin-top:0;
-font-size:28px;
-}
-
-h2{
-margin-top:0;
-}
+h1{margin-top:0;font-size:28px}
+h2{margin-top:0}
 
 .subtitle{
 color:#94a3b8;
@@ -65,10 +55,6 @@ text-align:right;
 cursor:pointer;
 }
 
-.menu button:hover{
-background:#1e293b;
-}
-
 .back{
 background:#475569;
 color:white;
@@ -85,9 +71,7 @@ grid-template-columns:repeat(2,1fr);
 gap:15px;
 }
 
-.full{
-grid-column:1/-1;
-}
+.full{grid-column:1/-1}
 
 label{
 display:block;
@@ -96,9 +80,7 @@ color:#cbd5e1;
 font-size:14px;
 }
 
-input,
-select,
-textarea{
+input,select,textarea{
 width:100%;
 padding:13px;
 border-radius:10px;
@@ -113,31 +95,24 @@ min-height:90px;
 resize:vertical;
 }
 
-button{
-font-family:inherit;
+.primary,.secondary{
+border:0;
+padding:13px 20px;
+border-radius:10px;
+font-weight:bold;
+margin-top:18px;
+cursor:pointer;
 }
 
 .primary{
 background:white;
 color:#111827;
-border:0;
-padding:13px 20px;
-border-radius:10px;
-font-weight:bold;
-margin-top:18px;
-cursor:pointer;
 }
 
 .secondary{
 background:#334155;
 color:white;
-border:0;
-padding:13px 20px;
-border-radius:10px;
-font-weight:bold;
-margin-top:18px;
 margin-right:8px;
-cursor:pointer;
 }
 
 .output{
@@ -153,9 +128,7 @@ direction:rtl;
 text-align:right;
 }
 
-.hidden{
-display:none;
-}
+.hidden{display:none}
 
 .info{
 margin-top:15px;
@@ -167,31 +140,15 @@ font-size:14px;
 }
 
 @media(max-width:650px){
-
-.menu{
-grid-template-columns:1fr;
+.menu,.grid{grid-template-columns:1fr}
+.full{grid-column:auto}
 }
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.full{
-grid-column:auto;
-}
-
-}
-
 </style>
 </head>
-
 
 <body>
 
 <div class="container">
-
-
-<!-- الصفحة الرئيسية -->
 
 <section id="home" class="card">
 
@@ -201,362 +158,226 @@ grid-column:auto;
 لوحة القرارات الإدارية
 </div>
 
-
 <div class="menu">
 
-<button onclick="openEndServices()">
-📄 قرارات إنهاء الخدمات
+<button onclick="openSection('endServices')">
+📄 قرارات الاستقالة
 </button>
 
-
-<button onclick="openDismissal()">
+<button onclick="openSection('dismissal')">
 📄 قرارات الفصل
 </button>
-
 
 <button disabled>
 📄 قرارات الترقيات — قريبًا
 </button>
-
 
 <button disabled>
 📄 قرارات أخرى — قريبًا
 </button>
 
 </div>
-
 </section>
 
 
-
-<!-- إنهاء الخدمات -->
-
 <section id="endServices" class="card hidden">
 
-<button class="back" onclick="goHome()">
-← العودة
-</button>
+<button class="back" onclick="goHome()">← العودة</button>
 
-<h2>📄 قرارات إنهاء الخدمات</h2>
+<h2>📄 قرارات الاستقالة</h2>
 
 <div class="subtitle">
-قرارات الاستقالة حسب مستوى المسعف
+المتدرب والمستوى 1 عليهم غرامة، والمستويات 2 إلى 10 بدون غرامة.
 </div>
-
 
 <div class="grid">
 
-
 <div>
-
 <label>Discord ID للشخص</label>
-
-<input
-id="endId"
-placeholder="مثال: 1188040679348240415">
-
+<input id="endId" placeholder="مثال: 1188040679348240415">
 </div>
 
-
 <div>
-
 <label>الكود</label>
-
-<input
-id="endCode"
-placeholder="مثال: E-141">
-
+<input id="endCode" placeholder="مثال: E-141">
 </div>
 
-
 <div>
-
 <label>اسم المسعف</label>
-
-<input
-id="endName"
-placeholder="مثال: لارين القحطاني">
-
+<input id="endName" placeholder="مثال: لارين القحطاني">
 </div>
 
-
 <div>
-
 <label>المستوى</label>
 
-<select id="endLevel">
+<select id="endLevel" onchange="updateEndFields()">
+<option value="متدرب">متدرب</option>
+<option value="1">مستوى 1</option>
+<option value="2">مستوى 2</option>
+<option value="3">مستوى 3</option>
+<option value="4">مستوى 4</option>
+<option value="5">مستوى 5</option>
+<option value="6">مستوى 6</option>
+<option value="7">مستوى 7</option>
+<option value="8">مستوى 8</option>
+<option value="9">مستوى 9</option>
+<option value="10">مستوى 10</option>
+</select>
+</div>
 
-<option value="متدرب">
-متدرب
-</option>
+<div class="full">
+<label>سبب الاستقالة</label>
+<textarea id="endReason" placeholder="مثال: استقالة برتبة مستوى (4) بناءً على طلبه"></textarea>
+</div>
 
-<option value="1">
-مستوى 1
-</option>
+<div id="endWithdrawal" class="full">
 
-<option value="2">
-مستوى 2
-</option>
+<label>نوع السحب</label>
 
-<option value="3">
-مستوى 3
-</option>
-
-<option value="4">
-مستوى 4
-</option>
-
-<option value="5">
-مستوى 5
-</option>
-
-<option value="6">
-مستوى 6
-</option>
-
-<option value="7">
-مستوى 7
-</option>
-
-<option value="8">
-مستوى 8
-</option>
-
-<option value="9">
-مستوى 9
-</option>
-
-<option value="10">
-مستوى 10
-</option>
-
+<select id="endWithdrawType" onchange="toggleInvoice('end')">
+<option value="رقابي">رقابي</option>
+<option value="فاتورة">فاتورة</option>
 </select>
 
 </div>
 
+<div id="endInvoiceWrap" class="full hidden">
 
-<div class="full">
+<label>رابط الفاتورة</label>
 
-<label>سبب الاستقالة</label>
-
-<textarea
-id="endReason"
-placeholder="مثال: استقالة بناءً على طلبه">
-</textarea>
+<input id="endInvoice" placeholder="ألصق رابط الفاتورة هنا">
 
 </div>
-
 
 <div>
-
 <label>Discord ID اعتماد</label>
-
-<input
-id="endApprove"
-placeholder="مثال: 1302748392887156809">
+<input id="endApprove" placeholder="مثال: 1302748392887156809">
+</div>
 
 </div>
 
-
-</div>
-
-
-<div class="info">
-
-المتدرب والمستوى 1:
-غرامة 1,000,000 + منع توظيف 14 يوم.
-
-المستويات من 2 إلى 10:
-بدون غرامة وبدون منع توظيف.
-
-</div>
-
+<div id="endInfo" class="info"></div>
 
 <button class="primary" onclick="generateEndService()">
 إنشاء القرار
 </button>
 
-
 <button class="secondary" onclick="copyDecision('endOutput')">
 نسخ القرار
 </button>
 
-
-<div
-id="endOutput"
-class="output">
+<div id="endOutput" class="output">
 سيظهر القرار هنا.
 </div>
 
 </section>
 
 
-
-<!-- الفصل -->
-
 <section id="dismissal" class="card hidden">
 
-<button class="back" onclick="goHome()">
-← العودة
-</button>
+<button class="back" onclick="goHome()">← العودة</button>
 
 <h2>📄 قرارات الفصل</h2>
 
 <div class="subtitle">
-قرار فصل مع غرامة ومنع توظيف
+الفصل يتضمن غرامة 1,000,000 ومنع توظيف 14 يوم.
 </div>
-
 
 <div class="grid">
 
-
 <div>
-
 <label>Discord ID للشخص</label>
-
-<input
-id="fireId"
-placeholder="مثال: 1188040679348240415">
-
+<input id="fireId" placeholder="مثال: 1188040679348240415">
 </div>
 
-
 <div>
-
 <label>الكود</label>
-
-<input
-id="fireCode"
-placeholder="مثال: E-901">
-
+<input id="fireCode" placeholder="مثال: E-901">
 </div>
 
-
 <div>
-
 <label>اسم المسعف</label>
-
-<input
-id="fireName"
-placeholder="مثال: روري بنت عبدالله">
-
+<input id="fireName" placeholder="مثال: روري بنت عبدالله">
 </div>
 
-
 <div>
-
 <label>المستوى</label>
 
 <select id="fireLevel">
-
-<option value="متدرب">
-متدرب
-</option>
-
-<option value="1">
-مستوى 1
-</option>
-
-<option value="2">
-مستوى 2
-</option>
-
-<option value="3">
-مستوى 3
-</option>
-
-<option value="4">
-مستوى 4
-</option>
-
-<option value="5">
-مستوى 5
-</option>
-
-<option value="6">
-مستوى 6
-</option>
-
-<option value="7">
-مستوى 7
-</option>
-
-<option value="8">
-مستوى 8
-</option>
-
-<option value="9">
-مستوى 9
-</option>
-
-<option value="10">
-مستوى 10
-</option>
-
+<option value="متدرب">متدرب</option>
+<option value="1">مستوى 1</option>
+<option value="2">مستوى 2</option>
+<option value="3">مستوى 3</option>
+<option value="4">مستوى 4</option>
+<option value="5">مستوى 5</option>
+<option value="6">مستوى 6</option>
+<option value="7">مستوى 7</option>
+<option value="8">مستوى 8</option>
+<option value="9">مستوى 9</option>
+<option value="10">مستوى 10</option>
 </select>
-
 </div>
-
 
 <div class="full">
 
 <label>سبب الفصل</label>
 
-<textarea
-id="fireReason"
-placeholder="اكتب سبب الفصل">
-</textarea>
+<textarea id="fireReason" placeholder="اكتب سبب الفصل"></textarea>
 
 </div>
 
+<div class="full">
+
+<label>نوع السحب</label>
+
+<select id="fireWithdrawType" onchange="toggleInvoice('fire')">
+<option value="رقابي">رقابي</option>
+<option value="فاتورة">فاتورة</option>
+</select>
+
+</div>
+
+<div id="fireInvoiceWrap" class="full hidden">
+
+<label>رابط الفاتورة</label>
+
+<input id="fireInvoice" placeholder="ألصق رابط الفاتورة هنا">
+
+</div>
 
 <div>
 
 <label>Discord ID اعتماد</label>
 
-<input
-id="fireApprove"
-placeholder="مثال: 763021705047965717">
+<input id="fireApprove" placeholder="مثال: 763021705047965717">
 
 </div>
 
-
 </div>
-
 
 <div class="info">
-
-قرار الفصل يتضمن تلقائيًا:
-غرامة مالية قدرها 1,000,000 + منع توظيف 14 يوم.
-
+ثابت في قرار الفصل: غرامة 1,000,000 + منع توظيف 14 يوم.
+نوع السحب تختاره من القائمة.
 </div>
-
 
 <button class="primary" onclick="generateDismissal()">
 إنشاء القرار
 </button>
 
-
 <button class="secondary" onclick="copyDecision('fireOutput')">
 نسخ القرار
 </button>
 
-
-<div
-id="fireOutput"
-class="output">
+<div id="fireOutput" class="output">
 سيظهر القرار هنا.
 </div>
 
 </section>
 
-
 </div>
 
 
-
 <script>
-
 
 function goHome(){
 
@@ -569,25 +390,21 @@ document.getElementById("dismissal").classList.add("hidden");
 }
 
 
-
-function openEndServices(){
-
-document.getElementById("home").classList.add("hidden");
-
-document.getElementById("endServices").classList.remove("hidden");
-
-}
-
-
-
-function openDismissal(){
+function openSection(id){
 
 document.getElementById("home").classList.add("hidden");
 
-document.getElementById("dismissal").classList.remove("hidden");
+document.getElementById("endServices").classList.add("hidden");
 
+document.getElementById("dismissal").classList.add("hidden");
+
+document.getElementById(id).classList.remove("hidden");
+
+if(id==="endServices"){
+updateEndFields();
 }
 
+}
 
 
 function value(id){
@@ -597,10 +414,86 @@ return document.getElementById(id).value.trim();
 }
 
 
+function updateEndFields(){
 
-/* =========================
-   إنهاء الخدمات
-========================= */
+const level=value("endLevel");
+
+const charged=(level==="متدرب" || level==="1");
+
+document.getElementById("endWithdrawal").classList.toggle("hidden",!charged);
+
+if(!charged){
+
+document.getElementById("endInvoiceWrap").classList.add("hidden");
+
+}
+
+document.getElementById("endInfo").textContent=
+
+charged
+
+?
+
+"هذا المستوى عليه غرامة 1,000,000 + منع توظيف 14 يوم. اختر نوع السحب: رقابي أو فاتورة."
+
+:
+
+"هذا المستوى لا توجد عليه غرامة ولا سحب.";
+
+}
+
+
+function toggleInvoice(type){
+
+const select=document.getElementById(
+type==="end" ? "endWithdrawType" : "fireWithdrawType"
+);
+
+const wrap=document.getElementById(
+type==="end" ? "endInvoiceWrap" : "fireInvoiceWrap"
+);
+
+wrap.classList.toggle(
+"hidden",
+select.value!=="فاتورة"
+);
+
+}
+
+
+function withdrawalText(type){
+
+const selectId=
+type==="end"
+?
+"endWithdrawType"
+:
+"fireWithdrawType";
+
+const invoiceId=
+type==="end"
+?
+"endInvoice"
+:
+"fireInvoice";
+
+const selected=value(selectId);
+
+if(selected==="فاتورة"){
+
+const invoice=value(invoiceId);
+
+return invoice
+?
+`\`نوع السحب :\` [فاتورة](${invoice})`
+:
+`\`نوع السحب :\` فاتورة`;
+
+}
+
+return `\`نوع السحب :\` رقابي`;
+
+}
 
 
 function generateEndService(){
@@ -617,38 +510,30 @@ const reason=value("endReason");
 
 const approve=value("endApprove");
 
+const charged=
+(level==="متدرب" || level==="1");
 
-let financial="";
+let clauses="";
 
-let ban="";
+if(charged){
 
+clauses=`
 
-/*
-
-المتدرب والمستوى 1:
-
-غرامة + منع توظيف
-
-*/
-
-if(level==="متدرب" || level==="1"){
-
-financial=
-`
 ثانيا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
 
-`;
-
-ban=
-`
-ثالثا: منع توظيف 14 يوم
-
-`;
+ثالثا: منع توظيف 14 يوم`;
 
 }
 
+let withdraw=
+charged
+?
+`\n\n${withdrawalText("end")}`
+:
+"";
 
-let decision=`*** ▬▬▬ ﷽ ▬▬
+
+const decision=`*** ▬▬▬ ﷽ ▬▬
 \`\`\`diff
 
 -الموضوع : قرار انهاء خدمات 
@@ -657,30 +542,22 @@ let decision=`*** ▬▬▬ ﷽ ▬▬
 \`\`\`cs
 # بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي 
  
-اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه
-${financial}${ban}
+اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه${clauses}
 \`\`\`
 
 <@${id}>
 [${code}] ${name}
 
-\`\`\`وذلك بسبب :${reason}\`\`\`
+\`\`\`وذلك بسبب :${reason}\`\`\`${withdraw}
 
-\`اعتماد:\` <@${approve}>      
-
+\`اعتماد:\`  <@${approve}>      
+   
 يرسل الاصل الى :
 ||<@&1404535885864632340>||***`;
-
 
 document.getElementById("endOutput").textContent=decision;
 
 }
-
-
-
-/* =========================
-   الفصل
-========================= */
 
 
 function generateDismissal(){
@@ -691,14 +568,14 @@ const code=value("fireCode");
 
 const name=value("fireName");
 
-const level=value("fireLevel");
-
 const reason=value("fireReason");
 
 const approve=value("fireApprove");
 
+const withdraw=withdrawalText("fire");
 
-let decision=`*** ▬▬▬ ﷽ ▬▬
+
+const decision=`*** ▬▬▬ ﷽ ▬▬
 \`\`\`diff
 
 -الموضوع : قرار فصل 
@@ -718,29 +595,21 @@ let decision=`*** ▬▬▬ ﷽ ▬▬
 
 \`\`\`وذلك بسبب : ${reason} \`\`\`
 
+${withdraw}
+
 \`اعتماد:\` <@${approve}>               
 
 يرسل الاصل الى :
 ||<@&1404535885864632340>||***`;
-
 
 document.getElementById("fireOutput").textContent=decision;
 
 }
 
 
-
-/* =========================
-   النسخ
-========================= */
-
-
 async function copyDecision(id){
 
-const output=document.getElementById(id);
-
-const text=output.textContent;
-
+const text=document.getElementById(id).textContent;
 
 if(!text || text==="سيظهر القرار هنا."){
 
@@ -749,7 +618,6 @@ alert("أنشئ القرار أولًا");
 return;
 
 }
-
 
 try{
 
@@ -766,6 +634,9 @@ alert("تعذر النسخ تلقائيًا، حدد النص وانسخه يد�
 }
 
 }
+
+
+updateEndFields();
 
 </script>
 
