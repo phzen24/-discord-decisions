@@ -12,13 +12,13 @@ body{
 margin:0;
 font-family:Tahoma,Arial,sans-serif;
 background:#0b1120;
-color:#fff;
+color:#fff
 }
 
 .container{
 max-width:900px;
 margin:auto;
-padding:25px 15px;
+padding:25px 15px
 }
 
 .card{
@@ -26,7 +26,7 @@ background:#111827;
 border:1px solid #263244;
 border-radius:18px;
 padding:22px;
-margin-bottom:18px;
+margin-bottom:18px
 }
 
 h1{margin-top:0;font-size:28px}
@@ -34,13 +34,13 @@ h2{margin-top:0}
 
 .subtitle{
 color:#94a3b8;
-margin-bottom:25px;
+margin-bottom:25px
 }
 
 .menu{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:15px;
+gap:15px
 }
 
 .menu button{
@@ -52,11 +52,11 @@ border-radius:12px;
 font-size:16px;
 font-weight:bold;
 text-align:right;
-cursor:pointer;
+cursor:pointer
 }
 
 .menu button:hover{
-background:#1e293b;
+background:#1e293b
 }
 
 .back{
@@ -66,24 +66,24 @@ border:0;
 padding:11px 18px;
 border-radius:10px;
 margin-bottom:20px;
-cursor:pointer;
+cursor:pointer
 }
 
 .grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:15px;
+gap:15px
 }
 
 .full{
-grid-column:1/-1;
+grid-column:1/-1
 }
 
 label{
 display:block;
 margin-bottom:7px;
 color:#cbd5e1;
-font-size:14px;
+font-size:14px
 }
 
 input,select,textarea{
@@ -93,12 +93,12 @@ border-radius:10px;
 border:1px solid #334155;
 background:#020617;
 color:white;
-font-size:15px;
+font-size:15px
 }
 
 textarea{
 min-height:90px;
-resize:vertical;
+resize:vertical
 }
 
 .primary,.secondary{
@@ -107,18 +107,18 @@ padding:13px 20px;
 border-radius:10px;
 font-weight:bold;
 margin-top:18px;
-cursor:pointer;
+cursor:pointer
 }
 
 .primary{
 background:white;
-color:#111827;
+color:#111827
 }
 
 .secondary{
 background:#334155;
 color:white;
-margin-right:8px;
+margin-right:8px
 }
 
 .output{
@@ -131,11 +131,11 @@ white-space:pre-wrap;
 line-height:1.8;
 overflow:auto;
 direction:rtl;
-text-align:right;
+text-align:right
 }
 
 .hidden{
-display:none;
+display:none
 }
 
 .info{
@@ -144,16 +144,38 @@ padding:12px;
 border-radius:10px;
 background:#172033;
 color:#cbd5e1;
-font-size:14px;
+font-size:14px
+}
+
+.instructions{
+display:block;
+margin-top:15px;
+padding:12px;
+border-radius:10px;
+background:#172033;
+color:#fff;
+text-decoration:none;
+text-align:center;
+border:1px solid #334155
+}
+
+.instructions:hover{
+background:#1e293b
+}
+
+.section-title{
+margin-top:25px;
+margin-bottom:12px;
+color:#e2e8f0
 }
 
 @media(max-width:650px){
 .menu,.grid{
-grid-template-columns:1fr;
+grid-template-columns:1fr
 }
 
 .full{
-grid-column:auto;
+grid-column:auto
 }
 }
 </style>
@@ -183,12 +205,12 @@ grid-column:auto;
 📄 قرارات الفصل
 </button>
 
-<button disabled>
-📄 قرارات الترقيات — قريبًا
+<button onclick="openSection('leaves')">
+🏖️ نظام الإجازات
 </button>
 
 <button disabled>
-📄 قرارات أخرى — قريبًا
+📄 قرارات الترقيات — قريبًا
 </button>
 
 </div>
@@ -200,9 +222,7 @@ grid-column:auto;
 
 <section id="endServices" class="card hidden">
 
-<button class="back" onclick="goHome()">
-← العودة
-</button>
+<button class="back" onclick="goHome()">← العودة</button>
 
 <h2>📄 قرارات الاستقالة</h2>
 
@@ -228,7 +248,6 @@ grid-column:auto;
 </div>
 
 <div>
-
 <label>المستوى</label>
 
 <select id="endLevel" onchange="updateEndFields()">
@@ -246,28 +265,24 @@ grid-column:auto;
 <option value="10">مستوى 10</option>
 
 </select>
-
 </div>
 
 <div class="full">
 
 <label>سبب الاستقالة</label>
 
-<textarea id="endReason"
+<textarea
+id="endReason"
 placeholder="مثال: استقالة برتبة مستوى (4) بناءً على طلبه">
 </textarea>
 
 </div>
 
-
-<!-- السحب للاستقالة -->
-
 <div id="endWithdrawal" class="full">
 
 <label>نوع السحب</label>
 
-<select id="endWithdrawType"
-onchange="toggleInvoice('end')">
+<select id="endWithdrawType" onchange="toggleInvoice('end')">
 
 <option value="رقابي">رقابي</option>
 <option value="فاتورة">فاتورة</option>
@@ -276,47 +291,37 @@ onchange="toggleInvoice('end')">
 
 </div>
 
-
 <div id="endInvoiceWrap" class="full hidden">
 
 <label>رابط الفاتورة</label>
 
-<input id="endInvoice"
+<input
+id="endInvoice"
 placeholder="ضع رابط الفاتورة هنا">
 
 </div>
-
 
 <div>
 
 <label>Discord ID اعتماد</label>
 
-<input id="endApprove"
+<input
+id="endApprove"
 placeholder="مثال: 1302748392887156809">
 
 </div>
 
 </div>
 
-
 <div id="endInfo" class="info"></div>
 
-
-<button class="primary"
-onclick="generateEndService()">
-
+<button class="primary" onclick="generateEndService()">
 إنشاء القرار
-
 </button>
 
-
-<button class="secondary"
-onclick="copyDecision('endOutput')">
-
+<button class="secondary" onclick="copyDecision('endOutput')">
 نسخ القرار
-
 </button>
-
 
 <div id="endOutput" class="output">
 سيظهر القرار هنا.
@@ -325,13 +330,11 @@ onclick="copyDecision('endOutput')">
 </section>
 
 
-<!-- قرارات الفصل -->
+<!-- الفصل -->
 
 <section id="dismissal" class="card hidden">
 
-<button class="back" onclick="goHome()">
-← العودة
-</button>
+<button class="back" onclick="goHome()">← العودة</button>
 
 <h2>📄 قرارات الفصل</h2>
 
@@ -342,34 +345,19 @@ onclick="copyDecision('endOutput')">
 <div class="grid">
 
 <div>
-
 <label>Discord ID للشخص</label>
-
-<input id="fireId"
-placeholder="مثال: 1188040679348240415">
-
+<input id="fireId">
 </div>
 
-
 <div>
-
 <label>الكود</label>
-
-<input id="fireCode"
-placeholder="مثال: E-901">
-
+<input id="fireCode">
 </div>
-
 
 <div>
-
 <label>اسم المسعف</label>
-
-<input id="fireName"
-placeholder="مثال: روري بنت عبدالله">
-
+<input id="fireName">
 </div>
-
 
 <div>
 
@@ -393,26 +381,19 @@ placeholder="مثال: روري بنت عبدالله">
 
 </div>
 
-
 <div class="full">
 
 <label>سبب الفصل</label>
 
-<textarea id="fireReason"
-placeholder="اكتب سبب الفصل">
-</textarea>
+<textarea id="fireReason"></textarea>
 
 </div>
-
-
-<!-- السحب للفصل -->
 
 <div class="full">
 
 <label>نوع السحب</label>
 
-<select id="fireWithdrawType"
-onchange="toggleInvoice('fire')">
+<select id="fireWithdrawType" onchange="toggleInvoice('fire')">
 
 <option value="رقابي">رقابي</option>
 <option value="فاتورة">فاتورة</option>
@@ -421,56 +402,420 @@ onchange="toggleInvoice('fire')">
 
 </div>
 
-
 <div id="fireInvoiceWrap" class="full hidden">
 
 <label>رابط الفاتورة</label>
 
-<input id="fireInvoice"
-placeholder="ضع رابط الفاتورة هنا">
+<input id="fireInvoice">
 
 </div>
-
 
 <div>
 
 <label>Discord ID اعتماد</label>
 
-<input id="fireApprove"
-placeholder="مثال: 763021705047965717">
+<input id="fireApprove">
 
 </div>
 
 </div>
-
 
 <div class="info">
+قرار الفصل: غرامة 1,000,000 + منع توظيف 14 يوم.
+</div>
 
-قرار الفصل:
-غرامة 1,000,000 + منع توظيف 14 يوم.
+<button class="primary" onclick="generateDismissal()">
+إنشاء القرار
+</button>
 
-اختر نوع السحب رقابي أو فاتورة.
+<button class="secondary" onclick="copyDecision('fireOutput')">
+نسخ القرار
+</button>
+
+<div id="fireOutput" class="output">
+سيظهر القرار هنا.
+</div>
+
+</section>
+
+
+<!-- نظام الإجازات -->
+
+<section id="leaves" class="card hidden">
+
+<button class="back" onclick="goHome()">← العودة</button>
+
+<h2>🏖️ نظام الإجازات</h2>
+
+<div class="subtitle">
+اختر نوع الإجازة المطلوب إصدارها.
+</div>
+
+<div class="menu">
+
+<button onclick="openLeave('internal')">
+🏠 إجازة داخلية
+</button>
+
+<button onclick="openLeave('outsideShift')">
+🕐 إجازة داخلية خارج شفت
+</button>
+
+<button onclick="openLeave('trader')">
+💰 إجازة داخلية تاجر
+</button>
+
+<button onclick="openLeave('external')">
+🌍 إجازة خارجية
+</button>
+
+<button onclick="openLeave('externalExtend')">
+🌍 تمديد إجازة خارجية
+</button>
 
 </div>
 
+</section>
 
-<button class="primary"
-onclick="generateDismissal()">
 
-إنشاء القرار
+<!-- الإجازة الداخلية -->
 
+<section id="internal" class="card hidden">
+
+<button class="back" onclick="openSection('leaves')">
+← العودة للإجازات
 </button>
 
+<h2>🏠 إجازة داخلية</h2>
 
-<button class="secondary"
-onclick="copyDecision('fireOutput')">
+<a
+class="instructions"
+href="https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104"
+target="_blank">
+📖 فتح تعليمات الإجازات
+</a>
 
-نسخ القرار
+<div class="grid">
 
+<div>
+<label>Discord ID للمسعف</label>
+<input id="intId">
+</div>
+
+<div>
+<label>مدة الإجازة بالساعات</label>
+<input id="intDuration" type="number" min="1" placeholder="مثال: 4">
+</div>
+
+<div>
+<label>الرصيد المتبقي</label>
+<input id="intBalance" placeholder="مثال: 5 ساعة">
+</div>
+
+<div>
+<label>من الساعة</label>
+<input id="intFrom" type="time">
+</div>
+
+<div>
+<label>تاريخ البداية</label>
+<input id="intFromDate" type="date">
+</div>
+
+<div>
+<label>إلى الساعة</label>
+<input id="intTo" type="time">
+</div>
+
+<div>
+<label>تاريخ النهاية</label>
+<input id="intToDate" type="date">
+</div>
+
+<div>
+<label>Discord ID اعتماد</label>
+<input id="intApprove">
+</div>
+
+</div>
+
+<button class="primary" onclick="generateInternal()">
+إنشاء الإجازة
 </button>
 
+<button class="secondary" onclick="copyDecision('intOutput')">
+نسخ الإجازة
+</button>
 
-<div id="fireOutput" class="output">
+<div id="intOutput" class="output">
+سيظهر القرار هنا.
+</div>
+
+</section>
+
+
+<!-- خارج الشفت -->
+
+<section id="outsideShift" class="card hidden">
+
+<button class="back" onclick="openSection('leaves')">
+← العودة للإجازات
+</button>
+
+<h2>🕐 إجازة داخلية (خارج شفت)</h2>
+
+<a
+class="instructions"
+href="https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104"
+target="_blank">
+📖 فتح تعليمات الإجازات
+</a>
+
+<div class="grid">
+
+<div>
+<label>Discord ID للمسعف</label>
+<input id="shiftId">
+</div>
+
+<div>
+<label>مدة الإجازة بالساعات</label>
+<input id="shiftDuration" type="number" min="1">
+</div>
+
+<div>
+<label>من الساعة</label>
+<input id="shiftFrom" type="time">
+</div>
+
+<div>
+<label>تاريخ البداية</label>
+<input id="shiftFromDate" type="date">
+</div>
+
+<div>
+<label>إلى الساعة</label>
+<input id="shiftTo" type="time">
+</div>
+
+<div>
+<label>تاريخ النهاية</label>
+<input id="shiftToDate" type="date">
+</div>
+
+<div>
+<label>Discord ID اعتماد</label>
+<input id="shiftApprove">
+</div>
+
+</div>
+
+<div class="info">
+خارج الشفت لا يخصم من رصيد الإجازات.
+</div>
+
+<button class="primary" onclick="generateOutsideShift()">
+إنشاء الإجازة
+</button>
+
+<button class="secondary" onclick="copyDecision('shiftOutput')">
+نسخ الإجازة
+</button>
+
+<div id="shiftOutput" class="output">
+سيظهر القرار هنا.
+</div>
+
+</section>
+
+
+<!-- التاجر -->
+
+<section id="trader" class="card hidden">
+
+<button class="back" onclick="openSection('leaves')">
+← العودة للإجازات
+</button>
+
+<h2>💰 إجازة داخلية (تاجر)</h2>
+
+<a
+class="instructions"
+href="https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104"
+target="_blank">
+📖 فتح تعليمات الإجازات
+</a>
+
+<div class="grid">
+
+<div>
+<label>Discord ID للمسعف</label>
+<input id="traderId">
+</div>
+
+<div>
+<label>مدة الإجازة بالساعات</label>
+<input id="traderDuration" type="number" min="1">
+</div>
+
+<div>
+<label>من الساعة</label>
+<input id="traderFrom" type="time">
+</div>
+
+<div>
+<label>تاريخ البداية</label>
+<input id="traderFromDate" type="date">
+</div>
+
+<div>
+<label>إلى الساعة</label>
+<input id="traderTo" type="time">
+</div>
+
+<div>
+<label>تاريخ النهاية</label>
+<input id="traderToDate" type="date">
+</div>
+
+<div>
+<label>Discord ID اعتماد</label>
+<input id="traderApprove">
+</div>
+
+</div>
+
+<div class="info">
+إجازة التاجر لا تخصم من رصيد الإجازات.
+</div>
+
+<button class="primary" onclick="generateTrader()">
+إنشاء الإجازة
+</button>
+
+<button class="secondary" onclick="copyDecision('traderOutput')">
+نسخ الإجازة
+</button>
+
+<div id="traderOutput" class="output">
+سيظهر القرار هنا.
+</div>
+
+</section>
+
+
+<!-- الخارجية -->
+
+<section id="external" class="card hidden">
+
+<button class="back" onclick="openSection('leaves')">
+← العودة للإجازات
+</button>
+
+<h2>🌍 إجازة خارجية</h2>
+
+<div class="grid">
+
+<div>
+<label>Discord ID للمسعف</label>
+<input id="extId">
+</div>
+
+<div>
+<label>مدة الإجازة بالأيام</label>
+<input id="extDuration" type="number" min="1">
+</div>
+
+<div>
+<label>من تاريخ</label>
+<input id="extFrom" type="date">
+</div>
+
+<div>
+<label>إلى تاريخ</label>
+<input id="extTo" type="date">
+</div>
+
+<div>
+<label>Discord ID اعتماد</label>
+<input id="extApprove">
+</div>
+
+</div>
+
+<div class="info">
+الإجازة الخارجية تكون بالأيام ولا تخصم من رصيد الإجازات.
+</div>
+
+<button class="primary" onclick="generateExternal()">
+إنشاء الإجازة
+</button>
+
+<button class="secondary" onclick="copyDecision('extOutput')">
+نسخ الإجازة
+</button>
+
+<div id="extOutput" class="output">
+سيظهر القرار هنا.
+</div>
+
+</section>
+
+
+<!-- تمديد الخارجية -->
+
+<section id="externalExtend" class="card hidden">
+
+<button class="back" onclick="openSection('leaves')">
+← العودة للإجازات
+</button>
+
+<h2>🌍 تمديد إجازة خارجية</h2>
+
+<div class="info">
+هذا الخيار مخصص للقيادة فقط.
+</div>
+
+<div class="grid">
+
+<div>
+<label>Discord ID للمسعف</label>
+<input id="extendId">
+</div>
+
+<div>
+<label>مدة التمديد بالأيام</label>
+<input id="extendDuration" type="number" min="1">
+</div>
+
+<div>
+<label>إلى تاريخ</label>
+<input id="extendTo" type="date">
+</div>
+
+<div>
+<label>Discord ID اعتماد</label>
+<input id="extendApprove">
+</div>
+
+</div>
+
+<a
+class="instructions"
+href="https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104"
+target="_blank">
+📖 فتح قوانين الإجازات
+</a>
+
+<button class="primary" onclick="generateExternalExtend()">
+إنشاء التمديد
+</button>
+
+<button class="secondary" onclick="copyDecision('extendOutput')">
+نسخ التمديد
+</button>
+
+<div id="extendOutput" class="output">
 سيظهر القرار هنا.
 </div>
 
@@ -481,33 +826,58 @@ onclick="copyDecision('fireOutput')">
 
 <script>
 
+const instructionsLink =
+"https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104";
+
+const originalRole =
+"<@&1404535885864632340>";
+
+function value(id){
+return document.getElementById(id).value.trim();
+}
+
+
 function goHome(){
 
-document.getElementById("home")
-.classList.remove("hidden");
+const sections = [
+"home",
+"endServices",
+"dismissal",
+"leaves",
+"internal",
+"outsideShift",
+"trader",
+"external",
+"externalExtend"
+];
 
-document.getElementById("endServices")
-.classList.add("hidden");
+sections.forEach(id=>{
+document.getElementById(id).classList.add("hidden");
+});
 
-document.getElementById("dismissal")
-.classList.add("hidden");
-
+document.getElementById("home").classList.remove("hidden");
 }
 
 
 function openSection(id){
 
-document.getElementById("home")
-.classList.add("hidden");
+const sections = [
+"home",
+"endServices",
+"dismissal",
+"leaves",
+"internal",
+"outsideShift",
+"trader",
+"external",
+"externalExtend"
+];
 
-document.getElementById("endServices")
-.classList.add("hidden");
+sections.forEach(section=>{
+document.getElementById(section).classList.add("hidden");
+});
 
-document.getElementById("dismissal")
-.classList.add("hidden");
-
-document.getElementById(id)
-.classList.remove("hidden");
+document.getElementById(id).classList.remove("hidden");
 
 if(id==="endServices"){
 updateEndFields();
@@ -516,48 +886,52 @@ updateEndFields();
 }
 
 
-function value(id){
+function openLeave(id){
 
-return document.getElementById(id).value.trim();
+const sections = [
+"leaves",
+"internal",
+"outsideShift",
+"trader",
+"external",
+"externalExtend"
+];
 
+sections.forEach(section=>{
+document.getElementById(section).classList.add("hidden");
+});
+
+document.getElementById(id).classList.remove("hidden");
 }
 
 
-/* تحديد هل المستوى عليه غرامة */
+/* الاستقالة */
 
 function updateEndFields(){
 
 const level=value("endLevel");
 
-const charged=
-(level==="متدرب" || level==="1");
+const charged =
+level==="متدرب" || level==="1";
 
-document.getElementById("endWithdrawal")
+document
+.getElementById("endWithdrawal")
 .classList.toggle("hidden",!charged);
 
 if(!charged){
-
-document.getElementById("endInvoiceWrap")
+document
+.getElementById("endInvoiceWrap")
 .classList.add("hidden");
-
 }
 
-document.getElementById("endInfo").textContent=
-
+document.getElementById("endInfo").textContent =
 charged
-
 ?
-
 "غرامة 1,000,000 + منع توظيف 14 يوم. اختر نوع السحب."
-
 :
-
 "هذا المستوى بدون غرامة وبدون سحب.";
-
 }
 
-
-/* إظهار الفاتورة فقط عند اختيار فاتورة */
 
 function toggleInvoice(type){
 
@@ -565,33 +939,20 @@ let select;
 let invoiceBox;
 
 if(type==="end"){
-
 select=document.getElementById("endWithdrawType");
-
 invoiceBox=document.getElementById("endInvoiceWrap");
-
 }else{
-
 select=document.getElementById("fireWithdrawType");
-
 invoiceBox=document.getElementById("fireInvoiceWrap");
+}
+
+invoiceBox.classList.toggle(
+"hidden",
+select.value!=="فاتورة"
+);
 
 }
 
-if(select.value==="فاتورة"){
-
-invoiceBox.classList.remove("hidden");
-
-}else{
-
-invoiceBox.classList.add("hidden");
-
-}
-
-}
-
-
-/* نص السحب */
 
 function getWithdrawal(type){
 
@@ -599,84 +960,56 @@ let select;
 let invoice;
 
 if(type==="end"){
-
 select=value("endWithdrawType");
 invoice=value("endInvoice");
-
 }else{
-
 select=value("fireWithdrawType");
 invoice=value("fireInvoice");
-
 }
-
 
 if(select==="فاتورة"){
 
 if(invoice){
-
-return `\`نوع السحب :\` [فاتورة](${invoice})`;
-
-}else{
-
-return `\`نوع السحب :\` فاتورة`;
-
+return "`نوع السحب :` [فاتورة]("+invoice+")";
 }
 
+return "`نوع السحب :` فاتورة";
 }
 
-
-return `\`نوع السحب :\` رقابي`;
-
+return "`نوع السحب :` رقابي";
 }
 
-
-/* إنشاء قرار الاستقالة */
 
 function generateEndService(){
 
 const id=value("endId");
-
 const code=value("endCode");
-
 const name=value("endName");
-
 const level=value("endLevel");
-
 const reason=value("endReason");
-
 const approve=value("endApprove");
 
-const charged=
-(level==="متدرب" || level==="1");
-
+const charged =
+level==="متدرب" || level==="1";
 
 let extra="";
-
 let withdrawal="";
-
 
 if(charged){
 
 extra=`
-
 ثانيا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
-
 ثالثا: منع توظيف 14 يوم`;
 
 withdrawal=`
-
 ${getWithdrawal("end")}`;
-
 }
-
 
 const decision=`*** ▬▬▬ ﷽ ▬▬
 \`\`\`diff
 
 -الموضوع : قرار انهاء خدمات 
 \`\`\`
-
 \`\`\`cs
 # بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي 
  
@@ -689,49 +1022,37 @@ const decision=`*** ▬▬▬ ﷽ ▬▬
 \`\`\`وذلك بسبب : ${reason} \`\`\`
 ${withdrawal}
 
-\`اعتماد:\` <@${approve}>      
+\`اعتماد:\`  <@${approve}>      
 
 يرسل الاصل الى :
 ||<@&1404535885864632340>||***`;
 
-
-document.getElementById("endOutput")
-.textContent=decision;
-
+document.getElementById("endOutput").textContent=decision;
 }
 
 
-/* إنشاء قرار الفصل */
+/* الفصل */
 
 function generateDismissal(){
 
 const id=value("fireId");
-
 const code=value("fireCode");
-
 const name=value("fireName");
-
 const reason=value("fireReason");
-
 const approve=value("fireApprove");
 
-const withdrawal=
-getWithdrawal("fire");
-
+const withdrawal=getWithdrawal("fire");
 
 const decision=`*** ▬▬▬ ﷽ ▬▬
 \`\`\`diff
 
 -الموضوع : قرار فصل 
 \`\`\`
-
 \`\`\`cs
 # بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من قيادة الهلال الاحمر قررنا مايلي 
  
 أولًا: تنهى خدمات المسعف ادناه اعتبارا من تاريخه
-
 ثانيا: منع توظيف 14 يوم
-
 ثالثا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
 
 \`\`\`
@@ -748,10 +1069,255 @@ ${withdrawal}
 يرسل الاصل الى :
 ||<@&1404535885864632340>||***`;
 
+document.getElementById("fireOutput").textContent=decision;
+}
 
-document.getElementById("fireOutput")
-.textContent=decision;
 
+/* حساب مدة الساعات */
+
+function calculateHours(from,to,fromDate,toDate){
+
+if(!from || !to || !fromDate || !toDate){
+return null;
+}
+
+const start =
+new Date(fromDate+"T"+from);
+
+const end =
+new Date(toDate+"T"+to);
+
+if(isNaN(start)||isNaN(end)||end<=start){
+return null;
+}
+
+return Math.round(
+((end-start)/3600000)*100
+)/100;
+
+}
+
+
+/* تحويل التاريخ */
+
+function formatDate(date){
+
+if(!date) return "";
+
+const parts=date.split("-");
+
+return parts[0]+"/"+parts[1]+"/"+parts[2];
+}
+
+
+/* تحويل الوقت إلى صيغة 12 ساعة */
+
+function formatTime(time){
+
+if(!time) return "";
+
+let [hour,minute]=time.split(":");
+
+hour=parseInt(hour);
+
+const suffix =
+hour>=12 ? "م" : "ص";
+
+hour=hour%12;
+
+if(hour===0){
+hour=12;
+}
+
+return String(hour).padStart(2,"0")+":"+minute+" "+suffix;
+}
+
+
+/* الإجازة الداخلية */
+
+function generateInternal(){
+
+const id=value("intId");
+const duration=value("intDuration");
+const balance=value("intBalance");
+const from=value("intFrom");
+const to=value("intTo");
+const fromDate=value("intFromDate");
+const toDate=value("intToDate");
+const approve=value("intApprove");
+
+const calculated=
+calculateHours(from,to,fromDate,toDate);
+
+const finalDuration=
+duration || calculated || "";
+
+const decision=`***﷽
+
+\` الموضوع :\` إجازة داخلية
+
+\` للمسعف المحترم :\` <@${id}>
+
+\` مدة الإجازة :\`  ${finalDuration} ساعة 
+
+\` الرصيد المتبقي :\`  ${balance} 
+
+\` من الساعة :\` ${formatTime(from)} | ${formatDate(fromDate)}
+
+\` إلى الساعة :\` ${formatTime(to)} | ${formatDate(toDate)}
+
+[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة](${instructionsLink})
+
+\`اعتماد:\` <@${approve}>
+
+\` يرسل الاصل الى :\` <@&1404535885864632340>***`;
+
+document.getElementById("intOutput").textContent=decision;
+}
+
+
+/* خارج الشفت */
+
+function generateOutsideShift(){
+
+const id=value("shiftId");
+const duration=value("shiftDuration");
+const from=value("shiftFrom");
+const to=value("shiftTo");
+const fromDate=value("shiftFromDate");
+const toDate=value("shiftToDate");
+const approve=value("shiftApprove");
+
+const calculated=
+calculateHours(from,to,fromDate,toDate);
+
+const finalDuration=
+duration || calculated || "";
+
+const decision=`***﷽
+
+\` الموضوع :\` إجازة داخلية ( خارج شفت )
+
+\` للمسعف المحترم :\` <@${id}>
+
+\` مدة الإجازة :\`  ${finalDuration} ساعة 
+
+\` الرصيد المتبقي :\`  خارج شفت
+
+\` من الساعة :\` ${formatTime(from)} | ${formatDate(fromDate)}
+
+\` إلى الساعة :\` ${formatTime(to)} | ${formatDate(toDate)}
+
+[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة](${instructionsLink})
+
+\`اعتماد:\` <@${approve}>
+
+\` يرسل الاصل الى :\` <@&1404535885864632340>***`;
+
+document.getElementById("shiftOutput").textContent=decision;
+}
+
+
+/* التاجر */
+
+function generateTrader(){
+
+const id=value("traderId");
+const duration=value("traderDuration");
+const from=value("traderFrom");
+const to=value("traderTo");
+const fromDate=value("traderFromDate");
+const toDate=value("traderToDate");
+const approve=value("traderApprove");
+
+const calculated=
+calculateHours(from,to,fromDate,toDate);
+
+const finalDuration=
+duration || calculated || "";
+
+const decision=`***﷽
+
+\` الموضوع :\` إجازة داخلية ( تاجر )
+
+\` للمسعف المحترم :\` <@${id}>
+
+\` مدة الإجازة :\`  ${finalDuration} ساعة 
+
+\` الرصيد المتبقي :\`  إجازة تاجر
+
+\` من الساعة :\` ${formatTime(from)} | ${formatDate(fromDate)}
+
+\` إلى الساعة :\` ${formatTime(to)} | ${formatDate(toDate)}
+
+[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة](${instructionsLink})
+
+\`اعتماد:\` <@${approve}>
+
+\` يرسل الاصل الى :\` <@&1404535885864632340>***`;
+
+document.getElementById("traderOutput").textContent=decision;
+}
+
+
+/* الإجازة الخارجية */
+
+function generateExternal(){
+
+const id=value("extId");
+const duration=value("extDuration");
+const from=value("extFrom");
+const to=value("extTo");
+const approve=value("extApprove");
+
+const decision=`***﷽
+
+\` الموضوع :\` إجازة خارجيه
+
+\` للمسعف المحترم :\` <@${id}>
+
+\` مدة الإجازة :\`  ${duration} يوم 
+
+\` من تاريخ :\`  ${formatDate(from)}
+
+\` إلى تاريخ :\` ${formatDate(to)}
+
+[يرجى قراءه القوانين قبل اخذ اجازه خارجية](${instructionsLink})
+
+\`اعتماد:\` <@${approve}>
+
+\` يرسل الاصل الى :\` <@&1404535885864632340>***`;
+
+document.getElementById("extOutput").textContent=decision;
+}
+
+
+/* تمديد الخارجية */
+
+function generateExternalExtend(){
+
+const id=value("extendId");
+const duration=value("extendDuration");
+const to=value("extendTo");
+const approve=value("extendApprove");
+
+const decision=`***﷽
+
+\` الموضوع :\` تمديد إجازة خارجية
+
+\` للمسعف المحترم :\` <@${id}>  
+
+\` مدة التمديد :\`  ${duration} يوم 
+
+\` إلى تاريخ :\`  ${formatDate(to)}
+
+[يرجى قراءه القوانين قبل اخذ اجازه خارجية](${instructionsLink})
+
+\`اعتماد:\` <@${approve}>
+
+\` يرسل الاصل الى :\` <@&1404535885864632340>***`;
+
+document.getElementById("extendOutput").textContent=decision;
 }
 
 
@@ -759,17 +1325,15 @@ document.getElementById("fireOutput")
 
 async function copyDecision(id){
 
-const output=
-document.getElementById(id);
+const text=
+document.getElementById(id).textContent;
 
-const text=output.textContent;
-
-if(!text || text==="سيظهر القرار هنا."){
-
+if(
+!text ||
+text==="سيظهر القرار هنا."
+){
 alert("أنشئ القرار أولًا");
-
 return;
-
 }
 
 try{
@@ -780,12 +1344,16 @@ alert("تم نسخ القرار ✅");
 
 }catch(error){
 
-alert("تعذر النسخ تلقائيًا، حدد النص وانسخه يدويًا.");
+alert(
+"تعذر النسخ تلقائيًا، حدد النص وانسخه يدويًا."
+);
 
 }
 
 }
 
+
+/* بداية الموقع */
 
 updateEndFields();
 
