@@ -7,499 +7,477 @@
 
 <style>
 :root{
-  --red:#d71935;
-  --red2:#ff263f;
-  --dark:#05080d;
-  --dark2:#0b1119;
-  --card:#101923;
-  --card2:#151f2b;
-  --border:#293746;
-  --text:#fff;
-  --muted:#aeb9c5;
-  --green:#27d69a;
+--red:#d71935;
+--red2:#ff314c;
+--dark:#05080d;
+--dark2:#0a1018;
+--card:#101923;
+--card2:#151f2b;
+--border:#2a3948;
+--text:#fff;
+--muted:#aeb9c5;
+--green:#2bd69a
 }
 
 *{box-sizing:border-box}
 
 body{
-  margin:0;
-  color:var(--text);
-  font-family:Tahoma,Arial,sans-serif;
-  background:
-    radial-gradient(circle at 50% -10%,#3b0c14 0,#090d13 38%,#030509 75%);
-  min-height:100vh;
+margin:0;
+background:
+radial-gradient(circle at 50% -10%,#4a0b16 0,#0a0d13 38%,#030509 78%);
+color:var(--text);
+font-family:Tahoma,Arial,sans-serif;
+min-height:100vh
 }
 
 button,input,select,textarea{font:inherit}
-
 button{cursor:pointer}
 
 .header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:#05080dee;
-  border-bottom:1px solid #2b3642;
-  backdrop-filter:blur(15px);
+position:sticky;
+top:0;
+z-index:100;
+background:#05080ded;
+border-bottom:1px solid #293744;
+backdrop-filter:blur(14px)
 }
 
 .header-inner{
-  max-width:1400px;
-  margin:auto;
-  padding:12px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
+max-width:1400px;
+margin:auto;
+padding:11px 18px;
+display:flex;
+align-items:center;
+justify-content:space-between
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
+display:flex;
+align-items:center;
+gap:12px
 }
 
 .logo-icon{
-  width:48px;
-  height:48px;
-  border-radius:14px;
-  background:linear-gradient(145deg,#f02039,#8d0d20);
-  display:grid;
-  place-items:center;
-  font-size:25px;
-  box-shadow:0 0 25px #d7193540;
+width:48px;
+height:48px;
+border-radius:14px;
+display:grid;
+place-items:center;
+font-size:25px;
+background:linear-gradient(145deg,var(--red2),#8d0d20);
+box-shadow:0 0 25px #d7193540
 }
 
 .logo-title{
-  font-size:18px;
-  font-weight:900;
+font-weight:900;
+font-size:18px
 }
 
 .logo-sub{
-  color:var(--muted);
-  font-size:11px;
-  margin-top:4px;
+font-size:11px;
+color:var(--muted);
+margin-top:4px
 }
 
 .status{
-  color:#b9c5d0;
-  font-size:12px;
+font-size:12px;
+color:var(--muted)
 }
 
-.status-dot{
-  display:inline-block;
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:var(--green);
-  margin-left:6px;
-  box-shadow:0 0 10px var(--green);
+.dot{
+display:inline-block;
+width:8px;
+height:8px;
+border-radius:50%;
+background:var(--green);
+margin-left:6px;
+box-shadow:0 0 10px var(--green)
 }
 
 .container{
-  max-width:1400px;
-  margin:auto;
-  padding:20px;
+max-width:1400px;
+margin:auto;
+padding:20px
 }
 
-/* الغلاف */
-
 .hero{
-  min-height:430px;
-  border:1px solid #4c1d25;
-  border-radius:28px;
-  overflow:hidden;
-  position:relative;
-  display:flex;
-  align-items:flex-end;
-  background:
-    linear-gradient(90deg,#020407ee,#07090dcc 48%,#16070a99),
-    radial-gradient(circle at 75% 30%,#d7193535,transparent 30%),
-    linear-gradient(135deg,#1a090d,#06090d 60%,#18070a);
-  box-shadow:0 25px 70px #0008;
+min-height:430px;
+position:relative;
+overflow:hidden;
+border:1px solid #5b202a;
+border-radius:28px;
+display:flex;
+align-items:flex-end;
+background:
+linear-gradient(90deg,#020407f2,#080b11dd 48%,#19070bd0),
+radial-gradient(circle at 80% 30%,#d719353d,transparent 30%),
+linear-gradient(135deg,#1d090e,#06090d 60%,#18070a)
 }
 
 .hero:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(120deg,transparent 45%,#d7193520 46%,transparent 47%),
-    linear-gradient(25deg,transparent 60%,#fff08 61%,transparent 62%);
-  opacity:.7;
-}
-
-.hero:after{
-  content:"🚑   🚨   ✚   🚑";
-  position:absolute;
-  left:30px;
-  bottom:25px;
-  font-size:70px;
-  opacity:.12;
-  letter-spacing:18px;
+content:"🚑   🚨   ✚   🚑";
+position:absolute;
+left:25px;
+bottom:25px;
+font-size:75px;
+opacity:.09;
+letter-spacing:15px
 }
 
 .hero-content{
-  position:relative;
-  z-index:2;
-  padding:45px;
-  max-width:850px;
+position:relative;
+z-index:2;
+padding:45px;
+max-width:900px
 }
 
-.hero-badge{
-  display:inline-block;
-  padding:8px 14px;
-  border-radius:30px;
-  background:#d719351c;
-  border:1px solid #d7193560;
-  color:#ff8796;
-  font-size:12px;
-  font-weight:bold;
+.badge{
+display:inline-block;
+padding:8px 14px;
+border-radius:30px;
+background:#d719351c;
+border:1px solid #d7193560;
+color:#ff8796;
+font-size:12px;
+font-weight:bold
 }
 
 .hero h1{
-  font-size:clamp(32px,5vw,62px);
-  margin:15px 0 8px;
+font-size:clamp(32px,5vw,62px);
+margin:16px 0 8px
 }
 
 .hero p{
-  color:#c2cbd5;
-  line-height:2;
-  max-width:700px;
+color:#c4ccd5;
+line-height:2;
+max-width:720px
 }
 
 .ecg{
-  margin-top:20px;
-  height:40px;
-  width:100%;
-  opacity:.8;
+height:45px;
+margin-top:20px
 }
 
 .ecg svg{
-  width:100%;
-  height:100%;
+width:100%;
+height:100%
 }
 
-/* الأقسام */
-
 .section-title{
-  margin:30px 0 15px;
+margin:30px 0 15px
 }
 
 .section-title h2{
-  margin:0;
+margin:0
 }
 
 .section-title p{
-  color:var(--muted);
-  font-size:12px;
+font-size:12px;
+color:var(--muted)
 }
 
 .grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px
 }
 
 .card{
-  min-height:170px;
-  padding:20px;
-  border:1px solid var(--border);
-  border-radius:20px;
-  background:linear-gradient(145deg,var(--card2),var(--card));
-  transition:.2s;
+min-height:165px;
+padding:20px;
+border:1px solid var(--border);
+border-radius:20px;
+background:linear-gradient(145deg,var(--card2),var(--card));
+transition:.2s
 }
 
 .card:hover{
-  transform:translateY(-3px);
-  border-color:#d7193566;
-  box-shadow:0 15px 35px #0006;
+transform:translateY(-3px);
+border-color:#d7193566;
+box-shadow:0 15px 35px #0006
 }
 
-.card-icon{
-  font-size:30px;
+.icon{
+font-size:30px
 }
 
 .card h3{
-  margin:10px 0 7px;
+margin:10px 0 7px
 }
 
 .card p{
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.8;
+font-size:12px;
+line-height:1.8;
+color:var(--muted)
 }
-
-.btn{
-  border:1px solid #405263;
-  background:#101c28;
-  color:#fff;
-  padding:10px 15px;
-  border-radius:10px;
-  font-weight:bold;
-}
-
-.btn-red{
-  background:linear-gradient(135deg,var(--red2),#9c0d20);
-  border:0;
-}
-
-.card .btn{
-  width:100%;
-  margin-top:10px;
-}
-
-/* الصفحات */
 
 .page{
-  display:none;
+display:none
 }
 
 .page.active{
-  display:block;
+display:block
+}
+
+.btn{
+border:1px solid #3c5061;
+background:#101c28;
+color:#fff;
+padding:10px 15px;
+border-radius:10px;
+font-weight:bold
+}
+
+.btn-red{
+border:0;
+background:linear-gradient(135deg,var(--red2),#9b0d21)
+}
+
+.card .btn,
+.subcard .btn{
+width:100%;
+margin-top:10px
 }
 
 .back{
-  margin-bottom:15px;
+margin-bottom:15px
 }
 
 .subgrid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px
 }
 
 .subcard{
-  padding:20px;
-  border:1px solid var(--border);
-  border-radius:18px;
-  background:linear-gradient(145deg,#131e2a,#0b121b);
+position:relative;
+padding:20px;
+border:1px solid var(--border);
+border-radius:18px;
+background:linear-gradient(145deg,#131e2a,#0b121b)
 }
 
 .subcard h3{
-  margin-top:0;
+margin-top:0
 }
 
 .subcard p{
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.8;
+font-size:12px;
+color:var(--muted);
+line-height:1.8
 }
 
 .coming{
-  opacity:.65;
-  position:relative;
+opacity:.6
 }
 
 .coming:after{
-  content:"قريبًا";
-  position:absolute;
-  top:12px;
-  left:12px;
-  color:#ffd76b;
-  border:1px solid #ffd76b55;
-  background:#ffd76b12;
-  padding:4px 9px;
-  border-radius:20px;
-  font-size:10px;
+content:"قريبًا";
+position:absolute;
+top:12px;
+left:12px;
+padding:4px 9px;
+border-radius:20px;
+font-size:10px;
+color:#ffd76b;
+background:#ffd76b12;
+border:1px solid #ffd76b55
 }
 
-/* نافذة النماذج */
-
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:500;
-  background:#000c;
-  padding:15px;
-  align-items:center;
-  justify-content:center;
-}
-
-.modal.open{
-  display:flex;
-}
-
-.modal-box{
-  width:min(950px,100%);
-  max-height:94vh;
-  overflow:auto;
-  border:1px solid #3a4c5e;
-  border-radius:22px;
-  background:#08111b;
-  box-shadow:0 30px 100px #000;
-}
-
-.modal-head{
-  position:sticky;
-  top:0;
-  z-index:2;
-  background:#0b1723;
-  border-bottom:1px solid var(--border);
-  padding:15px 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.close{
-  width:38px;
-  height:38px;
-  border:0;
-  border-radius:10px;
-  background:#172532;
-  color:white;
-  font-size:20px;
-}
-
-.modal-body{
-  padding:18px;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:13px;
-}
-
-.field{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-
-.field.full{
-  grid-column:1/-1;
-}
-
-label{
-  color:#cbd6e0;
-  font-size:12px;
-  font-weight:bold;
-}
-
-input,select,textarea{
-  width:100%;
-  background:#07111a;
-  color:#fff;
-  border:1px solid #304352;
-  border-radius:10px;
-  padding:11px;
-  outline:none;
-}
-
-input:focus,select:focus,textarea:focus{
-  border-color:var(--red);
-}
-
-textarea{
-  min-height:120px;
-  resize:vertical;
-}
-
-.actions{
-  display:flex;
-  gap:10px;
-  margin-top:15px;
-}
-
-.output{
-  display:none;
-  margin-top:18px;
-}
-
-.output.show{
-  display:block;
-}
-
-.output textarea{
-  min-height:400px;
-  direction:rtl;
-}
-
-.note{
-  padding:11px;
-  border-radius:10px;
-  background:#27d69a12;
-  border:1px solid #27d69a40;
-  color:#aeead5;
-  font-size:11px;
-  line-height:1.8;
-  margin-bottom:14px;
-}
-
-/* الإعدادات */
+/* القيادة */
 
 .settings{
-  border:1px solid #56303a;
-  background:linear-gradient(145deg,#1a1015,#0d131a);
-  border-radius:20px;
-  padding:20px;
-  margin-bottom:20px;
+margin-bottom:20px;
+padding:20px;
+border-radius:20px;
+border:1px solid #56303a;
+background:linear-gradient(145deg,#1a1015,#0d131a)
 }
 
 .settings h3{
-  margin-top:0;
+margin-top:0
 }
 
 .settings p{
-  color:var(--muted);
-  font-size:12px;
+font-size:12px;
+line-height:1.8;
+color:var(--muted)
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:13px
+}
+
+.field{
+display:flex;
+flex-direction:column;
+gap:6px
+}
+
+.full{
+grid-column:1/-1
+}
+
+label{
+font-size:12px;
+font-weight:bold;
+color:#cbd6e0
+}
+
+input,select,textarea{
+width:100%;
+padding:11px;
+border-radius:10px;
+border:1px solid #304352;
+background:#07111a;
+color:#fff;
+outline:none
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+border-color:var(--red)
+}
+
+textarea{
+min-height:120px;
+resize:vertical
+}
+
+.actions{
+display:flex;
+gap:10px;
+margin-top:15px
+}
+
+/* النافذة */
+
+.modal{
+display:none;
+position:fixed;
+inset:0;
+z-index:500;
+background:#000d;
+padding:15px;
+align-items:center;
+justify-content:center
+}
+
+.modal.open{
+display:flex
+}
+
+.modal-box{
+width:min(950px,100%);
+max-height:94vh;
+overflow:auto;
+border-radius:22px;
+border:1px solid #3a4c5e;
+background:#08111b;
+box-shadow:0 30px 100px #000
+}
+
+.modal-head{
+position:sticky;
+top:0;
+z-index:2;
+padding:15px 18px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#0b1723;
+border-bottom:1px solid var(--border)
+}
+
+.close{
+width:38px;
+height:38px;
+border:0;
+border-radius:10px;
+background:#172532;
+color:#fff;
+font-size:20px
+}
+
+.modal-body{
+padding:18px
+}
+
+.note{
+padding:11px;
+margin-bottom:14px;
+border-radius:10px;
+font-size:11px;
+line-height:1.8;
+color:#b8ead8;
+background:#27d69a12;
+border:1px solid #27d69a40
+}
+
+.output{
+display:none;
+margin-top:18px
+}
+
+.output.show{
+display:block
+}
+
+.output textarea{
+min-height:420px
 }
 
 .footer{
-  margin-top:50px;
-  border-top:1px solid #29333e;
-  padding:28px 15px;
-  text-align:center;
-  color:#aeb9c5;
-  font-size:12px;
-  line-height:2.2;
+margin-top:50px;
+padding:28px 15px;
+text-align:center;
+border-top:1px solid #29333e;
+font-size:12px;
+line-height:2.2;
+color:var(--muted)
 }
 
 .footer strong{
-  color:white;
+color:#fff
 }
 
-.footer .copy{
-  color:#d71935;
-  font-weight:bold;
+.footer .copyright{
+color:#e32a43;
+font-weight:bold
 }
 
 @media(max-width:1000px){
-  .grid{grid-template-columns:repeat(2,1fr)}
-  .subgrid{grid-template-columns:repeat(2,1fr)}
+.grid{grid-template-columns:repeat(2,1fr)}
+.subgrid{grid-template-columns:repeat(2,1fr)}
 }
 
 @media(max-width:650px){
-  .grid,.subgrid,.form-grid{
-    grid-template-columns:1fr;
-  }
+.grid,.subgrid,.form-grid{
+grid-template-columns:1fr
+}
 
-  .field.full{
-    grid-column:auto;
-  }
+.full{
+grid-column:auto
+}
 
-  .hero{
-    min-height:380px;
-  }
+.hero{
+min-height:380px
+}
 
-  .hero-content{
-    padding:28px;
-  }
+.hero-content{
+padding:28px
+}
 
-  .status{
-    display:none;
-  }
+.status{
+display:none
+}
 
-  .header-inner{
-    padding:10px 13px;
-  }
-
-  .container{
-    padding:12px;
-  }
+.container{
+padding:12px
+}
 }
 </style>
 </head>
@@ -507,23 +485,29 @@ textarea{
 <body>
 
 <header class="header">
+
 <div class="header-inner">
 
 <div class="logo">
+
 <div class="logo-icon">✚</div>
+
 <div>
 <div class="logo-title">بوابة شؤون الهلال الأحمر</div>
 <div class="logo-sub">النظام الإلكتروني للقرارات والطلبات الإدارية</div>
 </div>
+
 </div>
 
 <div class="status">
-<span class="status-dot"></span>
-النظام يعمل • <span id="clock"></span> • v2.1.0
+<span class="dot"></span>
+النظام يعمل • <span id="clock"></span> • v2.2.0
 </div>
 
 </div>
+
 </header>
+
 
 <div class="container">
 
@@ -532,9 +516,12 @@ textarea{
 <section id="home" class="page active">
 
 <div class="hero">
+
 <div class="hero-content">
 
-<div class="hero-badge">🚑 الهلال الأحمر السعودي • الشؤون الإدارية</div>
+<div class="badge">
+🚑 الهلال الأحمر السعودي • الشؤون الإدارية
+</div>
 
 <h1>بوابة شؤون الهلال الأحمر</h1>
 
@@ -544,21 +531,30 @@ textarea{
 </p>
 
 <div class="ecg">
+
 <svg viewBox="0 0 1000 80" preserveAspectRatio="none">
+
 <polyline
 points="0,40 180,40 205,40 220,15 235,65 250,40 400,40 420,40 440,10 460,70 480,40 700,40 720,40 740,18 760,62 780,40 1000,40"
 fill="none"
 stroke="#e62943"
 stroke-width="4"/>
+
 </svg>
+
 </div>
 
 </div>
+
 </div>
+
 
 <div class="section-title">
+
 <h2>الأقسام الرئيسية</h2>
-<p>اختر القسم المطلوب للدخول إلى نماذجه.</p>
+
+<p>اختر القسم المطلوب.</p>
+
 </div>
 
 <div class="grid" id="mainCards"></div>
@@ -566,77 +562,95 @@ stroke-width="4"/>
 </section>
 
 
-<!-- صفحة القسم -->
+<!-- القسم -->
 
 <section id="sectionPage" class="page">
 
 <button class="btn back" onclick="goHome()">← الرئيسية</button>
 
 <div class="section-title">
+
 <h2 id="sectionTitle"></h2>
+
 <p id="sectionDescription"></p>
+
 </div>
+
+
+<!-- بيانات القيادة -->
 
 <div id="leadershipSettings" class="settings" style="display:none">
 
-<h3>⚙️ بيانات القيادات</h3>
+<h3>⚙️ بيانات القيادة</h3>
 
 <p>
-هذه البيانات تحفظ داخل الموقع في نفس المتصفح، وتستخدم تلقائيًا
-في نماذج التوظيف والترقيات. إذا تغيرت القيادة، غيّر الـ ID هنا فقط.
+أدخل كوبي ID لكل قيادة مرة واحدة.
+يمكن تغيير الشخص لاحقًا من هنا بدون تعديل الكود.
 </p>
 
 <div class="form-grid">
 
 <div class="field">
-<label>القائد — كوبي ID</label>
-<input id="leaderId" placeholder="أدخل ID القائد">
+<label>قائد الهلال الأحمر</label>
+<input id="leaderId">
 </div>
 
 <div class="field">
-<label>النائب — كوبي ID</label>
-<input id="deputyId" placeholder="أدخل ID النائب">
+<label>نائب قائد الهلال الأحمر</label>
+<input id="deputyId">
 </div>
 
 <div class="field">
-<label>مدير قسم السجلات — كوبي ID</label>
-<input id="recordsId" placeholder="أدخل ID">
+<label>مساعد قائد الهلال الأحمر</label>
+<select id="assistantId">
+<option value="404332641018576896">وليد</option>
+<option value="1408368532583874571">رنا</option>
+</select>
 </div>
 
 <div class="field">
-<label>مسؤول قسم الدورات — كوبي ID</label>
-<input id="coursesId" placeholder="أدخل ID">
+<label>نائب مساعد قائد الهلال الأحمر</label>
+<select id="deputyAssistantId">
+<option value="838894876137357312">غياث</option>
+<option value="763021705047965717">عز</option>
+</select>
 </div>
 
 <div class="field">
-<label>مسؤول شؤون التوظيف — كوبي ID</label>
-<input id="employmentId" placeholder="أدخل ID">
+<label>مدير قسم الدورات</label>
+<input id="coursesId">
 </div>
 
 <div class="field">
-<label>مسؤول شؤون المعتمدين — كوبي ID</label>
-<input id="approvedId" placeholder="أدخل ID">
+<label>مسؤول شؤون التوظيف</label>
+<input id="employmentId">
 </div>
 
 <div class="field">
-<label>مسؤول سجل الترقيات — كوبي ID</label>
-<input id="promotionId" placeholder="أدخل ID">
+<label>مسؤول شؤون المعتمدين</label>
+<input id="approvedId">
 </div>
 
 <div class="field">
-<label>ID اعتماد إضافي</label>
-<input id="approvalId" placeholder="أدخل ID">
+<label>مسؤول شؤون الإشراف</label>
+<input id="supervisionId">
+</div>
+
+<div class="field">
+<label>مسؤول قسم السجلات والترقيات</label>
+<input id="recordsPromotionId">
 </div>
 
 </div>
 
 <button class="btn btn-red" style="margin-top:14px" onclick="saveLeadership()">
-حفظ بيانات القيادات
+حفظ بيانات القيادة
 </button>
 
 </div>
 
-<div class="subgrid" id="subCards"></div>
+
+<div id="subCards" class="subgrid"></div>
 
 </section>
 
@@ -646,6 +660,7 @@ stroke-width="4"/>
 ✚<br>
 
 <strong>كل نبضة حياة .. ونحن لها</strong><br>
+
 جاهزون دائماً .. لخدمة الإنسان
 
 <br><br>
@@ -654,7 +669,7 @@ stroke-width="4"/>
 
 <br>
 
-<span class="copy">
+<span class="copyright">
 © 2026 جميع الحقوق محفوظة
 </span>
 
@@ -674,11 +689,14 @@ stroke-width="4"/>
 <div class="modal-box">
 
 <div class="modal-head">
+
 <strong id="modalTitle"></strong>
+
 <button class="close" onclick="closeModal()">×</button>
+
 </div>
 
-<div class="modal-body" id="modalBody"></div>
+<div id="modalBody" class="modal-body"></div>
 
 </div>
 
@@ -688,190 +706,265 @@ stroke-width="4"/>
 <script>
 
 /* =========================
-   الثوابت
+الثوابت
 ========================= */
 
-const ROLE_ORIGINAL = "<@&1404535885864632340>";
+const ROLE_ORIGINAL="<@&1404535885864632340>";
 
-const ROLE1 = "<@&1404535891351048413>";
-const ROLE2 = "<@&1404535891376214137>";
-const ROLE3 = "<@&1404535891401117767>";
+const ROLE1="<@&1404535891351048413>";
+const ROLE2="<@&1404535891376214137>";
+const ROLE3="<@&1404535891401117767>";
 
-const INSTRUCTION_LINK =
+const INSTRUCTION_LINK=
 "https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104";
 
-const FINE_LINK =
+const FINE_LINK=
 "https://ptb.discord.com/channels/1404512396923375696/1404536350614491238/1466234198389035257";
 
 const levels=[
-"متدرب","1","2","3","4","5","6","7","8","9"
+"متدرب",
+"1",
+"2",
+"3",
+"4",
+"5",
+"6",
+"7",
+"8",
+"9"
 ];
 
 
 /* =========================
-   القيادات
+القيادة
 ========================= */
 
-const leadershipFields=[
+const leadershipIds=[
 "leaderId",
 "deputyId",
-"recordsId",
+"assistantId",
+"deputyAssistantId",
 "coursesId",
 "employmentId",
 "approvedId",
-"promotionId",
-"approvalId"
+"supervisionId",
+"recordsPromotionId"
 ];
-
-function loadLeadership(){
-
-leadershipFields.forEach(id=>{
-const value=localStorage.getItem("lead_"+id)||"";
-const el=document.getElementById(id);
-if(el) el.value=value;
-});
-
-}
 
 function saveLeadership(){
 
-leadershipFields.forEach(id=>{
-const el=document.getElementById(id);
-if(el){
-localStorage.setItem("lead_"+id,el.value.trim());
+leadershipIds.forEach(id=>{
+
+const element=document.getElementById(id);
+
+if(element){
+localStorage.setItem(
+"leadership_"+id,
+element.value.trim()
+);
 }
+
 });
 
-alert("تم حفظ بيانات القيادات بنجاح ✅");
+alert("تم حفظ بيانات القيادة بنجاح ✅");
 
 }
+
+
+function loadLeadership(){
+
+leadershipIds.forEach(id=>{
+
+const element=document.getElementById(id);
+
+if(!element)return;
+
+const saved=localStorage.getItem("leadership_"+id);
+
+if(saved!==null){
+element.value=saved;
+}
+
+});
+
+}
+
+
+/* تحويل ID إلى منشن */
 
 function mention(id){
 
-id=String(id||"").replace(/\D/g,"");
+const clean=String(id||"").replace(/\D/g,"");
 
-return id ? `<@${id}>` : "";
+return clean?`<@${clean}>`:"";
 
 }
 
-function leader(name){
 
-const id=localStorage.getItem("lead_"+name)||"";
+/* منشن قيادة */
 
-return mention(id);
+function leader(id){
+
+return mention(
+localStorage.getItem("leadership_"+id)||""
+);
 
 }
 
 
 /* =========================
-   الوقت
+الوقت
 ========================= */
 
 function updateClock(){
 
-const now=new Date();
-
 document.getElementById("clock").textContent=
-now.toLocaleTimeString("ar-JO",{
+new Date().toLocaleTimeString(
+"ar-JO",
+{
 hour:"2-digit",
 minute:"2-digit",
 hour12:true
-});
+}
+);
 
 }
 
 setInterval(updateClock,1000);
 updateClock();
+
 loadLeadership();
 
 
 /* =========================
-   الأقسام
+الأقسام
 ========================= */
 
 const sections={
 
 "قرارات إدارية":[
+
 ["dismiss","قرار فصل","قرار فصل مع الغرامة ومنع التوظيف."],
-["resign","قرار إنهاء خدمات","قرار الاستقالة وإنهاء الخدمات."]
+
+["resign","قرار إنهاء خدمات","قرار إنهاء الخدمات والاستقالة."]
 ],
 
 "نظام الإجازات":[
+
 ["internal","إجازة داخلية","بالساعات وتخصم من الرصيد."],
-["offshift","إجازة داخلية — خارج شفت","لا تخصم من الرصيد."],
-["trader","إجازة داخلية — تاجر","لا تخصم من الرصيد."],
-["external","إجازة خارجية","بالأيام ولا تخصم من الرصيد."],
+
+["offshift","إجازة داخلية ( خارج شفت )","لا تخصم من الرصيد."],
+
+["trader","إجازة داخلية ( تاجر )","لا تخصم من الرصيد."],
+
+["external","إجازة خارجية","بالأيام."],
+
 ["extend","تمديد إجازة خارجية","للقيادة فقط."]
 ],
 
 "الإنذارات والغرامات":[
-["verbal","إنذار شفهي","بدون غرامة مالية."],
-["first","إنذار وظيفي أول","قيمة الغرامة يحددها المستخدم."],
-["second","إنذار وظيفي ثاني","قيمة الغرامة يحددها المستخدم."],
-["final","إنذار نهائي","قيمة الغرامة يحددها المستخدم."]
+
+["verbal","إنذار شفهي","بدون غرامة."],
+
+["first","إنذار وظيفي أول","الغرامة يحددها المستخدم."],
+
+["second","إنذار وظيفي ثاني","الغرامة يحددها المستخدم."],
+
+["final","إنذار نهائي","الغرامة يحددها المستخدم."]
 ],
 
 "طلبات الرول":[
-["roleFire","طلب رول — فصل","نموذج ثابت."],
-["roleResign","طلب رول — استقالة","نموذج ثابت."],
-["roleApproved","طلب رول — تعيين معتمد","نموذج ثابت."],
-["roleTicket","طلب رول — تعيين تكت","نموذج ثابت."],
-["roleLeave","طلب رول — إجازة وظيفية","نموذج ثابت."],
-["roleReturn","طلب رول — عودة من إجازة","نموذج ثابت."]
+
+["roleFire","فصل","نموذج ثابت."],
+
+["roleResign","استقالة","نموذج ثابت."],
+
+["roleApproved","تعيين معتمد","نموذج ثابت."],
+
+["roleTicket","تعيين تكت","نموذج ثابت."],
+
+["roleLeave","إجازة وظيفية","نموذج ثابت."],
+
+["roleReturn","عودة من إجازة","نموذج ثابت."]
 ],
 
 "التوظيف":[
+
 ["basic","التوظيف الأساسي — تسجيل","نموذج التسجيل."],
-["exceptional","التوظيف الاستثنائي","نموذج التوظيف الاستثنائي."],
+
+["exceptional","التوظيف الاستثنائي","نموذج استثنائي."],
+
 ["rehire","إعادة خدمة — للقيادة فقط","خاص بالقيادة."],
-["batch","تعيين دفعة جديدة","تعيين دفعة كاملة."],
+
+["batch","تعيين دفعة جديدة","تعيين دفعة."],
+
 ["trainee","تعيين مشرف متدرب","تعيين الإشراف المتدرب."],
+
 ["staffJob","تعيين طاقم الإدارة","قريبًا."],
+
 ["playerJob","تعيين لاعب معتمد","قريبًا."]
 ],
 
 "الترقيات":[
-["basicPromo","ترقيات القطاع الأساسية","تحديد مستويات الترقية يدويًا."],
-["generalPromo","ترقيات إشراف عام","ترقية ثابتة من 7 إلى 8."],
+
+["basicPromo","ترقيات القطاع الأساسية","تحديد المستوى من وإلى."],
+
+["generalPromo","ترقيات إشراف عام","ثابت 7 إلى 8."],
+
 ["staffPromo","طاقم الإدارة","قريبًا."],
-["approvedPromo","ترقيات المعتمدين","ترقيات شؤون المعتمدين."],
-["grievance","ترقيات التظلم","نموذج ترقيات التظلم."],
-["exceptionPromo","ترقيات استثنائية","نموذج الترقية الاستثنائية."]
+
+["approvedPromo","ترقيات المعتمدين","ترقيات المعتمدين."],
+
+["grievance","ترقيات التظلم","ترقيات التظلم."],
+
+["exceptionPromo","ترقيات استثنائية","ترقيات استثنائية."]
 ]
 
 };
 
 
 /* =========================
-   البطاقات الرئيسية
+البطاقات
 ========================= */
 
-const main=[
+const mainCards=[
+
 ["📋","قرارات إدارية","قرارات الفصل وإنهاء الخدمات"],
+
 ["🗓️","نظام الإجازات","الإجازات الداخلية والخارجية"],
-["⚠️","الإنذارات والغرامات","الإنذارات والقيم المالية"],
-["🎖️","طلبات الرول","طلبات الرولات الثابتة"],
+
+["⚠️","الإنذارات والغرامات","الإنذارات والغرامات"],
+
+["🎖️","طلبات الرول","الطلبات الثابتة"],
+
 ["👤","التوظيف","التوظيف وإعادة الخدمة والدفعات"],
-["📈","الترقيات","جميع أنواع الترقيات"],
+
+["📈","الترقيات","ترقيات القطاع والمعتمدين والإشراف العام"],
+
 ["🔢","رفع الأكواد","قريبًا"],
+
 ["🎁","المكافآت","قريبًا"]
+
 ];
 
 document.getElementById("mainCards").innerHTML=
-main.map((x,i)=>`
 
-<div class="card ${i>5?"coming":""}">
+mainCards.map((x,index)=>`
 
-<div class="card-icon">${x[0]}</div>
+<div class="card ${index>5?"coming":""}">
+
+<div class="icon">${x[0]}</div>
 
 <h3>${x[1]}</h3>
 
 <p>${x[2]}</p>
 
-${i<6?
-`<button class="btn btn-red" onclick="openSection('${x[1]}')">
+${index<6?
+`<button class="btn btn-red"
+onclick="openSection('${x[1]}')">
 دخول القسم
-</button>`:""}
+</button>`
+:""}
 
 </div>
 
@@ -879,43 +972,64 @@ ${i<6?
 
 
 /* =========================
-   فتح الأقسام
+فتح القسم
 ========================= */
 
 function openSection(name){
 
-document.getElementById("home").classList.remove("active");
-document.getElementById("sectionPage").classList.add("active");
+document.getElementById("home")
+.classList.remove("active");
 
-document.getElementById("sectionTitle").textContent=name;
-document.getElementById("sectionDescription").textContent=
+document.getElementById("sectionPage")
+.classList.add("active");
+
+document.getElementById("sectionTitle")
+.textContent=name;
+
+document.getElementById("sectionDescription")
+.textContent=
 "اختر النموذج المطلوب.";
 
-const settings=document.getElementById("leadershipSettings");
+const settings=
+document.getElementById("leadershipSettings");
 
 settings.style.display=
-(name==="الترقيات"||name==="التوظيف")?"block":"none";
+(name==="التوظيف"||name==="الترقيات")
+?"block"
+:"none";
 
 loadLeadership();
 
-const cards=sections[name]||[];
+const list=sections[name]||[];
 
 document.getElementById("subCards").innerHTML=
-cards.map(x=>{
 
-const coming=
-["staffPromo","staffJob","playerJob"].includes(x[0]);
+list.map(item=>{
 
-return `
+const coming=[
+"staffJob",
+"playerJob",
+"staffPromo"
+].includes(item[0]);
+
+return`
+
 <div class="subcard ${coming?"coming":""}">
 
-<h3>${x[1]}</h3>
+<h3>${item[1]}</h3>
 
-<p>${x[2]}</p>
+<p>${item[2]}</p>
 
-${coming?"":"<button class='btn btn-red' onclick=\"openForm('"+x[0]+"')\">فتح النموذج</button>"}
+${coming?
+"":
+`<button class="btn btn-red"
+onclick="openForm('${item[0]}')">
+فتح النموذج
+</button>`
+}
 
 </div>
+
 `;
 
 }).join("");
@@ -927,8 +1041,11 @@ window.scrollTo(0,0);
 
 function goHome(){
 
-document.getElementById("sectionPage").classList.remove("active");
-document.getElementById("home").classList.add("active");
+document.getElementById("sectionPage")
+.classList.remove("active");
+
+document.getElementById("home")
+.classList.add("active");
 
 window.scrollTo(0,0);
 
@@ -936,93 +1053,133 @@ window.scrollTo(0,0);
 
 
 /* =========================
-   أدوات النماذج
+عناصر النماذج
 ========================= */
 
 function input(label,id,type="text"){
 
-return `
+return`
+
 <div class="field">
 
 <label>${label}</label>
 
-<input id="f_${id}" type="${type}" placeholder="${label}">
+<input
+id="f_${id}"
+type="${type}"
+placeholder="${label}"
+>
 
 </div>
+
 `;
 
 }
 
+
 function select(label,id,options){
 
-return `
+return`
+
 <div class="field">
 
 <label>${label}</label>
 
 <select id="f_${id}">
 
-${options.map(x=>`<option>${x}</option>`).join("")}
+${options.map(option=>
+`<option value="${option}">
+${option}
+</option>`
+).join("")}
 
 </select>
 
 </div>
+
 `;
 
 }
 
+
 function area(label,id){
 
-return `
+return`
+
 <div class="field full">
 
 <label>${label}</label>
 
-<textarea id="f_${id}" placeholder="${label}"></textarea>
+<textarea
+id="f_${id}"
+placeholder="${label}">
+</textarea>
 
 </div>
+
 `;
 
 }
 
+
 function val(id){
 
-return (document.getElementById("f_"+id)?.value||"").trim();
+const el=document.getElementById("f_"+id);
+
+return el?el.value.trim():"";
 
 }
 
-function ids(value){
 
-return value
+function getIds(text){
+
+return text
 .split(/[\n,]+/)
 .map(x=>x.trim())
 .filter(Boolean);
 
 }
 
+
 function today(){
 
 const d=new Date();
 
-return `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,"0")}/${String(d.getDate()).padStart(2,"0")}`;
+return`${d.getFullYear()}/${
+String(d.getMonth()+1).padStart(2,"0")
+}/${
+String(d.getDate()).padStart(2,"0")
+}`;
 
 }
+
 
 function addDays(date,days){
 
 const p=date.split("/").map(Number);
 
-const d=new Date(p[0],p[1]-1,p[2]);
+const d=
+new Date(
+p[0],
+p[1]-1,
+p[2]
+);
 
-d.setDate(d.getDate()+Number(days));
+d.setDate(
+d.getDate()+Number(days)
+);
 
-return `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,"0")}/${String(d.getDate()).padStart(2,"0")}`;
+return`${d.getFullYear()}/${
+String(d.getMonth()+1).padStart(2,"0")
+}/${
+String(d.getDate()).padStart(2,"0")
+}`;
 
 }
 
 
 /* =========================
-   فتح النموذج
+فتح النموذج
 ========================= */
 
 function openForm(type){
@@ -1038,16 +1195,32 @@ if(type==="dismiss"){
 
 title="قرار فصل";
 
-html=
-`<div class="form-grid">
-${input("يوزر ID","id")}
-${input("الاسم","name")}
-${input("السبب","reason")}
-${select("نوع السحب","withdraw",["رقابي","فاتورة"])}
-${input("رابط الفاتورة — عند اختيار فاتورة","invoice")}
-</div>`;
+html=`
 
-action="generateDismiss";
+<div class="form-grid">
+
+${input("يوزر ID","id")}
+
+${input("الاسم","name")}
+
+${input("السبب","reason")}
+
+${select(
+"نوع السحب",
+"withdraw",
+["رقابي","فاتورة"]
+)}
+
+${input(
+"رابط الفاتورة عند اختيار فاتورة",
+"invoice"
+)}
+
+</div>
+
+`;
+
+action="generateDismiss()";
 
 }
 
@@ -1056,17 +1229,34 @@ if(type==="resign"){
 
 title="قرار إنهاء خدمات";
 
-html=
-`<div class="form-grid">
-${select("مستوى المسعف","level",levels)}
-${input("يوزر ID","id")}
-${input("الاسم","name")}
-${input("السبب","reason")}
-${select("نوع السحب","withdraw",["رقابي","فاتورة"])}
-${input("رابط الفاتورة — عند الحاجة","invoice")}
-</div>`;
+html=`
 
-action="generateResign";
+<div class="form-grid">
+
+${select("مستوى المسعف","level",levels)}
+
+${input("يوزر ID","id")}
+
+${input("الاسم","name")}
+
+${input("السبب","reason")}
+
+${select(
+"نوع السحب",
+"withdraw",
+["رقابي","فاتورة"]
+)}
+
+${input(
+"رابط الفاتورة عند الحاجة",
+"invoice"
+)}
+
+</div>
+
+`;
+
+action="generateResign()";
 
 }
 
@@ -1077,70 +1267,105 @@ if(type==="internal"){
 
 title="إجازة داخلية";
 
-html=
-`<div class="form-grid">
-${input("يوزر ID","id")}
-${input("مدة الإجازة بالساعات","hours","number")}
-${input("الرصيد الحالي بالساعات","balance","number")}
-</div>`;
+html=`
 
-action="generateInternal";
+<div class="form-grid">
+
+${input("يوزر ID","id")}
+
+${input("مدة الإجازة بالساعات","hours","number")}
+
+${input("الرصيد الحالي بالساعات","balance","number")}
+
+</div>
+
+`;
+
+action="generateInternal()";
 
 }
+
 
 if(type==="offshift"){
 
-title="إجازة داخلية — خارج شفت";
+title="إجازة داخلية ( خارج شفت )";
 
-html=
-`<div class="form-grid">
+html=`
+
+<div class="form-grid">
+
 ${input("يوزر ID","id")}
-${input("مدة الإجازة بالساعات","hours","number")}
-</div>`;
 
-action="generateOffshift";
+${input("مدة الإجازة بالساعات","hours","number")}
+
+</div>
+
+`;
+
+action="generateOffshift()";
 
 }
+
 
 if(type==="trader"){
 
-title="إجازة داخلية — تاجر";
+title="إجازة داخلية ( تاجر )";
 
-html=
-`<div class="form-grid">
+html=`
+
+<div class="form-grid">
+
 ${input("يوزر ID","id")}
-${input("مدة الإجازة بالساعات","hours","number")}
-</div>`;
 
-action="generateTrader";
+${input("مدة الإجازة بالساعات","hours","number")}
+
+</div>
+
+`;
+
+action="generateTrader()";
 
 }
+
 
 if(type==="external"){
 
 title="إجازة خارجية";
 
-html=
-`<div class="form-grid">
-${input("يوزر ID","id")}
-${input("مدة الإجازة بالأيام","days","number")}
-</div>`;
+html=`
 
-action="generateExternal";
+<div class="form-grid">
+
+${input("يوزر ID","id")}
+
+${input("مدة الإجازة بالأيام","days","number")}
+
+</div>
+
+`;
+
+action="generateExternal()";
 
 }
+
 
 if(type==="extend"){
 
 title="تمديد إجازة خارجية";
 
-html=
-`<div class="form-grid">
-${input("يوزر ID","id")}
-${input("مدة التمديد بالأيام","days","number")}
-</div>`;
+html=`
 
-action="generateExtend";
+<div class="form-grid">
+
+${input("يوزر ID","id")}
+
+${input("مدة التمديد بالأيام","days","number")}
+
+</div>
+
+`;
+
+action="generateExtend()";
 
 }
 
@@ -1151,85 +1376,218 @@ if(type==="verbal"){
 
 title="إنذار شفهي";
 
-html=
-`<div class="form-grid">
-${input("يوزر ID","id")}
-${input("السبب","reason")}
-</div>`;
+html=`
 
-action="generateVerbal";
+<div class="form-grid">
+
+${input("يوزر ID","id")}
+
+${input("السبب","reason")}
+
+</div>
+
+`;
+
+action="generateVerbal()";
 
 }
 
-if(["first","second","final"].includes(type)){
+
+if(
+type==="first"||
+type==="second"||
+type==="final"
+){
 
 title=
-type==="first"?"إنذار وظيفي أول":
-type==="second"?"إنذار وظيفي ثاني":
-"إنذار نهائي";
+type==="first"
+?"إنذار وظيفي أول"
+:type==="second"
+?"إنذار وظيفي ثاني"
+:"إنذار نهائي";
 
-html=
-`<div class="form-grid">
+html=`
+
+<div class="form-grid">
+
 ${input("يوزر ID","id")}
-${input("قيمة الغرامة","amount","number")}
-${input("السبب","reason")}
-</div>`;
 
-action=`generateWarning('${type}')`;
+${input("قيمة الغرامة","amount","number")}
+
+${input("السبب","reason")}
+
+</div>
+
+`;
+
+action=`generateWarning("${type}")`;
 
 }
 
 
-/* طلبات الرول */
+/* الرول */
 
 if(type.startsWith("role")){
 
 title="طلب رول";
 
-html=
-`<div class="form-grid">
-${input("يوزر ID","id")}
-${["roleResign","roleApproved","roleTicket"].includes(type)?
-select("المستوى","level",levels):""}
-${["roleApproved","roleTicket"].includes(type)?
-input("الاسم","name"):""}
-</div>`;
+let roleHtml=`
 
-action=`generateRole('${type}')`;
+<div class="form-grid">
+
+${input("يوزر ID","id")}
+
+`;
+
+if(
+type==="roleResign"||
+type==="roleApproved"||
+type==="roleTicket"
+){
+
+roleHtml+=select(
+"المستوى",
+"level",
+levels
+);
+
+}
+
+if(
+type==="roleApproved"||
+type==="roleTicket"
+){
+
+roleHtml+=input(
+"الاسم",
+"name"
+);
+
+}
+
+roleHtml+=`</div>`;
+
+html=roleHtml;
+
+action=`generateRole("${type}")`;
 
 }
 
 
-/* التوظيف */
+/* التوظيف الأساسي */
 
-if(type==="basic"||type==="exceptional"){
+if(type==="basic"){
 
-title=
-type==="basic"?
-"التوظيف الأساسي — تسجيل":
-"التوظيف الاستثنائي";
+title="التوظيف الأساسي — تسجيل";
 
-html=
-`<div class="form-grid">
+html=`
+
+<div class="form-grid">
 
 ${input("اسم المواطن","name")}
+
 ${input("كوبي ID الديسكورد","id")}
+
 ${input("ID للمنشن","mentionId")}
+
 ${input("الخبرة","experience","number")}
+
 ${input("العمر","age","number")}
 
-${select("هل الاسم مطابق في المقاطعة والديسكورد؟","match",["نعم","لا"])}
-${select("هل يحمل مبلغ 150 ألف؟","money",["نعم","لا"])}
-${select("هل قرأ جميع التنويهات والقوانين؟","rules",["نعم","لا"])}
-${select("هل يتعهد على ذلك؟","pledge",["نعم","لا"])}
-${select("المحاسبة عند مخالفة القانون دون إنذار مسبق","warning","نعم","لا")}
+${select(
+"هل الاسم مطابق في المقاطعة والديسكورد؟",
+"match",
+["نعم","لا"]
+)}
 
-</div>`;
+${select(
+"هل يحمل مبلغ 150 ألف؟",
+"money",
+["نعم","لا"]
+)}
 
-action=
-type==="basic"?
-"generateBasic":
-"generateExceptional";
+${select(
+"هل قرأت جميع التنويهات والقوانين؟",
+"rules",
+["نعم","لا"]
+)}
+
+${select(
+"هل تتعهد على ذلك؟",
+"pledge",
+["نعم","لا"]
+)}
+
+${select(
+"المحاسبة عند المخالفة دون إنذار مسبق",
+"warning",
+["نعم","لا"]
+)}
+
+</div>
+
+`;
+
+action="generateBasic()";
+
+}
+
+
+/* التوظيف الاستثنائي */
+
+if(type==="exceptional"){
+
+title="التوظيف الاستثنائي";
+
+html=`
+
+<div class="form-grid">
+
+${input("اسم المواطن","name")}
+
+${input("كوبي ID الديسكورد","id")}
+
+${input("ID للمنشن","mentionId")}
+
+${input("الخبرة","experience","number")}
+
+${input("العمر","age","number")}
+
+${select(
+"هل الاسم مطابق؟",
+"match",
+["نعم","لا"]
+)}
+
+${select(
+"هل يحمل مبلغ 150 ألف؟",
+"money",
+["نعم","لا"]
+)}
+
+${select(
+"هل قرأ جميع التنويهات والقوانين؟",
+"rules",
+["نعم","لا"]
+)}
+
+${select(
+"هل تتعهد؟",
+"pledge",
+["نعم","لا"]
+)}
+
+${select(
+"المحاسبة دون إنذار مسبق",
+"warning",
+["نعم","لا"]
+)}
+
+</div>
+
+`;
+
+action="generateExceptional()";
 
 }
 
@@ -1240,27 +1598,59 @@ if(type==="rehire"){
 
 title="إعادة خدمة — للقيادة فقط";
 
-html=
-`<div class="form-grid">
+html=`
+
+<div class="form-grid">
 
 ${input("اسم المواطن","name")}
+
 ${input("كوبي ID الديسكورد","id")}
+
 ${input("ID للمنشن","mentionId")}
+
 ${input("الخبرة","experience","number")}
+
 ${input("العمر","age","number")}
 
-${select("هل الاسم مطابق؟","match",["نعم","لا"])}
-${select("هل يحمل مبلغ 300 ألف؟","money",["نعم","لا"])}
-${select("هل قرأ القوانين؟","rules",["نعم","لا"])}
-${select("هل يتعهد؟","pledge",["نعم","لا"])}
-${select("المحاسبة دون إنذار مسبق","warning",["نعم","لا"])}
+${select(
+"هل الاسم مطابق؟",
+"match",
+["نعم","لا"]
+)}
+
+${select(
+"هل يحمل مبلغ 300 ألف؟",
+"money",
+["نعم","لا"]
+)}
+
+${select(
+"هل قرأ القوانين؟",
+"rules",
+["نعم","لا"]
+)}
+
+${select(
+"هل يتعهد؟",
+"pledge",
+["نعم","لا"]
+)}
+
+${select(
+"المحاسبة دون إنذار مسبق",
+"warning",
+["نعم","لا"]
+)}
 
 ${input("الرتبة السابقة","oldLevel")}
+
 ${input("الرتبة الحالية","newLevel")}
 
-</div>`;
+</div>
 
-action="generateRehire";
+`;
+
+action="generateRehire()";
 
 }
 
@@ -1271,18 +1661,30 @@ if(type==="batch"){
 
 title="تعيين دفعة جديدة";
 
-html=
-`<div class="form-grid">
+html=`
+
+<div class="form-grid">
 
 ${input("رقم الدفعة","batch","number")}
+
 ${input("عدد المسعفين","count","number")}
-${select("مستوى الدفعة","level",levels)}
 
-${area("IDs المسعفين — كل ID في سطر","ids")}
+${select(
+"مستوى الدفعة",
+"level",
+levels
+)}
 
-</div>`;
+${area(
+"IDs المسعفين — كل ID في سطر",
+"ids"
+)}
 
-action="generateBatch";
+</div>
+
+`;
+
+action="generateBatch()";
 
 }
 
@@ -1293,9 +1695,12 @@ if(type==="trainee"){
 
 title="تعيين مشرف متدرب";
 
-html=area("IDs الأشخاص — كل ID في سطر","ids");
+html=area(
+"IDs الأشخاص — كل ID في سطر",
+"ids"
+);
 
-action="generateTrainee";
+action="generateTrainee()";
 
 }
 
@@ -1306,21 +1711,39 @@ if(type==="basicPromo"){
 
 title="ترقيات القطاع الأساسية";
 
-html=
-`<div class="note">
-المستويات مستقلة عن أي مسميات. اختر مستوى البداية ومستوى النهاية حسب القرار.
+html=`
+
+<div class="note">
+
+المستوى مستقل تمامًا عن أي مسمى.
+اختر مستوى البداية والنهاية فقط.
+
 </div>
 
 <div class="form-grid">
 
-${select("من مستوى","fromLevel",levels)}
-${select("إلى مستوى","toLevel",levels)}
+${select(
+"من مستوى",
+"fromLevel",
+levels
+)}
 
-${area("IDs الأشخاص — كل ID في سطر","ids")}
+${select(
+"إلى مستوى",
+"toLevel",
+levels
+)}
 
-</div>`;
+${area(
+"IDs الأشخاص — كل ID في سطر",
+"ids"
+)}
 
-action="generateBasicPromotion";
+</div>
+
+`;
+
+action="generateBasicPromotion()";
 
 }
 
@@ -1331,14 +1754,24 @@ if(type==="generalPromo"){
 
 title="ترقيات إشراف عام";
 
-html=
-`<div class="note">
-هذا النموذج ثابت للترقية من مستوى 7 إلى مستوى 8 وتسليم مهام الإشراف العام.
+html=`
+
+<div class="note">
+
+هذا النموذج ثابت:
+من مستوى 7 إلى مستوى 8،
+مع تسليم مهام الإشراف العام.
+
 </div>
 
-${area("IDs الأشخاص — كل ID في سطر","ids")}`;
+${area(
+"IDs الأشخاص — كل ID في سطر",
+"ids"
+)}
 
-action="generateGeneralPromotion";
+`;
+
+action="generateGeneralPromotion()";
 
 }
 
@@ -1349,17 +1782,32 @@ if(type==="approvedPromo"){
 
 title="ترقيات المعتمدين";
 
-html=
-`<div class="form-grid">
+html=`
 
-${select("من مستوى","fromLevel",levels)}
-${select("إلى مستوى","toLevel",levels)}
+<div class="form-grid">
 
-${area("IDs الأشخاص — كل ID في سطر","ids")}
+${select(
+"من مستوى",
+"fromLevel",
+levels
+)}
 
-</div>`;
+${select(
+"إلى مستوى",
+"toLevel",
+levels
+)}
 
-action="generateApprovedPromotion";
+${area(
+"IDs الأشخاص — كل ID في سطر",
+"ids"
+)}
+
+</div>
+
+`;
+
+action="generateApprovedPromotion()";
 
 }
 
@@ -1370,17 +1818,32 @@ if(type==="grievance"){
 
 title="ترقيات التظلم";
 
-html=
-`<div class="form-grid">
+html=`
 
-${select("من مستوى","fromLevel",levels)}
-${select("إلى مستوى","toLevel",levels)}
+<div class="form-grid">
 
-${area("IDs الأشخاص — كل ID في سطر","ids")}
+${select(
+"من مستوى",
+"fromLevel",
+levels
+)}
 
-</div>`;
+${select(
+"إلى مستوى",
+"toLevel",
+levels
+)}
 
-action="generateGrievance";
+${area(
+"IDs الأشخاص — كل ID في سطر",
+"ids"
+)}
+
+</div>
+
+`;
+
+action="generateGrievance()";
 
 }
 
@@ -1391,112 +1854,186 @@ if(type==="exceptionPromo"){
 
 title="ترقيات استثنائية";
 
-html=
-`<div class="form-grid">
+html=`
 
-${select("من مستوى","fromLevel",levels)}
-${select("إلى مستوى","toLevel",levels)}
+<div class="form-grid">
 
-${area("IDs الأشخاص — كل ID في سطر","ids")}
+${select(
+"من مستوى",
+"fromLevel",
+levels
+)}
 
-</div>`;
+${select(
+"إلى مستوى",
+"toLevel",
+levels
+)}
 
-action="generateExceptionalPromotion";
+${area(
+"IDs الأشخاص — كل ID في سطر",
+"ids"
+)}
+
+</div>
+
+`;
+
+action="generateExceptionalPromotion()";
 
 }
 
 
 /* قريبًا */
 
-if(["staffPromo","staffJob","playerJob"].includes(type)){
+if(
+type==="staffPromo"||
+type==="staffJob"||
+type==="playerJob"
+){
 
 title="قريبًا";
 
-html=
-`<div class="note">
-هذا القسم قيد التجهيز وسيتم إضافة النموذج المعتمد لاحقًا.
-</div>`;
+html=`
+
+<div class="note">
+
+هذا النموذج قيد التجهيز وسيتم إضافة النموذج المعتمد لاحقًا.
+
+</div>
+
+`;
 
 action="";
 
 }
 
 
-/* عرض */
+/* عرض النافذة */
 
-document.getElementById("modalTitle").textContent=title;
+document.getElementById("modalTitle")
+.textContent=title;
 
-document.getElementById("modalBody").innerHTML=
+document.getElementById("modalBody")
+.innerHTML=
+
 html+
+
 `
+
 <div class="actions">
 
-${action?
-`<button class="btn btn-red" onclick="${action}">
+${
+action
+?
+`<button
+class="btn btn-red"
+onclick="${action}">
 إنشاء القرار
-</button>`:""}
+</button>`
+:""
+}
 
-<button class="btn" onclick="closeModal()">إغلاق</button>
+<button
+class="btn"
+onclick="closeModal()">
+إغلاق
+</button>
 
 </div>
 
 <div id="output" class="output">
 
-<textarea id="result" readonly></textarea>
+<textarea
+id="result"
+readonly>
+</textarea>
 
-<button class="btn btn-red" style="margin-top:10px" onclick="copyResult()">
+<button
+class="btn btn-red"
+style="margin-top:10px"
+onclick="copyResult()">
 نسخ القرار
 </button>
 
 </div>
+
 `;
 
-document.getElementById("modal").classList.add("open");
+document.getElementById("modal")
+.classList.add("open");
 
 }
 
 
 /* =========================
-   إغلاق ونسخ
+الإخراج
 ========================= */
-
-function closeModal(){
-
-document.getElementById("modal").classList.remove("open");
-
-}
 
 function output(text){
 
-document.getElementById("result").value=text;
+const result=
+document.getElementById("result");
 
-document.getElementById("output").classList.add("show");
+const box=
+document.getElementById("output");
+
+if(!result||!box){
+
+console.error("Output element missing");
+
+return;
 
 }
 
+result.value=text;
+
+box.classList.add("show");
+
+}
+
+
 function copyResult(){
 
-navigator.clipboard.writeText(
-document.getElementById("result").value
-).then(()=>alert("تم نسخ القرار ✅"));
+const result=
+document.getElementById("result");
+
+if(!result)return;
+
+navigator.clipboard
+.writeText(result.value)
+.then(()=>{
+alert("تم نسخ القرار ✅");
+})
+.catch(()=>{
+result.select();
+document.execCommand("copy");
+alert("تم نسخ القرار ✅");
+});
+
+}
+
+
+function closeModal(){
+
+document.getElementById("modal")
+.classList.remove("open");
 
 }
 
 
 /* =========================
-   القرارات
+قرارات الفصل والاستقالة
 ========================= */
 
 function generateDismiss(){
 
-const id=mention(val("id"));
-
-let withdraw=val("withdraw");
-
-let withdrawal=
-withdraw==="فاتورة"
-?`[فاتورة](${val("invoice")})`
-:"رقابي";
+const withdrawal=
+val("withdraw")==="فاتورة"
+?
+`[فاتورة](${val("invoice")})`
+:
+"رقابي";
 
 output(`*** ▬▬▬ ﷽ ▬▬
 
@@ -1512,7 +2049,7 @@ output(`*** ▬▬▬ ﷽ ▬▬
 ثالثا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
 \`\`\`
 
-${id}
+${mention(val("id"))}
 ${val("name")}
 
 \`\`\`وذلك بسبب : ${val("reason")}\`\`\`
@@ -1529,11 +2066,9 @@ ${val("name")}
 
 function generateResign(){
 
-const level=val("level");
-
 const fine=
-level==="متدرب"||
-level==="1";
+val("level")==="متدرب"||
+val("level")==="1";
 
 let text=`*** ▬▬▬ ﷽ ▬▬
 
@@ -1550,6 +2085,7 @@ let text=`*** ▬▬▬ ﷽ ▬▬
 if(fine){
 
 text+=`
+
 ثانيا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
 
 ثالثا: منع توظيف 14 يوم
@@ -1558,23 +2094,29 @@ text+=`
 }
 
 text+=`
+
 \`\`\`
 
 ${mention(val("id"))}
 ${val("name")}
 
 \`\`\`وذلك بسبب : ${val("reason")}\`\`\`
+
 `;
 
 if(fine){
 
 text+=`
+
 \`نوع السحب :\`
 ${
 val("withdraw")==="فاتورة"
-?`[فاتورة](${val("invoice")})`
-:"رقابي"
+?
+`[فاتورة](${val("invoice")})`
+:
+"رقابي"
 }
+
 `;
 
 }
@@ -1592,40 +2134,52 @@ output(text);
 
 
 /* =========================
-   الإجازات
+الإجازات
 ========================= */
 
 function timeRange(hours){
 
 const now=new Date();
 
-const start=now.toLocaleTimeString("ar-JO",{
+const start=
+now.toLocaleTimeString(
+"ar-JO",
+{
 hour:"2-digit",
 minute:"2-digit",
 hour12:true
-});
+}
+);
 
-now.setMinutes(now.getMinutes()+Number(hours)*60);
+now.setMinutes(
+now.getMinutes()+Number(hours)*60
+);
 
-const end=now.toLocaleTimeString("ar-JO",{
+const end=
+now.toLocaleTimeString(
+"ar-JO",
+{
 hour:"2-digit",
 minute:"2-digit",
 hour12:true
-});
+}
+);
 
-return [start,end];
+return[start,end];
 
 }
 
 
 function generateInternal(){
 
-const t=timeRange(val("hours"));
+const t=
+timeRange(val("hours"));
 
 const remaining=
 Math.max(
 0,
-Number(val("balance"))-Number(val("hours"))
+Number(val("balance"))-
+Number(val("hours"))
 );
 
 output(`***﷽
@@ -1651,7 +2205,8 @@ output(`***﷽
 
 function generateOffshift(){
 
-const t=timeRange(val("hours"));
+const t=
+timeRange(val("hours"));
 
 output(`***﷽
 
@@ -1676,7 +2231,8 @@ output(`***﷽
 
 function generateTrader(){
 
-const t=timeRange(val("hours"));
+const t=
+timeRange(val("hours"));
 
 output(`***﷽
 
@@ -1692,7 +2248,7 @@ output(`***﷽
 
 \` إلى الساعة :\` ${t[1]} | ${today()}
 
-[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة](${INSTRUCTION_LINK})
+[يرجى قراءه القوانين قبل اخذ اجازه خارجية](${INSTRUCTION_LINK})
 
 \` يرسل الاصل الى :\` ${ROLE_ORIGINAL}***`);
 
@@ -1744,7 +2300,7 @@ output(`***﷽
 
 
 /* =========================
-   الإنذارات
+الإنذارات
 ========================= */
 
 function generateVerbal(){
@@ -1765,9 +2321,11 @@ ${mention(val("id"))}
 
 \`\`\`وذلك بسبب : ${val("reason")}\`\`\`
 
-\` توقيع واعتماد : \` ${leader("leaderId")}
+\` توقيع واعتماد : \`
+${leader("leaderId")}
 
-\` يرسل الاصل الى : \` ${ROLE_ORIGINAL}***`);
+\` يرسل الاصل الى : \`
+${ROLE_ORIGINAL}***`);
 
 }
 
@@ -1776,14 +2334,17 @@ function generateWarning(type){
 
 const title=
 type==="first"
-?"انذار وظيفي أول":
+?"انذار وظيفي أول"
+:
 type==="second"
-?"انذار وظيفي ثاني":
+?"انذار وظيفي ثاني"
+:
 "انذار نهائي بالفصل";
 
 const subject=
 type==="final"
-?"انذار نهائي":
+?"انذار نهائي"
+:
 "انذار وظيفي";
 
 output(`*** ▬▬▬ ﷽ ▬▬
@@ -1803,17 +2364,21 @@ ${mention(val("id"))}
 
 \`\`\`وذلك بسبب : ${val("reason")}\`\`\`
 
-\` ملاحظه : \` [يرجى فتح تكت تواصل مع الشؤون الإدارية لتسديد الغرامة](${FINE_LINK})
+\` ملاحظه : \`
+[يرجى فتح تكت تواصل مع الشؤون الإدارية لتسديد الغرامة](${FINE_LINK})
 
-\` توقيع واعتماد : \` ${leader("leaderId")}
+\` توقيع واعتماد : \`
+${leader("leaderId")}
 
-\` يرسل الاصل الى : \` ${ROLE_ORIGINAL}***`);
+\` يرسل الاصل الى : \`
+${ROLE_ORIGINAL}***`);
 
 }
 
 
 /* =========================
-   طلبات الرول — ثابتة
+طلبات الرول
+ثابتة
 ========================= */
 
 function generateRole(type){
@@ -1824,44 +2389,61 @@ let extra="";
 
 if(type==="roleFire"){
 
-request="ازالة الاسم , ازاله رولات الهلال , منع توظيف 14 يوم";
+request=
+"ازالة الاسم , ازاله رولات الهلال , منع توظيف 14 يوم";
+
 reason="فصل";
 
 }
 
-if(type==="roleResign"){
+else if(type==="roleResign"){
 
-request=`ازالة الاسم , ازاله رولات الهلال`;
-reason=`استقالة بمستوى ${val("level")}`;
+request=
+"ازالة الاسم , ازاله رولات الهلال";
+
+reason=
+"استقالة بمستوى "+val("level");
 
 }
 
-if(type==="roleApproved"){
+else if(type==="roleApproved"){
 
-request=`اضافة رول الهلال + مستوى ${val("level")}`;
+request=
+"اضافة رول الهلال + مستوى "+val("level");
+
 reason="تعيين معتمد";
-extra=`\`الاسم :\` ${val("name")}`;
+
+extra=
+`\`الاسم :\` ${val("name")}`;
 
 }
 
-if(type==="roleTicket"){
+else if(type==="roleTicket"){
 
-request=`اضافة رول الهلال + مستوى ${val("level")}`;
+request=
+"اضافة رول الهلال + مستوى "+val("level");
+
 reason="تعيين تيكت";
-extra=`\`الاسم :\` ${val("name")}`;
+
+extra=
+`\`الاسم :\` ${val("name")}`;
 
 }
 
-if(type==="roleLeave"){
+else if(type==="roleLeave"){
 
-request="اضافة رول اجازه وظيفيه";
+request=
+"اضافة رول اجازه وظيفيه";
+
 reason="اجازه خارجيه";
 
 }
 
-if(type==="roleReturn"){
+else if(type==="roleReturn"){
 
-request="ازالة رول اجازه وظيفيه";
+request=
+"ازالة رول اجازه وظيفيه";
+
 reason="عودة من اجازه خارجيه";
 
 }
@@ -1886,12 +2468,12 @@ ${ROLE3}`);
 
 
 /* =========================
-   التوظيف
+التوظيف
 ========================= */
 
-function jobCommon(){
+function generateBasic(){
 
-return `***\`اسم المواطن:\` ( ${val("name")} ) ***
+output(`***\`اسم المواطن:\` ( ${val("name")} ) ***
 
 ***\`اليوزر اي دي للديسكورد:\` ( ${val("id")} )***
 
@@ -1909,40 +2491,44 @@ return `***\`اسم المواطن:\` ( ${val("name")} ) ***
 
 ***\`هل تتعهد على ذلك:\` ${val("pledge")}***
 
-***\`في حال رصدك مخالفًا لأي قانون سيتم محاسبتك دون إنذار مسبق\`: ${val("warning")}***`;
-
-}
-
-
-function generateBasic(){
-
-output(
-jobCommon()+
-`
+***\`في حال رصدك مخالفًا لأي قانون سيتم محاسبتك دون إنذار مسبق\`: ${val("warning")}***
 
 ***مقبول في الهلال الاحمر ***
 
-<@&1404535887802663054>`
-);
+<@&1404535887802663054>`);
 
 }
 
 
 function generateExceptional(){
 
-output(
-`*** النموذج الخاص بالتوظيف الاستثنائي***
+output(`*** النموذج الخاص بالتوظيف الاستثنائي***
 
-`+
-jobCommon()+
-`
+***\`اسم المواطن:\` ( ${val("name")} ) ***
+
+***\`الكوبي ايدي الديسكورد :\` ( ${val("id")} )***
+
+***\`حساب الدسكورد :\` ${mention(val("mentionId"))} ***
+
+***\`الخبرة:\` ${val("experience")}***
+
+***\`العمر :\` ${val("age")}***
+
+***\`هل الاسم مطابق في المقاطعة , الديسكورد:\` ${val("match")}***
+
+***\`هل يحمل مبلغ 150 الف :\` ${val("money")}***
+
+***\`هل قرات جميع التنويهات والقوانين الخاصة بالهلال الأحمر ؟ :\` ${val("rules")}***
+
+***\`هل تتعهد على ذلك :\` ${val("pledge")}***
+
+***\`في حال رصدك مخالفًا لأي قانون سيتم محاسبتك دون إنذار مسبق\` : ${val("warning")}***
 
 ***مقبول في الهلال الاحمر ***
 
 للعلم و الاحاطه : ${leader("employmentId")}
 
-للتسجيل : ${leader("recordsId")}`
-);
+للتسجيل : ${leader("recordsPromotionId")}`);
 
 }
 
@@ -1977,10 +2563,11 @@ output(`***
 
 ***مقبول من الهلال الاحمر ***
 
-\`للعلم و الاحاطه :\` ${leader("employmentId")}
+\`للعلم و الاحاطه :\`
+${leader("employmentId")}
 
-\`للتسجيل :\` ${leader("recordsId")}`);
-
+\`للتسجيل :\`
+${leader("recordsPromotionId")}`);
 
 }
 
@@ -1988,7 +2575,7 @@ output(`***
 function generateBatch(){
 
 const people=
-ids(val("ids"))
+getIds(val("ids"))
 .map(mention)
 .join("\n");
 
@@ -2024,7 +2611,7 @@ ${ROLE3}
 إعتماد /
 ${leader("leaderId")}
 ${ROLE2}
-${leader("recordsId")}
+${leader("recordsPromotionId")}
 ${ROLE1}
 
 يرسل الاصل الى /
@@ -2039,7 +2626,7 @@ ${ROLE1}
 function generateTrainee(){
 
 const people=
-ids(val("ids"))
+getIds(val("ids"))
 .map(mention)
 .join("\n");
 
@@ -2062,7 +2649,7 @@ output(`**▬▬▬ ﷽ ▬▬▬
 ${people}
 
 توقيع /
-${leader("recordsId")}
+${leader("recordsPromotionId")}
 
 ${ROLE1}
 
@@ -2073,25 +2660,25 @@ ${leader("leaderId")}
 ${ROLE2}
 
 للعلم و الاحاطه :
-||<@&1404535887643021414>||
+<@&1404535887643021414>
 **`);
 
 }
 
 
 /* =========================
-   الترقيات الأساسية
+الترقيات الأساسية
 ========================= */
 
 function generateBasicPromotion(){
 
-const people=
-ids(val("ids"))
-.map(mention)
-.join("\n");
-
 const from=val("fromLevel");
 const to=val("toLevel");
+
+const people=
+getIds(val("ids"))
+.map(mention)
+.join("\n");
 
 output(`**▬▬▬ ﷽ ▬▬▬
 
@@ -2100,9 +2687,7 @@ output(`**▬▬▬ ﷽ ▬▬▬
 \`\`\`
 
 \`\`\`cs
-
-# بعد الاطلاع على نظام الترقيات واحصائيات السجلات الصادر من قبل إدارة الهلال الاحمر الموقره قررنا مايلي
-
+# بعد الاطلاع على نظام الترقيات واحصائيات السجلات الصادر من قبل إدارة الهلال الاحمر الموقره قررنا مايلي 
 \`\`\`
 
 \`\`\`diff
@@ -2122,23 +2707,23 @@ ${people}
 توقيع و اعتماد /
 ${leader("leaderId")}
 ${ROLE2}
-${leader("recordsId")}
+${leader("recordsPromotionId")}
 ${ROLE1}
 
 للعلم و الاحاطه /
-||<@&1404535887643021414>||**`);
+|| <@&1404535887643021414> ||**`);
 
 }
 
 
 /* =========================
-   ترقيات إشراف عام
+ترقيات إشراف عام
 ========================= */
 
 function generateGeneralPromotion(){
 
 const people=
-ids(val("ids"))
+getIds(val("ids"))
 .map(mention)
 .join("\n");
 
@@ -2169,23 +2754,23 @@ ${people}
 توقيع واعتماد /
 ${leader("leaderId")}
 ${ROLE2}
-${leader("recordsId")}
+${leader("recordsPromotionId")}
 ${ROLE1}
 
 للعلم و الاحاطه :
-|| <@&1404535887643021414> ||**`);
+|| <@&1404535887643021414>  ||**`);
 
 }
 
 
 /* =========================
-   ترقيات المعتمدين
+ترقيات المعتمدين
 ========================= */
 
 function generateApprovedPromotion(){
 
 const people=
-ids(val("ids"))
+getIds(val("ids"))
 .map(mention)
 .join("\n");
 
@@ -2228,13 +2813,13 @@ ${ROLE1}
 
 
 /* =========================
-   التظلم
+التظلم
 ========================= */
 
 function generateGrievance(){
 
 const people=
-ids(val("ids"))
+getIds(val("ids"))
 .map(mention)
 .join("\n");
 
@@ -2256,14 +2841,14 @@ output(`**▬▬▬ ﷽ ▬▬▬
 
 ${people}
 
-* مع تمنياتنا له بالتوفيق والنجاح .
+* مع تمنياتنا له بالتوفيق والنجاح  .
 
 اعتماد /
 ${leader("leaderId")}
 ${ROLE2}
 
 توقيع /
-${leader("promotionId")}
+${leader("recordsPromotionId")}
 ${ROLE3}
 
 مسؤول سجل الترقيات
@@ -2275,13 +2860,13 @@ ${ROLE3}
 
 
 /* =========================
-   الاستثنائية
+الاستثنائية
 ========================= */
 
 function generateExceptionalPromotion(){
 
 const people=
-ids(val("ids"))
+getIds(val("ids"))
 .map(mention)
 .join("\n");
 
@@ -2304,7 +2889,7 @@ output(`**▬▬▬ ﷽ ▬▬▬
 ${people}
 
 توقيع / مسؤول قسم السجلات والترقيات
-${leader("recordsId")}
+${leader("recordsPromotionId")}
 ${ROLE3}
 
 اعتماد /
@@ -2320,13 +2905,16 @@ ${ROLE1}
 
 
 /* =========================
-   إغلاق بالضغط خارج النافذة
+إغلاق بالنقر خارج النافذة
 ========================= */
 
-document.getElementById("modal").addEventListener("click",function(e){
+document.getElementById("modal")
+.addEventListener("click",function(event){
 
-if(e.target===this){
+if(event.target===this){
+
 closeModal();
+
 }
 
 });
