@@ -1,2689 +1,1288 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>بوابة شؤون الهلال الأحمر</title>
 
 <style>
 :root{
---red:#d71935;
---red2:#ff314c;
---dark:#05080d;
---dark2:#0a1018;
---card:#101923;
---card2:#151f2b;
---border:#2a3948;
---text:#fff;
---muted:#aeb9c5;
---green:#2bd69a
+--bg:#061321;--p:#0b1d31;--p2:#102943;--l:#294863;
+--r:#d9273f;--w:#f7fbff;--m:#a9bdd0
 }
-
 *{box-sizing:border-box}
-
 body{
-margin:0;
-background:
-radial-gradient(circle at 50% -10%,#4a0b16 0,#0a0d13 38%,#030509 78%);
-color:var(--text);
-font-family:Tahoma,Arial,sans-serif;
-min-height:100vh
+margin:0;background:radial-gradient(circle at 10% 0,#173653,#061321 40%,#030a12);
+color:var(--w);font-family:Tahoma,Arial,sans-serif
 }
-
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
-
-.header{
-position:sticky;
-top:0;
-z-index:100;
-background:#05080ded;
-border-bottom:1px solid #293744;
-backdrop-filter:blur(14px)
+.top{
+position:sticky;top:0;z-index:5;background:#040c16e8;
+border-bottom:1px solid var(--l);backdrop-filter:blur(12px)
 }
-
-.header-inner{
-max-width:1400px;
-margin:auto;
-padding:11px 18px;
-display:flex;
-align-items:center;
-justify-content:space-between
+.topin,main{max-width:1250px;margin:auto}
+.topin{
+padding:12px 18px;display:flex;justify-content:space-between;
+align-items:center
 }
-
-.logo{
-display:flex;
-align-items:center;
-gap:12px
+.brand{display:flex;align-items:center;gap:12px;font-weight:900}
+.mark{
+width:44px;height:44px;border-radius:14px;
+background:linear-gradient(145deg,var(--r),#8e1325);
+display:grid;place-items:center;font-size:24px
 }
-
-.logo-icon{
-width:48px;
-height:48px;
-border-radius:14px;
-display:grid;
-place-items:center;
-font-size:25px;
-background:linear-gradient(145deg,var(--red2),#8d0d20);
-box-shadow:0 0 25px #d7193540
-}
-
-.logo-title{
-font-weight:900;
-font-size:18px
-}
-
-.logo-sub{
-font-size:11px;
-color:var(--muted);
-margin-top:4px
-}
-
-.status{
-font-size:12px;
-color:var(--muted)
-}
-
+.small{font-size:11px;color:var(--m);margin-top:3px;font-weight:500}
+.status{font-size:12px;color:var(--m)}
 .dot{
-display:inline-block;
-width:8px;
-height:8px;
-border-radius:50%;
-background:var(--green);
-margin-left:6px;
-box-shadow:0 0 10px var(--green)
+display:inline-block;width:9px;height:9px;border-radius:50%;
+background:#35d39b;margin-left:7px
 }
-
-.container{
-max-width:1400px;
-margin:auto;
-padding:20px
-}
-
+main{padding:25px 18px 45px}
 .hero{
-min-height:430px;
-position:relative;
-overflow:hidden;
-border:1px solid #5b202a;
-border-radius:28px;
-display:flex;
-align-items:flex-end;
-background:
-linear-gradient(90deg,#020407f2,#080b11dd 48%,#19070bd0),
-radial-gradient(circle at 80% 30%,#d719353d,transparent 30%),
-linear-gradient(135deg,#1d090e,#06090d 60%,#18070a)
+padding:40px 30px;border:1px solid var(--l);border-radius:28px;
+background:linear-gradient(135deg,#143451,#071a2b);overflow:hidden
 }
+.hero h1{font-size:clamp(30px,5vw,55px);margin:8px 0}
+.hero p{color:var(--m);line-height:1.9}
+.k{color:#ff8a98;font-weight:900}
 
-.hero:before{
-content:"🚑   🚨   ✚   🚑";
-position:absolute;
-left:25px;
-bottom:25px;
-font-size:75px;
-opacity:.09;
-letter-spacing:15px
+.grid,.subgrid{
+display:grid;grid-template-columns:repeat(4,1fr);gap:14px
 }
+.subgrid{grid-template-columns:repeat(3,1fr)}
+.head{margin:28px 0 13px}
+.head h2{margin:0}
+.head p{color:var(--m);font-size:12px}
 
-.hero-content{
-position:relative;
-z-index:2;
-padding:45px;
-max-width:900px
+.card,.sub{
+border:1px solid var(--l);border-radius:19px;
+background:linear-gradient(180deg,var(--p2),#091d30);padding:18px
 }
-
-.badge{
-display:inline-block;
-padding:8px 14px;
-border-radius:30px;
-background:#d719351c;
-border:1px solid #d7193560;
-color:#ff8796;
-font-size:12px;
-font-weight:bold
+.card{min-height:150px}
+.icon{font-size:28px}
+.card h3,.sub h3{margin:9px 0 6px}
+.card p,.sub p{color:var(--m);font-size:12px;line-height:1.8}
+.btn,.sub button{
+width:100%;margin-top:13px;border:1px solid #345b7d;
+background:#0c2339;color:#fff;border-radius:11px;
+padding:10px;font-weight:900
 }
-
-.hero h1{
-font-size:clamp(32px,5vw,62px);
-margin:16px 0 8px
-}
-
-.hero p{
-color:#c4ccd5;
-line-height:2;
-max-width:720px
-}
-
-.ecg{
-height:45px;
-margin-top:20px
-}
-
-.ecg svg{
-width:100%;
-height:100%
-}
-
-.section-title{
-margin:30px 0 15px
-}
-
-.section-title h2{
-margin:0
-}
-
-.section-title p{
-font-size:12px;
-color:var(--muted)
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px
-}
-
-.card{
-min-height:165px;
-padding:20px;
-border:1px solid var(--border);
-border-radius:20px;
-background:linear-gradient(145deg,var(--card2),var(--card));
-transition:.2s
-}
-
-.card:hover{
-transform:translateY(-3px);
-border-color:#d7193566;
-box-shadow:0 15px 35px #0006
-}
-
-.icon{
-font-size:30px
-}
-
-.card h3{
-margin:10px 0 7px
-}
-
-.card p{
-font-size:12px;
-line-height:1.8;
-color:var(--muted)
-}
-
-.page{
-display:none
-}
-
-.page.active{
-display:block
-}
-
-.btn{
-border:1px solid #3c5061;
-background:#101c28;
-color:#fff;
-padding:10px 15px;
-border-radius:10px;
-font-weight:bold
-}
-
-.btn-red{
-border:0;
-background:linear-gradient(135deg,var(--red2),#9b0d21)
-}
-
-.card .btn,
-.subcard .btn{
-width:100%;
-margin-top:10px
-}
-
-.back{
-margin-bottom:15px
-}
-
-.subgrid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px
-}
-
-.subcard{
-position:relative;
-padding:20px;
-border:1px solid var(--border);
-border-radius:18px;
-background:linear-gradient(145deg,#131e2a,#0b121b)
-}
-
-.subcard h3{
-margin-top:0
-}
-
-.subcard p{
-font-size:12px;
-color:var(--muted);
-line-height:1.8
-}
-
-.coming{
-opacity:.6
-}
-
+.coming{position:relative;opacity:.8}
 .coming:after{
-content:"قريبًا";
-position:absolute;
-top:12px;
-left:12px;
-padding:4px 9px;
-border-radius:20px;
-font-size:10px;
-color:#ffd76b;
-background:#ffd76b12;
-border:1px solid #ffd76b55
+content:'قريبًا';position:absolute;top:10px;left:10px;
+color:#f0ca68;background:#e9b94918;border:1px solid #e9b94955;
+border-radius:20px;padding:3px 8px;font-size:10px
 }
-
-/* القيادة */
-
-.settings{
-margin-bottom:20px;
-padding:20px;
-border-radius:20px;
-border:1px solid #56303a;
-background:linear-gradient(145deg,#1a1015,#0d131a)
+.info{
+display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px
 }
-
-.settings h3{
-margin-top:0
+.info div{
+padding:13px;text-align:center;border:1px solid var(--l);
+border-radius:15px;background:#091d30
 }
-
-.settings p{
-font-size:12px;
-line-height:1.8;
-color:var(--muted)
+.info span{display:block;color:var(--m);font-size:11px}
+.view{display:none}
+.view.active{display:block}
+.back{
+margin-bottom:14px;border:1px solid var(--l);background:#0b2137;
+color:#fff;border-radius:11px;padding:9px 14px
 }
-
-.form-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:13px
-}
-
-.field{
-display:flex;
-flex-direction:column;
-gap:6px
-}
-
-.full{
-grid-column:1/-1
-}
-
-label{
-font-size:12px;
-font-weight:bold;
-color:#cbd6e0
-}
-
-input,select,textarea{
-width:100%;
-padding:11px;
-border-radius:10px;
-border:1px solid #304352;
-background:#07111a;
-color:#fff;
-outline:none
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-border-color:var(--red)
-}
-
-textarea{
-min-height:120px;
-resize:vertical
-}
-
-.actions{
-display:flex;
-gap:10px;
-margin-top:15px
-}
-
-/* النافذة */
-
-.modal{
-display:none;
-position:fixed;
-inset:0;
-z-index:500;
-background:#000d;
-padding:15px;
-align-items:center;
-justify-content:center
-}
-
-.modal.open{
-display:flex
-}
-
-.modal-box{
-width:min(950px,100%);
-max-height:94vh;
-overflow:auto;
-border-radius:22px;
-border:1px solid #3a4c5e;
-background:#08111b;
-box-shadow:0 30px 100px #000
-}
-
-.modal-head{
-position:sticky;
-top:0;
-z-index:2;
-padding:15px 18px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-background:#0b1723;
-border-bottom:1px solid var(--border)
-}
-
-.close{
-width:38px;
-height:38px;
-border:0;
-border-radius:10px;
-background:#172532;
-color:#fff;
-font-size:20px
-}
-
-.modal-body{
-padding:18px
-}
-
-.note{
-padding:11px;
-margin-bottom:14px;
-border-radius:10px;
-font-size:11px;
-line-height:1.8;
-color:#b8ead8;
-background:#27d69a12;
-border:1px solid #27d69a40
-}
-
-.output{
-display:none;
-margin-top:18px
-}
-
-.output.show{
-display:block
-}
-
-.output textarea{
-min-height:420px
-}
-
 .footer{
-margin-top:50px;
-padding:28px 15px;
-text-align:center;
-border-top:1px solid #29333e;
-font-size:12px;
-line-height:2.2;
-color:var(--muted)
+text-align:center;color:var(--m);border-top:1px solid var(--l);
+padding:25px;margin-top:35px;font-size:12px;line-height:2
+}
+.modal{
+display:none;position:fixed;inset:0;z-index:20;background:#000b;
+align-items:center;justify-content:center;padding:14px
+}
+.modal.open{display:flex}
+.dialog{
+width:min(900px,100%);max-height:93vh;overflow:auto;
+background:#071827;border:1px solid #31506d;border-radius:23px
+}
+.dh{
+position:sticky;top:0;background:#091c2f;border-bottom:1px solid var(--l);
+padding:15px 18px;display:flex;justify-content:space-between
+}
+.close{
+border:0;background:#172e43;color:#fff;border-radius:9px;width:38px
+}
+.db{padding:18px}
+.form{
+display:grid;grid-template-columns:repeat(2,1fr);gap:12px
+}
+.field{display:flex;flex-direction:column;gap:6px}
+.full{grid-column:1/-1}
+label{font-size:12px;font-weight:900;color:#c7d8e6}
+input,select,textarea{
+width:100%;border:1px solid #294b68;background:#071726;
+color:#fff;border-radius:10px;padding:10px
+}
+textarea{min-height:110px;resize:vertical}
+.actions{display:flex;gap:9px;margin-top:15px}
+.primary{
+border:0;background:linear-gradient(135deg,var(--r),#9e1427);
+color:#fff;border-radius:11px;padding:11px 17px;font-weight:900
+}
+.secondary{
+border:1px solid #355a78;background:#0c243a;color:#fff;
+border-radius:11px;padding:11px 17px
+}
+.out{display:none;margin-top:15px}
+.out.show{display:block}
+.out textarea{min-height:350px;direction:rtl}
+.note{
+font-size:11px;color:#b7eedc;background:#35d39b12;
+border:1px solid #35d39b44;padding:10px;border-radius:10px;margin-bottom:12px
 }
 
-.footer strong{
-color:#fff
-}
-
-.footer .copyright{
-color:#e32a43;
-font-weight:bold
-}
-
-@media(max-width:1000px){
+@media(max-width:950px){
 .grid{grid-template-columns:repeat(2,1fr)}
 .subgrid{grid-template-columns:repeat(2,1fr)}
+.info{grid-template-columns:repeat(2,1fr)}
 }
-
-@media(max-width:650px){
-.grid,.subgrid,.form-grid{
-grid-template-columns:1fr
-}
-
-.full{
-grid-column:auto
-}
-
-.hero{
-min-height:380px
-}
-
-.hero-content{
-padding:28px
-}
-
-.status{
-display:none
-}
-
-.container{
-padding:12px
-}
+@media(max-width:620px){
+.grid,.subgrid,.form{grid-template-columns:1fr}
+.full{grid-column:auto}
+.status{display:none}
 }
 </style>
 </head>
 
 <body>
 
-<header class="header">
-
-<div class="header-inner">
-
-<div class="logo">
-
-<div class="logo-icon">✚</div>
-
+<header class="top">
+<div class="topin">
+<div class="brand">
+<div class="mark">✚</div>
 <div>
-<div class="logo-title">بوابة شؤون الهلال الأحمر</div>
-<div class="logo-sub">النظام الإلكتروني للقرارات والطلبات الإدارية</div>
+بوابة شؤون الهلال الأحمر
+<div class="small">النظام الإلكتروني للقرارات والطلبات الإدارية</div>
 </div>
-
 </div>
 
 <div class="status">
 <span class="dot"></span>
-النظام يعمل • <span id="clock"></span> • v2.2.0
+النظام يعمل • <span id="clock"></span> • v2.0.0
 </div>
-
 </div>
-
 </header>
 
+<main>
 
-<div class="container">
-
-<!-- الرئيسية -->
-
-<section id="home" class="page active">
+<section id="home" class="view active">
 
 <div class="hero">
-
-<div class="hero-content">
-
-<div class="badge">
-🚑 الهلال الأحمر السعودي • الشؤون الإدارية
-</div>
-
+<div class="k">🚑 الشؤون الإدارية • الهلال الأحمر</div>
 <h1>بوابة شؤون الهلال الأحمر</h1>
-
 <p>
-منصة إدارية موحدة لإنشاء القرارات والنماذج والطلبات
-بصياغة جاهزة للنسخ والإرسال عبر Discord.
+منصة موحدة لإنشاء القرارات والطلبات والنماذج الإدارية
+بصيغة جاهزة للنسخ والإرسال في ديسكورد.
 </p>
-
-<div class="ecg">
-
-<svg viewBox="0 0 1000 80" preserveAspectRatio="none">
-
-<polyline
-points="0,40 180,40 205,40 220,15 235,65 250,40 400,40 420,40 440,10 460,70 480,40 700,40 720,40 740,18 760,62 780,40 1000,40"
-fill="none"
-stroke="#e62943"
-stroke-width="4"/>
-
-</svg>
-
 </div>
 
-</div>
-
-</div>
-
-
-<div class="section-title">
-
+<div class="head">
 <h2>الأقسام الرئيسية</h2>
-
-<p>اختر القسم المطلوب.</p>
-
+<p>كل قسم بقائمته ونماذجه الخاصة.</p>
 </div>
 
 <div class="grid" id="mainCards"></div>
 
-</section>
-
-
-<!-- القسم -->
-
-<section id="sectionPage" class="page">
-
-<button class="btn back" onclick="goHome()">← الرئيسية</button>
-
-<div class="section-title">
-
-<h2 id="sectionTitle"></h2>
-
-<p id="sectionDescription"></p>
-
+<div class="info">
+<div><b>فريق واحد</b><span>تنظيم أفضل</span></div>
+<div><b>استجابة أسرع</b><span>نماذج جاهزة</span></div>
+<div><b>السلامة أولاً</b><span>خدمة القطاع</span></div>
+<div><b>نظام موحد</b><span>صياغة ثابتة</span></div>
 </div>
-
-
-<!-- بيانات القيادة -->
-
-<div id="leadershipSettings" class="settings" style="display:none">
-
-<h3>⚙️ بيانات القيادة</h3>
-
-<p>
-أدخل كوبي ID لكل قيادة مرة واحدة.
-يمكن تغيير الشخص لاحقًا من هنا بدون تعديل الكود.
-</p>
-
-<div class="form-grid">
-
-<div class="field">
-<label>قائد الهلال الأحمر</label>
-<input id="leaderId">
-</div>
-
-<div class="field">
-<label>نائب قائد الهلال الأحمر</label>
-<input id="deputyId">
-</div>
-
-<div class="field">
-<label>مساعد قائد الهلال الأحمر</label>
-<select id="assistantId">
-<option value="404332641018576896">وليد</option>
-<option value="1408368532583874571">رنا</option>
-</select>
-</div>
-
-<div class="field">
-<label>نائب مساعد قائد الهلال الأحمر</label>
-<select id="deputyAssistantId">
-<option value="838894876137357312">غياث</option>
-<option value="763021705047965717">عز</option>
-</select>
-</div>
-
-<div class="field">
-<label>مدير قسم الدورات</label>
-<input id="coursesId">
-</div>
-
-<div class="field">
-<label>مسؤول شؤون التوظيف</label>
-<input id="employmentId">
-</div>
-
-<div class="field">
-<label>مسؤول شؤون المعتمدين</label>
-<input id="approvedId">
-</div>
-
-<div class="field">
-<label>مسؤول شؤون الإشراف</label>
-<input id="supervisionId">
-</div>
-
-<div class="field">
-<label>مسؤول قسم السجلات والترقيات</label>
-<input id="recordsPromotionId">
-</div>
-
-</div>
-
-<button class="btn btn-red" style="margin-top:14px" onclick="saveLeadership()">
-حفظ بيانات القيادة
-</button>
-
-</div>
-
-
-<div id="subCards" class="subgrid"></div>
 
 </section>
 
+<section id="section" class="view">
+<button class="back" onclick="home()">← الرئيسية</button>
+
+<div class="head">
+<h2 id="sectitle"></h2>
+<p id="secdesc"></p>
+</div>
+
+<div class="subgrid" id="cards"></div>
+</section>
 
 <footer class="footer">
-
 ✚<br>
-
-<strong>كل نبضة حياة .. ونحن لها</strong><br>
-
-جاهزون دائماً .. لخدمة الإنسان
-
-<br><br>
-
-<strong>حيدر علي / Haider Ali</strong>
-
-<br>
-
-<span class="copyright">
-© 2026 جميع الحقوق محفوظة
-</span>
-
-<br>
-
-تصميم وتطوير: <strong>حيدر علي</strong>
-
+<b>كل نبضة حياة .. ونحن لها</b><br>
+جاهزون دائماً .. لخدمة الإنسان<br><br>
+<b>حيدر علي / Haider Ali</b><br>
+جميع الحقوق محفوظة © 2026<br>
+تصميم وتطوير: حيدر علي
 </footer>
 
+</main>
+
+<div class="modal" id="modal">
+<div class="dialog">
+
+<div class="dh">
+<b id="ft"></b>
+<button class="close" onclick="closeF()">×</button>
 </div>
 
-
-<!-- Modal -->
-
-<div id="modal" class="modal">
-
-<div class="modal-box">
-
-<div class="modal-head">
-
-<strong id="modalTitle"></strong>
-
-<button class="close" onclick="closeModal()">×</button>
+<div class="db" id="fb"></div>
 
 </div>
-
-<div id="modalBody" class="modal-body"></div>
-
 </div>
-
-</div>
-
 
 <script>
 
-/* =========================
-الثوابت
-========================= */
+const MR='<@&1404535885864632340>';
+const R1='<@&1404535891351048413>';
+const R2='<@&1404535891376214137>';
+const R3='<@&1404535891401117767>';
 
-const ROLE_ORIGINAL="<@&1404535885864632340>";
+const LL='https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104';
 
-const ROLE1="<@&1404535891351048413>";
-const ROLE2="<@&1404535891376214137>";
-const ROLE3="<@&1404535891401117767>";
+const FL='https://ptb.discord.com/channels/1404512396923375696/1404536350614491238/1466234198389035257';
 
-const INSTRUCTION_LINK=
-"https://discord.com/channels/1404512396923375696/1404536315537526794/1509034080019288104";
+const data={
 
-const FINE_LINK=
-"https://ptb.discord.com/channels/1404512396923375696/1404536350614491238/1466234198389035257";
-
-const levels=[
-"متدرب",
-"1",
-"2",
-"3",
-"4",
-"5",
-"6",
-"7",
-"8",
-"9"
-];
-
-
-/* =========================
-القيادة
-========================= */
-
-const leadershipIds=[
-"leaderId",
-"deputyId",
-"assistantId",
-"deputyAssistantId",
-"coursesId",
-"employmentId",
-"approvedId",
-"supervisionId",
-"recordsPromotionId"
-];
-
-function saveLeadership(){
-
-leadershipIds.forEach(id=>{
-
-const element=document.getElementById(id);
-
-if(element){
-localStorage.setItem(
-"leadership_"+id,
-element.value.trim()
-);
-}
-
-});
-
-alert("تم حفظ بيانات القيادة بنجاح ✅");
-
-}
-
-
-function loadLeadership(){
-
-leadershipIds.forEach(id=>{
-
-const element=document.getElementById(id);
-
-if(!element)return;
-
-const saved=localStorage.getItem("leadership_"+id);
-
-if(saved!==null){
-element.value=saved;
-}
-
-});
-
-}
-
-
-/* تحويل ID إلى منشن */
-
-function mention(id){
-
-const clean=String(id||"").replace(/\D/g,"");
-
-return clean?`<@${clean}>`:"";
-
-}
-
-
-/* منشن قيادة */
-
-function leader(id){
-
-return mention(
-localStorage.getItem("leadership_"+id)||""
-);
-
-}
-
-
-/* =========================
-الوقت
-========================= */
-
-function updateClock(){
-
-document.getElementById("clock").textContent=
-new Date().toLocaleTimeString(
-"ar-JO",
-{
-hour:"2-digit",
-minute:"2-digit",
-hour12:true
-}
-);
-
-}
-
-setInterval(updateClock,1000);
-updateClock();
-
-loadLeadership();
-
-
-/* =========================
-الأقسام
-========================= */
-
-const sections={
-
-"قرارات إدارية":[
-
-["dismiss","قرار فصل","قرار فصل مع الغرامة ومنع التوظيف."],
-
-["resign","قرار إنهاء خدمات","قرار إنهاء الخدمات والاستقالة."]
+'قرارات إدارية':[
+['dismiss','قرار فصل','الفصل مع غرامة ومنع توظيف.'],
+['resign','قرار إنهاء خدمات','استقالة حسب المستوى.']
 ],
 
-"نظام الإجازات":[
-
-["internal","إجازة داخلية","بالساعات وتخصم من الرصيد."],
-
-["offshift","إجازة داخلية ( خارج شفت )","لا تخصم من الرصيد."],
-
-["trader","إجازة داخلية ( تاجر )","لا تخصم من الرصيد."],
-
-["external","إجازة خارجية","بالأيام."],
-
-["extend","تمديد إجازة خارجية","للقيادة فقط."]
+'نظام الإجازات':[
+['internal','إجازة داخلية','بالساعات وتخصم من الرصيد.'],
+['offshift','إجازة خارج شفت','بالساعات ولا تخصم.'],
+['trader','إجازة تاجر','بالساعات ولا تخصم.'],
+['external','إجازة خارجية','بالأيام ولا تخصم من الرصيد.'],
+['extend','تمديد إجازة خارجية','للقيادة فقط.']
 ],
 
-"الإنذارات والغرامات":[
-
-["verbal","إنذار شفهي","بدون غرامة."],
-
-["first","إنذار وظيفي أول","الغرامة يحددها المستخدم."],
-
-["second","إنذار وظيفي ثاني","الغرامة يحددها المستخدم."],
-
-["final","إنذار نهائي","الغرامة يحددها المستخدم."]
+'الإنذارات والغرامات':[
+['verbal','إنذار شفهي','بدون غرامة.'],
+['first','إنذار وظيفي أول','قيمة الغرامة يحددها المستخدم.'],
+['second','إنذار وظيفي ثاني','قيمة الغرامة يحددها المستخدم.'],
+['final','إنذار نهائي','قيمة الغرامة يحددها المستخدم.']
 ],
 
-"طلبات الرول":[
-
-["roleFire","فصل","نموذج ثابت."],
-
-["roleResign","استقالة","نموذج ثابت."],
-
-["roleApproved","تعيين معتمد","نموذج ثابت."],
-
-["roleTicket","تعيين تكت","نموذج ثابت."],
-
-["roleLeave","إجازة وظيفية","نموذج ثابت."],
-
-["roleReturn","عودة من إجازة","نموذج ثابت."]
+'طلبات الرول':[
+['roleFire','طلب فصل','نموذج ثابت.'],
+['roleResign','طلب استقالة','نموذج ثابت.'],
+['roleApproved','تعيين معتمد','نموذج ثابت.'],
+['roleTicket','تعيين تيكت','نموذج ثابت.'],
+['roleLeave','إجازة وظيفية','نموذج ثابت.'],
+['roleReturn','عودة من إجازة','نموذج ثابت.']
 ],
 
-"التوظيف":[
-
-["basic","التوظيف الأساسي — تسجيل","نموذج التسجيل."],
-
-["exceptional","التوظيف الاستثنائي","نموذج استثنائي."],
-
-["rehire","إعادة خدمة — للقيادة فقط","خاص بالقيادة."],
-
-["batch","تعيين دفعة جديدة","تعيين دفعة."],
-
-["trainee","تعيين مشرف متدرب","تعيين الإشراف المتدرب."],
-
-["staffJob","تعيين طاقم الإدارة","قريبًا."],
-
-["playerJob","تعيين لاعب معتمد","قريبًا."]
+'التوظيف':[
+['basic','التوظيف الأساسي — تسجيل','تسجيل أساسي.'],
+['exceptional','التوظيف الاستثنائي','توظيف استثنائي.'],
+['rehire','إعادة خدمة — للقيادة فقط','خاص بالقيادة.'],
+['batch','تعيين دفعة جديدة','رقم دفعة وعدد ومستوى وأسماء.'],
+['trainee','تعيين مشرف متدرب','تعيين الإشراف المتدرب.'],
+['staffJob','تعيين طاقم الإدارة — قريبًا','قريبًا.'],
+['playerJob','تعيين لاعب معتمد — قريبًا','قريبًا.']
 ],
 
-"الترقيات":[
+'الترقيات':[
+['leaders','ترقيات القطاع الأساسية','المستوى من وإلى وIDs الأشخاص.'],
+['general','ترقيات إشراف عام','ثابت من مستوى 7 إلى 8.'],
+['staffPromo','طاقم الإدارة — قريبًا','قريبًا.'],
+['approvedPromo','ترقيات المعتمدين','المستوى من وإلى وIDs الأشخاص.'],
+['grievance','ترقيات التظلم','المستوى من وإلى وIDs الأشخاص.'],
+['exceptionPromo','ترقيات استثنائية','المستوى من وإلى وIDs الأشخاص.']
+],
 
-["basicPromo","ترقيات القطاع الأساسية","تحديد المستوى من وإلى."],
-
-["generalPromo","ترقيات إشراف عام","ثابت 7 إلى 8."],
-
-["staffPromo","طاقم الإدارة","قريبًا."],
-
-["approvedPromo","ترقيات المعتمدين","ترقيات المعتمدين."],
-
-["grievance","ترقيات التظلم","ترقيات التظلم."],
-
-["exceptionPromo","ترقيات استثنائية","ترقيات استثنائية."]
+'المكافآت':[
+['rewardDepartments','مكافآت الأقسام','عدة نماذج مستقلة حسب القسم.'],
+['rewardSupervisors','مكافآت المشرفين','منشنات وقيمة وسبب واعتماد.'],
+['rewardMedics','مكافآت المسعفين','منشنات وقيمة وسبب واعتماد.']
 ]
 
 };
 
-
-/* =========================
-البطاقات
-========================= */
-
-const mainCards=[
-
-["📋","قرارات إدارية","قرارات الفصل وإنهاء الخدمات"],
-
-["🗓️","نظام الإجازات","الإجازات الداخلية والخارجية"],
-
-["⚠️","الإنذارات والغرامات","الإنذارات والغرامات"],
-
-["🎖️","طلبات الرول","الطلبات الثابتة"],
-
-["👤","التوظيف","التوظيف وإعادة الخدمة والدفعات"],
-
-["📈","الترقيات","ترقيات القطاع والمعتمدين والإشراف العام"],
-
-["🔢","رفع الأكواد","قريبًا"],
-
-["🎁","المكافآت","قريبًا"]
-
-];
-
-document.getElementById("mainCards").innerHTML=
-
-mainCards.map((x,index)=>`
-
-<div class="card ${index>5?"coming":""}">
-
-<div class="icon">${x[0]}</div>
-
-<h3>${x[1]}</h3>
-
-<p>${x[2]}</p>
-
-${index<6?
-`<button class="btn btn-red"
-onclick="openSection('${x[1]}')">
-دخول القسم
-</button>`
-:""}
-
-</div>
-
-`).join("");
-
-
-/* =========================
-فتح القسم
-========================= */
-
-function openSection(name){
-
-document.getElementById("home")
-.classList.remove("active");
-
-document.getElementById("sectionPage")
-.classList.add("active");
-
-document.getElementById("sectionTitle")
-.textContent=name;
-
-document.getElementById("sectionDescription")
-.textContent=
-"اختر النموذج المطلوب.";
-
-const settings=
-document.getElementById("leadershipSettings");
-
-settings.style.display=
-(name==="التوظيف"||name==="الترقيات")
-?"block"
-:"none";
-
-loadLeadership();
-
-const list=sections[name]||[];
-
-document.getElementById("subCards").innerHTML=
-
-list.map(item=>{
-
-const coming=[
-"staffJob",
-"playerJob",
-"staffPromo"
-].includes(item[0]);
-
-return`
-
-<div class="subcard ${coming?"coming":""}">
-
-<h3>${item[1]}</h3>
-
-<p>${item[2]}</p>
-
-${coming?
-"":
-`<button class="btn btn-red"
-onclick="openForm('${item[0]}')">
-فتح النموذج
-</button>`
+function q(id){
+return document.getElementById(id)
 }
 
-</div>
-
-`;
-
-}).join("");
-
-window.scrollTo(0,0);
-
+function v(n){
+return (q('f_'+n)?.value||'').trim()
 }
 
-
-function goHome(){
-
-document.getElementById("sectionPage")
-.classList.remove("active");
-
-document.getElementById("home")
-.classList.add("active");
-
-window.scrollTo(0,0);
-
+function men(id){
+id=(id||'').replace(/\D/g,'');
+return id?`<@${id}>`:''
 }
 
-
-/* =========================
-عناصر النماذج
-========================= */
-
-function input(label,id,type="text"){
-
-return`
-
-<div class="field">
-
-<label>${label}</label>
-
-<input
-id="f_${id}"
-type="${type}"
-placeholder="${label}"
->
-
-</div>
-
-`;
-
+function ls(s){
+return s.split(/\n|,/).map(x=>x.trim()).filter(Boolean)
 }
-
-
-function select(label,id,options){
-
-return`
-
-<div class="field">
-
-<label>${label}</label>
-
-<select id="f_${id}">
-
-${options.map(option=>
-`<option value="${option}">
-${option}
-</option>`
-).join("")}
-
-</select>
-
-</div>
-
-`;
-
-}
-
-
-function area(label,id){
-
-return`
-
-<div class="field full">
-
-<label>${label}</label>
-
-<textarea
-id="f_${id}"
-placeholder="${label}">
-</textarea>
-
-</div>
-
-`;
-
-}
-
-
-function val(id){
-
-const el=document.getElementById("f_"+id);
-
-return el?el.value.trim():"";
-
-}
-
-
-function getIds(text){
-
-return text
-.split(/[\n,]+/)
-.map(x=>x.trim())
-.filter(Boolean);
-
-}
-
 
 function today(){
-
-const d=new Date();
-
-return`${d.getFullYear()}/${
-String(d.getMonth()+1).padStart(2,"0")
-}/${
-String(d.getDate()).padStart(2,"0")
-}`;
-
+let d=new Date();
+return `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')}`
 }
 
-
-function addDays(date,days){
-
-const p=date.split("/").map(Number);
-
-const d=
-new Date(
-p[0],
-p[1]-1,
-p[2]
-);
-
-d.setDate(
-d.getDate()+Number(days)
-);
-
-return`${d.getFullYear()}/${
-String(d.getMonth()+1).padStart(2,"0")
-}/${
-String(d.getDate()).padStart(2,"0")
-}`;
-
+function addDays(s,n){
+let a=s.split('/').map(Number);
+let d=new Date(a[0],a[1]-1,a[2]);
+d.setDate(d.getDate()+Number(n));
+return `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')}`
 }
 
+function clock(){
+q('clock').textContent=new Date().toLocaleTimeString(
+'ar-JO',
+{hour:'2-digit',minute:'2-digit',hour12:true}
+)
+}
 
-/* =========================
-فتح النموذج
-========================= */
+setInterval(clock,1000);
+clock();
 
-function openForm(type){
+function home(){
+q('section').classList.remove('active');
+q('home').classList.add('active');
+scrollTo(0,0)
+}
 
-let title="";
-let html="";
-let action="";
+function section(name){
 
+q('home').classList.remove('active');
+q('section').classList.add('active');
 
-/* قرارات */
+q('sectitle').textContent=name;
+q('secdesc').textContent='اختر النموذج المطلوب.';
 
-if(type==="dismiss"){
+q('cards').innerHTML=data[name].map(x=>`
 
-title="قرار فصل";
+<div class="sub ${['staffPromo','staffJob','playerJob'].includes(x[0])?'coming':''}">
+<h3>${x[1]}</h3>
+<p>${x[2]}</p>
 
-html=`
-
-<div class="form-grid">
-
-${input("يوزر ID","id")}
-
-${input("الاسم","name")}
-
-${input("السبب","reason")}
-
-${select(
-"نوع السحب",
-"withdraw",
-["رقابي","فاتورة"]
-)}
-
-${input(
-"رابط الفاتورة عند اختيار فاتورة",
-"invoice"
-)}
+${['staffPromo','staffJob','playerJob'].includes(x[0])
+?''
+:`<button onclick="openF('${x[0]}')">فتح النموذج</button>`}
 
 </div>
 
-`;
+`).join('');
 
-action="generateDismiss()";
-
+scrollTo(0,0)
 }
 
+q('mainCards').innerHTML=[
 
-if(type==="resign"){
+['📋','قرارات إدارية','قرارات الفصل وإنهاء الخدمات.'],
+['🗓️','نظام الإجازات','الإجازات الداخلية والخارجية.'],
+['⚠️','الإنذارات والغرامات','الإنذارات وقيم الغرامات.'],
+['🎖️','طلبات الرول','طلبات الرولات الإدارية.'],
+['👤','التوظيف','التسجيل والتعيينات.'],
+['📈','الترقيات','ترقيات القطاع والإشراف والمعتمدين.'],
+['💻','رفع الأكواد','قريبًا.'],
+['💰','المكافآت','مكافآت الأقسام والمشرفين والمسعفين.']
 
-title="قرار إنهاء خدمات";
+].map(x=>`
 
-html=`
-
-<div class="form-grid">
-
-${select("مستوى المسعف","level",levels)}
-
-${input("يوزر ID","id")}
-
-${input("الاسم","name")}
-
-${input("السبب","reason")}
-
-${select(
-"نوع السحب",
-"withdraw",
-["رقابي","فاتورة"]
-)}
-
-${input(
-"رابط الفاتورة عند الحاجة",
-"invoice"
-)}
-
+<div class="card ${x[1]=='رفع الأكواد'?'coming':''}">
+<div class="icon">${x[0]}</div>
+<h3>${x[1]}</h3>
+<p>${x[2]}</p>
+${x[1]=='رفع الأكواد'
+?''
+:`<button class="btn" onclick="section('${x[1]}')">دخول القسم</button>`}
 </div>
 
-`;
+`).join('');
 
-action="generateResign()";
-
+function field(label,name,type='text',extra=''){
+return `
+<div class="field">
+<label>${label}</label>
+<input id="f_${name}" type="${type}" ${extra}>
+</div>`
 }
 
+function area(label,name){
+return `
+<div class="field full">
+<label>${label}</label>
+<textarea id="f_${name}" placeholder="اكتب هنا..."></textarea>
+</div>`
+}
 
-/* الإجازات */
+function sel(label,name,options){
+return `
+<div class="field">
+<label>${label}</label>
+<select id="f_${name}">
+${options.map(o=>`<option>${o}</option>`).join('')}
+</select>
+</div>`
+}
 
-if(type==="internal"){
+function shell(note,html,fn){
+return `
+<div class="note">${note}</div>
 
-title="إجازة داخلية";
-
-html=`
-
-<div class="form-grid">
-
-${input("يوزر ID","id")}
-
-${input("مدة الإجازة بالساعات","hours","number")}
-
-${input("الرصيد الحالي بالساعات","balance","number")}
-
+<div class="form">
+${html}
 </div>
-
-`;
-
-action="generateInternal()";
-
-}
-
-
-if(type==="offshift"){
-
-title="إجازة داخلية ( خارج شفت )";
-
-html=`
-
-<div class="form-grid">
-
-${input("يوزر ID","id")}
-
-${input("مدة الإجازة بالساعات","hours","number")}
-
-</div>
-
-`;
-
-action="generateOffshift()";
-
-}
-
-
-if(type==="trader"){
-
-title="إجازة داخلية ( تاجر )";
-
-html=`
-
-<div class="form-grid">
-
-${input("يوزر ID","id")}
-
-${input("مدة الإجازة بالساعات","hours","number")}
-
-</div>
-
-`;
-
-action="generateTrader()";
-
-}
-
-
-if(type==="external"){
-
-title="إجازة خارجية";
-
-html=`
-
-<div class="form-grid">
-
-${input("يوزر ID","id")}
-
-${input("مدة الإجازة بالأيام","days","number")}
-
-</div>
-
-`;
-
-action="generateExternal()";
-
-}
-
-
-if(type==="extend"){
-
-title="تمديد إجازة خارجية";
-
-html=`
-
-<div class="form-grid">
-
-${input("يوزر ID","id")}
-
-${input("مدة التمديد بالأيام","days","number")}
-
-</div>
-
-`;
-
-action="generateExtend()";
-
-}
-
-
-/* الإنذارات */
-
-if(type==="verbal"){
-
-title="إنذار شفهي";
-
-html=`
-
-<div class="form-grid">
-
-${input("يوزر ID","id")}
-
-${input("السبب","reason")}
-
-</div>
-
-`;
-
-action="generateVerbal()";
-
-}
-
-
-if(
-type==="first"||
-type==="second"||
-type==="final"
-){
-
-title=
-type==="first"
-?"إنذار وظيفي أول"
-:type==="second"
-?"إنذار وظيفي ثاني"
-:"إنذار نهائي";
-
-html=`
-
-<div class="form-grid">
-
-${input("يوزر ID","id")}
-
-${input("قيمة الغرامة","amount","number")}
-
-${input("السبب","reason")}
-
-</div>
-
-`;
-
-action=`generateWarning("${type}")`;
-
-}
-
-
-/* الرول */
-
-if(type.startsWith("role")){
-
-title="طلب رول";
-
-let roleHtml=`
-
-<div class="form-grid">
-
-${input("يوزر ID","id")}
-
-`;
-
-if(
-type==="roleResign"||
-type==="roleApproved"||
-type==="roleTicket"
-){
-
-roleHtml+=select(
-"المستوى",
-"level",
-levels
-);
-
-}
-
-if(
-type==="roleApproved"||
-type==="roleTicket"
-){
-
-roleHtml+=input(
-"الاسم",
-"name"
-);
-
-}
-
-roleHtml+=`</div>`;
-
-html=roleHtml;
-
-action=`generateRole("${type}")`;
-
-}
-
-
-/* التوظيف الأساسي */
-
-if(type==="basic"){
-
-title="التوظيف الأساسي — تسجيل";
-
-html=`
-
-<div class="form-grid">
-
-${input("اسم المواطن","name")}
-
-${input("كوبي ID الديسكورد","id")}
-
-${input("ID للمنشن","mentionId")}
-
-${input("الخبرة","experience","number")}
-
-${input("العمر","age","number")}
-
-${select(
-"هل الاسم مطابق في المقاطعة والديسكورد؟",
-"match",
-["نعم","لا"]
-)}
-
-${select(
-"هل يحمل مبلغ 150 ألف؟",
-"money",
-["نعم","لا"]
-)}
-
-${select(
-"هل قرأت جميع التنويهات والقوانين؟",
-"rules",
-["نعم","لا"]
-)}
-
-${select(
-"هل تتعهد على ذلك؟",
-"pledge",
-["نعم","لا"]
-)}
-
-${select(
-"المحاسبة عند المخالفة دون إنذار مسبق",
-"warning",
-["نعم","لا"]
-)}
-
-</div>
-
-`;
-
-action="generateBasic()";
-
-}
-
-
-/* التوظيف الاستثنائي */
-
-if(type==="exceptional"){
-
-title="التوظيف الاستثنائي";
-
-html=`
-
-<div class="form-grid">
-
-${input("اسم المواطن","name")}
-
-${input("كوبي ID الديسكورد","id")}
-
-${input("ID للمنشن","mentionId")}
-
-${input("الخبرة","experience","number")}
-
-${input("العمر","age","number")}
-
-${select(
-"هل الاسم مطابق؟",
-"match",
-["نعم","لا"]
-)}
-
-${select(
-"هل يحمل مبلغ 150 ألف؟",
-"money",
-["نعم","لا"]
-)}
-
-${select(
-"هل قرأ جميع التنويهات والقوانين؟",
-"rules",
-["نعم","لا"]
-)}
-
-${select(
-"هل تتعهد؟",
-"pledge",
-["نعم","لا"]
-)}
-
-${select(
-"المحاسبة دون إنذار مسبق",
-"warning",
-["نعم","لا"]
-)}
-
-</div>
-
-`;
-
-action="generateExceptional()";
-
-}
-
-
-/* إعادة الخدمة */
-
-if(type==="rehire"){
-
-title="إعادة خدمة — للقيادة فقط";
-
-html=`
-
-<div class="form-grid">
-
-${input("اسم المواطن","name")}
-
-${input("كوبي ID الديسكورد","id")}
-
-${input("ID للمنشن","mentionId")}
-
-${input("الخبرة","experience","number")}
-
-${input("العمر","age","number")}
-
-${select(
-"هل الاسم مطابق؟",
-"match",
-["نعم","لا"]
-)}
-
-${select(
-"هل يحمل مبلغ 300 ألف؟",
-"money",
-["نعم","لا"]
-)}
-
-${select(
-"هل قرأ القوانين؟",
-"rules",
-["نعم","لا"]
-)}
-
-${select(
-"هل يتعهد؟",
-"pledge",
-["نعم","لا"]
-)}
-
-${select(
-"المحاسبة دون إنذار مسبق",
-"warning",
-["نعم","لا"]
-)}
-
-${input("الرتبة السابقة","oldLevel")}
-
-${input("الرتبة الحالية","newLevel")}
-
-</div>
-
-`;
-
-action="generateRehire()";
-
-}
-
-
-/* دفعة */
-
-if(type==="batch"){
-
-title="تعيين دفعة جديدة";
-
-html=`
-
-<div class="form-grid">
-
-${input("رقم الدفعة","batch","number")}
-
-${input("عدد المسعفين","count","number")}
-
-${select(
-"مستوى الدفعة",
-"level",
-levels
-)}
-
-${area(
-"IDs المسعفين — كل ID في سطر",
-"ids"
-)}
-
-</div>
-
-`;
-
-action="generateBatch()";
-
-}
-
-
-/* مشرف متدرب */
-
-if(type==="trainee"){
-
-title="تعيين مشرف متدرب";
-
-html=area(
-"IDs الأشخاص — كل ID في سطر",
-"ids"
-);
-
-action="generateTrainee()";
-
-}
-
-
-/* الترقيات الأساسية */
-
-if(type==="basicPromo"){
-
-title="ترقيات القطاع الأساسية";
-
-html=`
-
-<div class="note">
-
-المستوى مستقل تمامًا عن أي مسمى.
-اختر مستوى البداية والنهاية فقط.
-
-</div>
-
-<div class="form-grid">
-
-${select(
-"من مستوى",
-"fromLevel",
-levels
-)}
-
-${select(
-"إلى مستوى",
-"toLevel",
-levels
-)}
-
-${area(
-"IDs الأشخاص — كل ID في سطر",
-"ids"
-)}
-
-</div>
-
-`;
-
-action="generateBasicPromotion()";
-
-}
-
-
-/* إشراف عام */
-
-if(type==="generalPromo"){
-
-title="ترقيات إشراف عام";
-
-html=`
-
-<div class="note">
-
-هذا النموذج ثابت:
-من مستوى 7 إلى مستوى 8،
-مع تسليم مهام الإشراف العام.
-
-</div>
-
-${area(
-"IDs الأشخاص — كل ID في سطر",
-"ids"
-)}
-
-`;
-
-action="generateGeneralPromotion()";
-
-}
-
-
-/* المعتمدين */
-
-if(type==="approvedPromo"){
-
-title="ترقيات المعتمدين";
-
-html=`
-
-<div class="form-grid">
-
-${select(
-"من مستوى",
-"fromLevel",
-levels
-)}
-
-${select(
-"إلى مستوى",
-"toLevel",
-levels
-)}
-
-${area(
-"IDs الأشخاص — كل ID في سطر",
-"ids"
-)}
-
-</div>
-
-`;
-
-action="generateApprovedPromotion()";
-
-}
-
-
-/* التظلم */
-
-if(type==="grievance"){
-
-title="ترقيات التظلم";
-
-html=`
-
-<div class="form-grid">
-
-${select(
-"من مستوى",
-"fromLevel",
-levels
-)}
-
-${select(
-"إلى مستوى",
-"toLevel",
-levels
-)}
-
-${area(
-"IDs الأشخاص — كل ID في سطر",
-"ids"
-)}
-
-</div>
-
-`;
-
-action="generateGrievance()";
-
-}
-
-
-/* الاستثنائية */
-
-if(type==="exceptionPromo"){
-
-title="ترقيات استثنائية";
-
-html=`
-
-<div class="form-grid">
-
-${select(
-"من مستوى",
-"fromLevel",
-levels
-)}
-
-${select(
-"إلى مستوى",
-"toLevel",
-levels
-)}
-
-${area(
-"IDs الأشخاص — كل ID في سطر",
-"ids"
-)}
-
-</div>
-
-`;
-
-action="generateExceptionalPromotion()";
-
-}
-
-
-/* قريبًا */
-
-if(
-type==="staffPromo"||
-type==="staffJob"||
-type==="playerJob"
-){
-
-title="قريبًا";
-
-html=`
-
-<div class="note">
-
-هذا النموذج قيد التجهيز وسيتم إضافة النموذج المعتمد لاحقًا.
-
-</div>
-
-`;
-
-action="";
-
-}
-
-
-/* عرض النافذة */
-
-document.getElementById("modalTitle")
-.textContent=title;
-
-document.getElementById("modalBody")
-.innerHTML=
-
-html+
-
-`
 
 <div class="actions">
-
-${
-action
-?
-`<button
-class="btn btn-red"
-onclick="${action}">
-إنشاء القرار
-</button>`
-:""
-}
-
-<button
-class="btn"
-onclick="closeModal()">
-إغلاق
-</button>
-
+<button class="primary" onclick="${fn}">توليد القرار</button>
+<button class="secondary" onclick="closeF()">إغلاق</button>
 </div>
 
-<div id="output" class="output">
-
-<textarea
-id="result"
-readonly>
-</textarea>
-
-<button
-class="btn btn-red"
-style="margin-top:10px"
-onclick="copyResult()">
-نسخ القرار
-</button>
-
+<div class="out" id="out">
+<textarea id="result" readonly></textarea>
+<div class="actions">
+<button class="primary" onclick="copyResult()">نسخ النص</button>
 </div>
-
-`;
-
-document.getElementById("modal")
-.classList.add("open");
-
+</div>
+`
 }
 
+function openF(t){
 
-/* =========================
-الإخراج
-========================= */
+q('ft').textContent='النموذج';
+let html='';
+let fn='';
 
-function output(text){
+if(t==='dismiss'){
+q('ft').textContent='قرار فصل';
 
-const result=
-document.getElementById("result");
+html=
+field('Discord ID','id')+
+field('اعتماد — Discord ID','app')+
+area('سبب الفصل','reason')+
+sel('نوع السحب','withdraw',['رقابي','فاتورة'])+
+field('رابط الفاتورة — عند اختيار فاتورة','invoice');
 
-const box=
-document.getElementById("output");
-
-if(!result||!box){
-
-console.error("Output element missing");
-
-return;
-
+fn='genDismiss()'
 }
 
-result.value=text;
+else if(t==='resign'){
+q('ft').textContent='قرار إنهاء خدمات';
 
-box.classList.add("show");
+html=
+field('Discord ID','id')+
+sel('المستوى','level',['متدرب','1','2','3','4','5','6','7','8','9','10'])+
+field('اعتماد — Discord ID','app')+
+area('سبب الاستقالة','reason')+
+sel('نوع السحب — للمتدرب ومستوى 1','withdraw',['رقابي','فاتورة'])+
+field('رابط الفاتورة — عند اختيار فاتورة','invoice');
 
+fn='genResign()'
 }
 
+else if(['internal','offshift','trader'].includes(t)){
+
+q('ft').textContent=
+t==='internal'?'إجازة داخلية':
+t==='offshift'?'إجازة داخلية (خارج شفت)':
+'إجازة داخلية (تاجر)';
+
+html=
+field('Discord ID','id')+
+field('مدة الإجازة بالساعات','hours','number')+
+(t==='internal'?field('الرصيد المتبقي بالساعات','balance'):sel(
+'نوع الرصيد',
+'balance',
+t==='offshift'?['خارج شفت']:['إجازة تاجر']
+))+
+field('اعتماد — Discord ID','app');
+
+fn=`genInternal('${t}')`
+}
+
+else if(t==='external'){
+
+q('ft').textContent='إجازة خارجية';
+
+html=
+field('Discord ID','id')+
+field('مدة الإجازة بالأيام','days','number')+
+field('اعتماد — Discord ID','app');
+
+fn='genExternal()'
+}
+
+else if(t==='extend'){
+
+q('ft').textContent='تمديد إجازة خارجية';
+
+html=
+field('Discord ID','id')+
+field('مدة التمديد بالأيام','days','number')+
+field('اعتماد — Discord ID','app');
+
+fn='genExtend()'
+}
+
+else if(t==='verbal'){
+
+q('ft').textContent='إنذار شفهي';
+
+html=
+field('Discord ID','id')+
+area('سبب الإنذار','reason')+
+field('اعتماد — Discord ID','app');
+
+fn='genVerbal()'
+}
+
+else if(['first','second','final'].includes(t)){
+
+q('ft').textContent=
+t==='first'?'إنذار وظيفي أول':
+t==='second'?'إنذار وظيفي ثاني':
+'إنذار نهائي';
+
+html=
+field('Discord ID','id')+
+field('قيمة الغرامة','amount')+
+area('سبب الإنذار','reason')+
+field('اعتماد — Discord ID','app');
+
+fn=`genWarn('${t}')`
+}
+
+else if(t==='basic'||t==='exceptional'){
+
+q('ft').textContent=t==='basic'?'التوظيف الأساسي':'التوظيف الاستثنائي';
+
+html=
+field('اسم المواطن','name')+
+field('Discord ID','id')+
+field('منشن المتقدم — Discord ID','mid')+
+field('الخبرة','exp')+
+field('العمر','age')+
+sel('الاسم مطابق','match',['نعم','لا'])+
+sel('يحمل مبلغ 150 ألف','money',['نعم','لا'])+
+sel('قرأ القوانين','read',['نعم','لا'])+
+sel('يتعهد','pledge',['نعم','لا'])+
+sel('الموافقة على المحاسبة','law',['نعم','لا']);
+
+fn=t==='basic'?'genBasic()':'genExceptional()'
+}
+
+else if(t==='rehire'){
+
+q('ft').textContent='إعادة خدمة — للقيادة فقط';
+
+html=
+field('اسم المواطن','name')+
+field('Discord ID','id')+
+field('منشن المتقدم — Discord ID','mid')+
+field('الخبرة','exp')+
+field('العمر','age')+
+sel('الاسم مطابق','match',['نعم','لا'])+
+sel('يحمل مبلغ 300 ألف','money',['نعم','لا'])+
+sel('قرأ القوانين','read',['نعم','لا'])+
+sel('يتعهد','pledge',['نعم','لا'])+
+sel('الموافقة على المحاسبة','law',['نعم','لا'])+
+field('الرتبة السابقة','old')+
+field('الرتبة الحالية','new');
+
+fn='genRehire()'
+}
+
+else if(t==='batch'){
+
+q('ft').textContent='تعيين دفعة جديدة';
+
+html=
+field('رقم الدفعة','batch')+
+field('عدد المسعفين','count')+
+field('المستوى','level')+
+area('Discord IDs — كل ID في سطر','ids')+
+field('توقيع مسؤول شؤون التوظيف — Discord ID','sign')+
+field('اعتماد 1 — Discord ID','approval')+
+field('اعتماد 2 — Discord ID','extra1')+
+field('اعتماد 3 — Discord ID','extra2')+
+field('اعتماد 4 — Discord ID','extra3')+
+field('اعتماد 5 — Discord ID','extra4');
+
+fn='genBatch()'
+}
+
+else if(t==='trainee'){
+
+q('ft').textContent='تعيين مشرف متدرب';
+
+html=
+area('Discord IDs — كل ID في سطر','ids')+
+field('توقيع — Discord ID','sign')+
+field('مسؤول شؤون الإشراف — Discord ID','supervision')+
+field('مسؤول شؤون الإشراف / اعتماد — Discord ID','supervisionRole')+
+field('اعتماد — Discord ID','approval')+
+field('للعلم والإحاطة — Discord ID','info');
+
+fn='genTrainee()'
+}
+
+else if(t.startsWith('role')){
+
+q('ft').textContent='طلبات الرول';
+
+html=field('Discord ID','id');
+
+if(['roleResign','roleApproved','roleTicket'].includes(t))
+html+=field('المستوى','level');
+
+if(['roleApproved','roleTicket'].includes(t))
+html+=field('الاسم','name');
+
+fn=`genRole('${t}')`
+}
+
+else if(['leaders','approvedPromo','grievance','exceptionPromo'].includes(t)){
+
+q('ft').textContent='نموذج ترقية';
+
+html=
+field('المستوى من','from')+
+field('المستوى إلى','to')+
+area('Discord IDs — كل ID في سطر','ids');
+
+if(t==='leaders')
+html+=
+field('منشن الاعتماد 1','m1')+
+field('منشن الاعتماد 2','m2')+
+field('منشن الاعتماد 3','m3')+
+field('منشن الاعتماد 4','m4');
+
+else
+html+=
+field('منشن 1','m1')+
+field('منشن 2','m2')+
+field('منشن 3','m3')+
+field('منشن 4','m4');
+
+fn=`genPromo('${t}')`
+}
+
+else if(t==='general'){
+
+q('ft').textContent='ترقيات إشراف عام';
+
+html=
+area('Discord IDs — كل ID في سطر','ids')+
+field('منشن اعتماد 1','m1')+
+field('منشن اعتماد 2','m2')+
+field('منشن اعتماد 3','m3')+
+field('منشن اعتماد 4','m4');
+
+fn='genGeneral()'
+}
+
+else if(t==='rewardDepartments'){
+
+q('ft').textContent='مكافآت الأقسام';
+
+html=
+sel('القسم', 'dept',[
+'قسم جرد الترقيات',
+'قسم شؤون المعتمدين',
+'قسم الدورات',
+'شؤون الإشراف'
+])+
+sel('قيمة المكافأة','amount',['500,000','1,000,000'])+
+area('منشنات المستحقين — كل منشن في سطر','persons')+
+area('سبب المكافأة','reason')+
+field('اعتماد — Discord ID','app');
+
+fn='genDepartmentReward()'
+}
+
+else if(t==='rewardSupervisors'){
+
+q('ft').textContent='مكافآت المشرفين';
+
+html=
+sel('قيمة المكافأة','amount',['500,000','1,000,000'])+
+area('منشنات المشرفين — كل منشن في سطر','persons')+
+area('سبب المكافأة','reason')+
+field('اعتماد — Discord ID','app');
+
+fn='genReward("المشرفين")'
+}
+
+else if(t==='rewardMedics'){
+
+q('ft').textContent='مكافآت المسعفين';
+
+html=
+sel('قيمة المكافأة','amount',['500,000','1,000,000'])+
+area('منشنات المسعفين — كل منشن في سطر','persons')+
+area('سبب المكافأة','reason')+
+field('اعتماد — Discord ID','app');
+
+fn='genReward("المسعفين")'
+}
+
+q('fb').innerHTML=shell(
+'المنشنات تكتب يدويًا، والقيم والبيانات حسب النموذج.',
+html,
+fn
+);
+
+q('modal').classList.add('open')
+}
+
+function closeF(){
+q('modal').classList.remove('open')
+}
+
+function put(text){
+q('result').value=text;
+q('out').classList.add('show')
+}
 
 function copyResult(){
-
-const result=
-document.getElementById("result");
-
-if(!result)return;
-
-navigator.clipboard
-.writeText(result.value)
-.then(()=>{
-alert("تم نسخ القرار ✅");
-})
-.catch(()=>{
-result.select();
-document.execCommand("copy");
-alert("تم نسخ القرار ✅");
-});
-
+navigator.clipboard.writeText(q('result').value)
+.then(()=>alert('تم نسخ النص بنجاح'))
+.catch(()=>alert('انسخ النص يدويًا'))
 }
 
+function genDismiss(){
 
-function closeModal(){
+let type=v('withdraw');
 
-document.getElementById("modal")
-.classList.remove("open");
+let withdrawal=
+type==='فاتورة'
+?`[فاتورة](${v('invoice')})`
+:'رقابي';
 
-}
-
-
-/* =========================
-قرارات الفصل والاستقالة
-========================= */
-
-function generateDismiss(){
-
-const withdrawal=
-val("withdraw")==="فاتورة"
-?
-`[فاتورة](${val("invoice")})`
-:
-"رقابي";
-
-output(`*** ▬▬▬ ﷽ ▬▬
-
+put(`*** ▬▬▬ ﷽ ▬▬
 \`\`\`diff
 -الموضوع : قرار فصل
 \`\`\`
 
 \`\`\`cs
-# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من قيادة الهلال الاحمر قررنا مايلي
-
-أولًا: تنهى خدمات المسعف ادناه اعتبارا من تاريخه
+# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من قيادة الهلال الاحمر قررنا مايلي 
+ 
+أولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه
 ثانيا: منع توظيف 14 يوم
 ثالثا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
 \`\`\`
 
-${mention(val("id"))}
-${val("name")}
+${men(v('id'))}
 
-\`\`\`وذلك بسبب : ${val("reason")}\`\`\`
+\`\`\`وذلك بسبب : ${v('reason')} \`\`\`
 
 \`نوع السحب :\` ${withdrawal}
 
-\`اعتماد:\` ${leader("leaderId")}
+\`اعتماد:\` ${men(v('app'))}
 
 يرسل الاصل الى :
-||${ROLE_ORIGINAL}||***`);
-
+||${MR}||***`)
 }
 
+function genResign(){
 
-function generateResign(){
+let level=v('level');
 
-const fine=
-val("level")==="متدرب"||
-val("level")==="1";
+if(level==='متدرب'||level==='1'){
 
-let text=`*** ▬▬▬ ﷽ ▬▬
+let withdrawal=
+v('withdraw')==='فاتورة'
+?`[فاتورة](${v('invoice')})`
+:'رقابي';
 
+put(`*** ▬▬▬ ﷽ ▬▬
+\`\`\`diff
+-الموضوع : قرار انهاء خدمات 
+\`\`\`
+
+\`\`\`cs
+# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي 
+ 
+اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه
+
+ثانيا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
+
+ثالثا: منع توظيف 14 يوم
+\`\`\`
+
+${men(v('id'))}
+
+\`\`\`وذلك بسبب : ${v('reason')} \`\`\`
+
+\`نوع السحب :\` ${withdrawal}
+
+\`اعتماد:\` ${men(v('app'))}
+
+يرسل الاصل الى :
+||${MR}||***`)
+}
+else{
+
+put(`*** ▬▬▬ ﷽ ▬▬
 \`\`\`diff
 -الموضوع : قرار انهاء خدمات
 \`\`\`
 
 \`\`\`cs
-# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي
-
+# بعد الاطلاع على نظام التوظيف والترقيات وانهاء الخدمة الصادر من ادارة الهلال الاحمر قررنا مايلي 
+ 
 اولاً: تنهى خدمات المسعف ادناه اعتبارا من تاريخه
-`;
-
-if(fine){
-
-text+=`
-
-ثانيا: غرامه مالية قدرها 1,000,000 تسلم الى خزينة الهلال الاحمر
-
-ثالثا: منع توظيف 14 يوم
-`;
-
-}
-
-text+=`
-
 \`\`\`
 
-${mention(val("id"))}
-${val("name")}
+${men(v('id'))}
 
-\`\`\`وذلك بسبب : ${val("reason")}\`\`\`
+\`\`\`وذلك بسبب : ${v('reason')} \`\`\`
 
-`;
-
-if(fine){
-
-text+=`
-
-\`نوع السحب :\`
-${
-val("withdraw")==="فاتورة"
-?
-`[فاتورة](${val("invoice")})`
-:
-"رقابي"
-}
-
-`;
-
-}
-
-text+=`
-
-\`اعتماد:\` ${leader("leaderId")}
+\`اعتماد:\` ${men(v('app'))}
 
 يرسل الاصل الى :
-||${ROLE_ORIGINAL}||***`;
-
-output(text);
-
+||${MR}||***`)
+}
 }
 
+function genInternal(t){
 
-/* =========================
-الإجازات
-========================= */
+let now=new Date();
+let hours=Number(v('hours')||0);
 
-function timeRange(hours){
-
-const now=new Date();
-
-const start=
-now.toLocaleTimeString(
-"ar-JO",
-{
-hour:"2-digit",
-minute:"2-digit",
+let start=now.toLocaleTimeString('ar-JO',{
+hour:'2-digit',
+minute:'2-digit',
 hour12:true
-}
-);
+});
 
-now.setMinutes(
-now.getMinutes()+Number(hours)*60
-);
+let endDate=new Date(now.getTime()+hours*60*60*1000);
 
-const end=
-now.toLocaleTimeString(
-"ar-JO",
-{
-hour:"2-digit",
-minute:"2-digit",
+let end=endDate.toLocaleTimeString('ar-JO',{
+hour:'2-digit',
+minute:'2-digit',
 hour12:true
-}
-);
+});
 
-return[start,end];
+let date=today();
 
-}
+let subject=
+t==='internal'
+?'إجازة داخلية':
+t==='offshift'
+?'إجازة داخلية ( خارج شفت )':
+'إجازة داخلية ( تاجر )';
 
+let balance=
+t==='internal'
+?`${v('balance')} ساعة`
+:t==='offshift'
+?'خارج شفت'
+:'إجازة تاجر';
 
-function generateInternal(){
+put(`***﷽
 
-const t=
-timeRange(val("hours"));
+\` الموضوع :\` ${subject}
 
-const remaining=
-Math.max(
-0,
-Number(val("balance"))-
-Number(val("hours"))
-);
+\` للمسعف المحترم :\` ${men(v('id'))}
 
-output(`***﷽
+\` مدة الإجازة :\` ${hours} ساعة
 
-\` الموضوع :\` إجازة داخلية
+\` الرصيد المتبقي :\` ${balance}
 
-\` للمسعف المحترم :\` ${mention(val("id"))}
+\` من الساعة :\` ${start} | ${date}
 
-\` مدة الإجازة :\` ${val("hours")} ساعة
+\` إلى الساعة :\` ${end} | ${today()}
 
-\` الرصيد المتبقي :\` ${remaining} ساعة
+[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة](${LL})
 
-\` من الساعة :\` ${t[0]} | ${today()}
-
-\` إلى الساعة :\` ${t[1]} | ${today()}
-
-[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة](${INSTRUCTION_LINK})
-
-\` يرسل الاصل الى :\` ${ROLE_ORIGINAL}***`);
-
+\` يرسل الاصل الى :\` ${MR}***`)
 }
 
+function genExternal(){
 
-function generateOffshift(){
+let d=Number(v('days')||0);
+let s=today();
 
-const t=
-timeRange(val("hours"));
-
-output(`***﷽
-
-\` الموضوع :\` إجازة داخلية ( خارج شفت )
-
-\` للمسعف المحترم :\` ${mention(val("id"))}
-
-\` مدة الإجازة :\` ${val("hours")} ساعة
-
-\` الرصيد المتبقي :\` خارج شفت
-
-\` من الساعة :\` ${t[0]} | ${today()}
-
-\` إلى الساعة :\` ${t[1]} | ${today()}
-
-[يرجى قراءة قوانين الإجازات قبل تغيير الوظيفة](${INSTRUCTION_LINK})
-
-\` يرسل الاصل الى :\` ${ROLE_ORIGINAL}***`);
-
-}
-
-
-function generateTrader(){
-
-const t=
-timeRange(val("hours"));
-
-output(`***﷽
-
-\` الموضوع :\` إجازة داخلية ( تاجر )
-
-\` للمسعف المحترم :\` ${mention(val("id"))}
-
-\` مدة الإجازة :\` ${val("hours")} ساعة
-
-\` الرصيد المتبقي :\` إجازة تاجر
-
-\` من الساعة :\` ${t[0]} | ${today()}
-
-\` إلى الساعة :\` ${t[1]} | ${today()}
-
-[يرجى قراءه القوانين قبل اخذ اجازه خارجية](${INSTRUCTION_LINK})
-
-\` يرسل الاصل الى :\` ${ROLE_ORIGINAL}***`);
-
-}
-
-
-function generateExternal(){
-
-const start=today();
-
-output(`***﷽
+put(`***﷽
 
 \` الموضوع :\` إجازة خارجيه
 
-\` للمسعف المحترم :\` ${mention(val("id"))}
+\` للمسعف المحترم :\` ${men(v('id'))}
 
-\` مدة الإجازة :\` ${val("days")} يوم
+\` مدة الإجازة :\` ${d} يوم 
 
-\` من تاريخ :\` ${start}
+\` من تاريخ :\` ${s}
 
-\` إلى تاريخ :\` ${addDays(start,val("days"))}
+\` إلى تاريخ :\` ${addDays(s,d)}
 
-[يرجى قراءه القوانين قبل اخذ اجازه خارجية](${INSTRUCTION_LINK})
+[يرجى قراءه القوانين قبل اخذ اجازه خارجية](${LL})
 
-\` يرسل الاصل الى :\` ${ROLE_ORIGINAL}***`);
-
+\` يرسل الاصل الى :\` ${MR}***`)
 }
 
+function genExtend(){
 
-function generateExtend(){
+let s=today();
 
-const start=today();
-
-output(`***﷽
+put(`***﷽
 
 \` الموضوع :\` تمديد إجازة خارجية
 
-\` للمسعف المحترم :\` ${mention(val("id"))}
+\` للمسعف المحترم :\` ${men(v('id'))}
 
-\` مدة التمديد :\` ${val("days")} يوم
+\` مدة التمديد :\` ${v('days')} يوم 
 
-\` إلى تاريخ :\` ${addDays(start,val("days"))}
+\` إلى تاريخ :\` ${addDays(s,v('days'))}
 
-[يرجى قراءه القوانين قبل اخذ اجازه خارجية](${INSTRUCTION_LINK})
+[يرجى قراءه القوانين قبل اخذ اجازه خارجية](${LL})
 
-\` يرسل الاصل الى :\` ${ROLE_ORIGINAL}***`);
-
+\` يرسل الاصل الى :\` ${MR}***`)
 }
 
+function genVerbal(){
 
-/* =========================
-الإنذارات
-========================= */
-
-function generateVerbal(){
-
-output(`*** ▬▬▬ ﷽ ▬▬
+put(`*** ▬▬▬ ﷽ ▬▬
 
 \`\`\`diff
 -الموضوع : انذار شفهي
 \`\`\`
 
 \`\`\`cs
-# بعد الاطلاع على نظام المخالفات والعقوبات الصادر من ادارة الهلال الاحمر قررنا مايلي
-
+# بعد الاطلاع على نظام المخالفات والعقوبات الصادر من ادارة الهلال الاحمر قررنا مايلي 
+ 
 اولاً : انذار شفهي
 \`\`\`
 
-${mention(val("id"))}
+${men(v('id'))}
 
-\`\`\`وذلك بسبب : ${val("reason")}\`\`\`
+\`\`\`وذلك بسبب : ${v('reason')} \`\`\`
 
-\` توقيع واعتماد : \`
-${leader("leaderId")}
+\` توقيع واعتماد : \` ${men(v('app'))}
 
-\` يرسل الاصل الى : \`
-${ROLE_ORIGINAL}***`);
-
+\` يرسل الاصل الى : \` ${MR}***`)
 }
 
+function genWarn(t){
 
-function generateWarning(type){
+let title=
+t==='first'?'انذار وظيفي أول':
+t==='second'?'انذار وظيفي ثاني':
+'انذار نهائي بالفصل';
 
-const title=
-type==="first"
-?"انذار وظيفي أول"
-:
-type==="second"
-?"انذار وظيفي ثاني"
-:
-"انذار نهائي بالفصل";
+let subject=t==='final'?'انذار نهائي':'انذار وظيفي';
 
-const subject=
-type==="final"
-?"انذار نهائي"
-:
-"انذار وظيفي";
-
-output(`*** ▬▬▬ ﷽ ▬▬
+put(`*** ▬▬▬ ﷽ ▬▬
 
 \`\`\`diff
 -الموضوع : ${subject}
 \`\`\`
 
 \`\`\`cs
-# بعد الاطلاع على نظام المخالفات والعقوبات الصادر من ادارة الهلال الاحمر قررنا مايلي
-
+# بعد الاطلاع على نظام المخالفات والعقوبات الصادر من ادارة الهلال الاحمر قررنا مايلي 
+ 
 اولاً : ${title}
-ثانياً: غرامة مالية قدرها ${val("amount")} تسلم الى خزينة الهلال الأحمر
+ثانياً: غرامة مالية قدرها ${v('amount')} تسلم الى خزينة الهلال الأحمر
 \`\`\`
 
-${mention(val("id"))}
+${men(v('id'))}
 
-\`\`\`وذلك بسبب : ${val("reason")}\`\`\`
+\`\`\`وذلك بسبب : ${v('reason')}\`\`\`
 
-\` ملاحظه : \`
-[يرجى فتح تكت تواصل مع الشؤون الإدارية لتسديد الغرامة](${FINE_LINK})
+\` ملاحظه : \` [يرجى فتح تكت تواصل مع الشؤون الإدارية لتسديد الغرامة](${FL}) 
 
-\` توقيع واعتماد : \`
-${leader("leaderId")}
+\` توقيع واعتماد : \` ${men(v('app'))}
 
-\` يرسل الاصل الى : \`
-${ROLE_ORIGINAL}***`);
-
+\` يرسل الاصل الى : \` ${MR}***`)
 }
 
+function commonJob(){
 
-/* =========================
-طلبات الرول
-ثابتة
-========================= */
+return `***\`اسم المواطن:\` ( ${v('name')} ) ***
 
-function generateRole(type){
+***\`اليوزر اي دي للديسكورد:\` ( ${v('id')} )***
 
-let request="";
-let reason="";
-let extra="";
+***\`حساب الدسكورد:\` ( ${men(v('mid'))} )*** 
 
-if(type==="roleFire"){
+***\`الخبرة:\` ${v('exp')}***
 
-request=
-"ازالة الاسم , ازاله رولات الهلال , منع توظيف 14 يوم";
+***\`العمر:\` ${v('age')}***
 
-reason="فصل";
+***\`هل الاسم مطابق في المقاطعة , الديسكورد:\` ${v('match')}***
 
+***\`هل يحمل مبلغ 150 الف:\` ${v('money')}***
+
+***\`هل قرأت جميع التنويهات والقوانين الخاصة بالهلال الأحمر ؟:\` ${v('read')}  ***
+
+***\`هل تتعهد على ذلك:\` ${v('pledge')}***
+
+***\`في حال رصدك مخالفًا لأي قانون سيتم محاسبتك دون إنذار مسبق\`: ${v('law')} ***`
 }
 
-else if(type==="roleResign"){
+function genBasic(){
 
-request=
-"ازالة الاسم , ازاله رولات الهلال";
-
-reason=
-"استقالة بمستوى "+val("level");
-
-}
-
-else if(type==="roleApproved"){
-
-request=
-"اضافة رول الهلال + مستوى "+val("level");
-
-reason="تعيين معتمد";
-
-extra=
-`\`الاسم :\` ${val("name")}`;
-
-}
-
-else if(type==="roleTicket"){
-
-request=
-"اضافة رول الهلال + مستوى "+val("level");
-
-reason="تعيين تيكت";
-
-extra=
-`\`الاسم :\` ${val("name")}`;
-
-}
-
-else if(type==="roleLeave"){
-
-request=
-"اضافة رول اجازه وظيفيه";
-
-reason="اجازه خارجيه";
-
-}
-
-else if(type==="roleReturn"){
-
-request=
-"ازالة رول اجازه وظيفيه";
-
-reason="عودة من اجازه خارجيه";
-
-}
-
-output(`***السلام عليكم ورحمة الله وبركاته ,,
-
-***\`القيادة الموقرة نطلب منكم للمسعف : \` ( ${mention(val("id"))} ) ***
-
-***نوع الطلب : ( ${request} ) ***
-
-${extra}
-
-***\`وذلك بسبب :\` ( ${reason} ) ***
-
-*** للعلم مع التحية /***
-
-${ROLE1}
-${ROLE2}
-${ROLE3}`);
-
-}
-
-
-/* =========================
-التوظيف
-========================= */
-
-function generateBasic(){
-
-output(`***\`اسم المواطن:\` ( ${val("name")} ) ***
-
-***\`اليوزر اي دي للديسكورد:\` ( ${val("id")} )***
-
-***\`حساب الدسكورد:\` ( ${mention(val("mentionId"))} )***
-
-***\`الخبرة:\` ${val("experience")}***
-
-***\`العمر:\` ${val("age")}***
-
-***\`هل الاسم مطابق في المقاطعة , الديسكورد:\` ${val("match")}***
-
-***\`هل يحمل مبلغ 150 الف:\` ${val("money")}***
-
-***\`هل قرأت جميع التنويهات والقوانين الخاصة بالهلال الأحمر ؟:\` ${val("rules")}***
-
-***\`هل تتعهد على ذلك:\` ${val("pledge")}***
-
-***\`في حال رصدك مخالفًا لأي قانون سيتم محاسبتك دون إنذار مسبق\`: ${val("warning")}***
+put(commonJob()+`
 
 ***مقبول في الهلال الاحمر ***
 
-<@&1404535887802663054>`);
-
+<@&1404535887802663054>`)
 }
 
+function genExceptional(){
 
-function generateExceptional(){
+put(`*** النموذج الخاص بالتوظيف الاستثنائي***
 
-output(`*** النموذج الخاص بالتوظيف الاستثنائي***
-
-***\`اسم المواطن:\` ( ${val("name")} ) ***
-
-***\`الكوبي ايدي الديسكورد :\` ( ${val("id")} )***
-
-***\`حساب الدسكورد :\` ${mention(val("mentionId"))} ***
-
-***\`الخبرة:\` ${val("experience")}***
-
-***\`العمر :\` ${val("age")}***
-
-***\`هل الاسم مطابق في المقاطعة , الديسكورد:\` ${val("match")}***
-
-***\`هل يحمل مبلغ 150 الف :\` ${val("money")}***
-
-***\`هل قرات جميع التنويهات والقوانين الخاصة بالهلال الأحمر ؟ :\` ${val("rules")}***
-
-***\`هل تتعهد على ذلك :\` ${val("pledge")}***
-
-***\`في حال رصدك مخالفًا لأي قانون سيتم محاسبتك دون إنذار مسبق\` : ${val("warning")}***
+${commonJob()}
 
 ***مقبول في الهلال الاحمر ***
 
-للعلم و الاحاطه : ${leader("employmentId")}
+للعلم و الاحاطه :  <@1439774309768757401>
 
-للتسجيل : ${leader("recordsPromotionId")}`);
-
+للتسجيل :  <@838894876137357312>`)
 }
 
+function genRehire(){
 
-function generateRehire(){
+put(`***
+\`اسم المواطن :\` ${v('name')}
 
-output(`***
+\`الكوبي ايدي الديسكورد :( ${v('id')} )\`***
 
-\`اسم المواطن :\` ${val("name")}
+\`حساب الدسكورد :\` ${men(v('mid'))}
 
-\`الكوبي ايدي الديسكورد :\` ( ${val("id")} )
+***\`الخبرة: ${v('exp')}\`***
 
-\`حساب الدسكورد :\` ${mention(val("mentionId"))}
+***\`العمر : ${v('age')}\`***
 
-***\`الخبرة: ${val("experience")}\`***
+***\`هل الاسم مطابق في المقاطعة , الديسكورد:\` ${v('match')}***
 
-***\`العمر : ${val("age")}\`***
+***\`هل يحمل مبلغ 300 الف :\` ${v('money')}***
 
-***\`هل الاسم مطابق في المقاطعة , الديسكورد:\` ${val("match")}***
+***\`هل قرات جميع التنويهات والقوانين الخاصة بالهلال الأحمر ؟ :\` ${v('read')} ***
 
-***\`هل يحمل مبلغ 300 الف :\` ${val("money")}***
+***\`هل تتعهد على ذلك :\` ${v('pledge')}***
 
-***\`هل قرات جميع التنويهات والقوانين الخاصة بالهلال الأحمر ؟ :\` ${val("rules")}***
+***\`في حال رصدك مخالفًا لأي قانون سيتم محاسبتك دون إنذار مسبق\` : ${v('law')} ***
 
-***\`هل تتعهد على ذلك :\` ${val("pledge")}***
+***\`الرتبه السابقه :\` ( ${v('old')} )***
 
-***\`في حال رصدك مخالفًا لأي قانون سيتم محاسبتك دون إنذار مسبق\` : ${val("warning")}***
-
-***\`الرتبه السابقه :\` ( ${val("oldLevel")} )***
-
-***\`الرتبه الحاليه :\` ( ${val("newLevel")} )***
+***\`الرتبه الحاليه :\` ( ${v('new')} )***
 
 ***مقبول من الهلال الاحمر ***
 
-\`للعلم و الاحاطه :\`
-${leader("employmentId")}
+\`للعلم و الاحاطه : \` <@1439774309768757401>
 
-\`للتسجيل :\`
-${leader("recordsPromotionId")}`);
-
+\`للتسجيل : \` <@495581345632878602> - <@940217674150076456> - <@838894876137357312> - <@1334355891209769021>`)
 }
 
+function genBatch(){
 
-function generateBatch(){
-
-const people=
-getIds(val("ids"))
-.map(mention)
-.join("\n");
-
-output(`**▬▬▬ ﷽ ▬▬▬
+put(`**▬▬▬ ﷽ ▬▬▬
 
 \`\`\`diff
--الموضوع: تعين الدفعه رقم ( ${val("batch")} ) الاستثنائية من الأدارة .
+-الموضوع: تعين الدفعه رقم ( ${v('batch')} ) الاستثنائية من الأدارة .
 \`\`\`
 
 \`\`\`cs
 # بعد الاطلاع على نظام التعينات واحصائيات شؤون التوظيف هذا اليوم الصادر من قبل قيادة الهلال الاحمر قررنا مايلي:
 \`\`\`
 
-\`\`\`
-أولًأ: الموافقة على تعيين الدفعه رقم ( ${val("batch")} ) و تشمل ( ${val("count")} ) مسعف بمستوى ( ${val("level")} ) اعتبارًا من صدور هذا القرار
+أولًأ: الموافقة على تعيين الدفعه رقم ( ${v('batch')} ) و تشمل ( ${v('count')} ) مسعف بمستوى ( ${v('level')} ) اعتبارًا من صدور هذا القرار
+
 ثانيًا: على مدير قسم السجلات اعتماد اكوادهم الجديدة وابلاغهم مضمونه
+
 ثالثًا: على مدير قسم الدورات الحاقهم بدورة العمليات
-\`\`\`
 
-ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 
-${people}
+${ls(v('ids')).map(men).join('\n')}
 
-ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
-
-مع تمنياتنا لهم بالتوفيق والنجاح .
+ـــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 
 توقيع / مسؤول شؤون التوظيف
-${leader("employmentId")}
-
-${ROLE3}
+${men(v('sign'))}
 
 إعتماد /
-${leader("leaderId")}
-${ROLE2}
-${leader("recordsPromotionId")}
-${ROLE1}
+${men(v('approval'))}
+${men(v('extra1'))}
+${men(v('extra2'))}
+${men(v('extra3'))}
+${men(v('extra4'))}
 
 يرسل الاصل الى /
-||${ROLE_ORIGINAL}||
+||${MR}||
 
 للعلم والاحاطة /
-||<@&1404535887643021414>||**`);
-
+||<@&1404535887643021414> ||**`)
 }
 
+function genTrainee(){
 
-function generateTrainee(){
-
-const people=
-getIds(val("ids"))
-.map(mention)
-.join("\n");
-
-output(`**▬▬▬ ﷽ ▬▬▬
+put(`**▬▬▬ ﷽ ▬▬▬
 
 \`\`\`diff
 -الموضوع: تعيين مشرف متدرب
 \`\`\`
 
 \`\`\`cs
-#بعد الاطلاع على نظام التعيين و التدريب الصادر من إدارة شؤون المشرفين والمعتمد من قبل إدارة الهلال الاحمر الموقره قررنا مايلي
+#بعد الاطلاع على نظام التعيين و التدريب الصادر من إدارة شؤون المشرفين والمعتمد من قبل إدارة الهلال الاحمر الموقره قررنا مايلي 
 \`\`\`
 
 \`\`\`diff
-اولا : تعيين التالي اسمائهم ادناه بمنصب الاشراف المتدرب
-ثانيا: على مدير قسم السجلات اعتماد اكوادهم الجديده
-ثالثاً: على مسؤول شؤون الدورات الحاقهم بالدورات المستحقه
+اولا : تعيين التالي اسمائهم ادناه بمنصب الاشراف المتدرب 
+ثانيا: على مدير قسم السجلات اعتماد اكوادهم الجديده 
+ثالثاً: على مسؤول شؤون الدورات الحاقهم بالدورات المستحقه 
 \`\`\`
 
-${people}
+${ls(v('ids')).map(men).join('\n')}
 
 توقيع /
-${leader("recordsPromotionId")}
-
-${ROLE1}
+${men(v('sign'))}
+${men(v('supervision'))}
 
 مسؤول شؤون الإشراف
+${men(v('supervisionRole'))}
 
 اعتماد /
-${leader("leaderId")}
-${ROLE2}
+${men(v('approval'))}
 
 للعلم و الاحاطه :
-<@&1404535887643021414>
-**`);
-
+${men(v('info'))}
+**`)
 }
 
+function genRole(t){
 
-/* =========================
-الترقيات الأساسية
-========================= */
+let typ='',why='',extra='';
 
-function generateBasicPromotion(){
+if(t==='roleFire'){
+typ='ازالة الاسم , ازاله رولات الهلال , منع توظيف 14 يوم';
+why='فصل'
+}
 
-const from=val("fromLevel");
-const to=val("toLevel");
+if(t==='roleResign'){
+typ='ازالة الاسم , ازاله رولات الهلال';
+why='استقالة بمستوى '+v('level')
+}
 
-const people=
-getIds(val("ids"))
-.map(mention)
-.join("\n");
+if(t==='roleApproved'){
+typ='اضافة رول الهلال + مستوى '+v('level');
+why='تعيين معتمد';
+extra=`\`الاسم :\` ${v('name')}`
+}
 
-output(`**▬▬▬ ﷽ ▬▬▬
+if(t==='roleTicket'){
+typ='اضافة رول الهلال + مستوى '+v('level');
+why='تعيين تيكت';
+extra=`\`الاسم :\` ${v('name')}`
+}
+
+if(t==='roleLeave'){
+typ='اضافة رول اجازه وظيفيه';
+why='اجازه خارجيه'
+}
+
+if(t==='roleReturn'){
+typ='ازالة رول اجازه وظيفيه';
+why='عودة من اجازه خارجيه'
+}
+
+put(`***السلام عليكم ورحمة الله وبركاته ,,
+
+***\`القيادة الموقرة نطلب منكم للمسعف : \` ( ${men(v('id'))} ) ***
+
+***نوع الطلب : ( ${typ} ) ***
+
+${extra}
+
+***\`وذلك بسبب :\` ( ${why} ) ***
+
+*** للعلم مع التحية /***
+${R1}
+${R2}
+${R3}`)
+}
+
+function genPromo(t){
+
+let ids=ls(v('ids')).map(men).join('\n');
+let from=v('from');
+let to=v('to');
+
+if(t==='general'){
+genGeneral();
+return
+}
+
+let body='';
+let sign='';
+
+if(t==='leaders'){
+
+body=`اولا : ترقية التالي اسمائهم ادناه من مستوى ( ${from} ) الى مستوى ( ${to} ) اعتباراً من صدور هذا القرار
+
+ثانيًا: على مدير قسم السجلات اعتماد اكوادهم الجديده و رفع رتبهم للمستوى المطلوب
+
+ثالثًا: على مدير قسم الدورات الحاقهم بالدورات المطلوبه`;
+
+sign=`توقيع و اعتماد /
+${men(v('m1'))}
+${men(v('m2'))}
+${men(v('m3'))}
+${men(v('m4'))}`
+}
+
+else if(t==='approvedPromo'){
+
+body=`أولًا: ترقية التالي اسمائهم ادناه من مستوى ( ${from} ) الى مستوى ( ${to} ) اعتباراً من صدور هذا القرار
+
+ثانيًا: على مدير قسم السجلات اعتماد مستوياتهم الجديده و رفع رتبهم للمستوى المطلوب
+
+ثالثًا: على مسؤول شؤون الدورات الحاقهم بالدورات المستحقه`;
+
+sign=`توقيع / مسؤول شؤون المعتمدين
+${men(v('m1'))}
+${men(v('m2'))}
+${men(v('m3'))}
+${men(v('m4'))}`
+}
+
+else if(t==='grievance'){
+
+body=`اولا : ترقية التالي اسمائهم من مستوى ${from} الى مستوى ${to} اعتباراً من صدور هذا القرار
+
+ثانيا:على مدير قسم السجلات اعتماد اكوادهم الجديده و رفع رتبهم للمستوى المطلوب
+
+ثالثاً:على مسؤول شئون الدورات الحاقهم بالدورات المستحقه`;
+
+sign=`اعتماد /
+${men(v('m1'))}
+${men(v('m2'))}
+
+توقيع /
+${men(v('m3'))}
+${men(v('m4'))}
+مسؤول سجل الترقيات`
+}
+
+else{
+
+body=`أولًا: ترقية التالي اسمائهم ادناه من مستوى ( ${from} ) الى مستوى ( ${to} ) اعتباراً من صدور هذا القرار
+
+ثانيًا: على مدير قسم السجلات اعتماد اكوادهم الجديده و رفع رتبهم للمستوى المطلوب
+
+ثالثًا: على مسؤول شؤون الدورات الحاقهم بالدورات المستحقه`;
+
+sign=`توقيع / مسؤول قسم السجلات والترقيات
+${men(v('m1'))}
+${men(v('m2'))}
+
+اعتماد /
+${men(v('m3'))}
+${men(v('m4'))}`
+}
+
+put(`**▬▬▬ ﷽ ▬▬▬
 
 \`\`\`diff
--الموضوع: ترقيات مستوى ${to}
+-الموضوع: ${t==='grievance'?'ترقيات التظلم':t==='exceptionPromo'?`ترقيات استثنائيه الى مستوى ${to}`:t==='approvedPromo'?`ترقيات المعتمدين مستوى ${to}`:`ترقيات مستوى ${to}`}
 \`\`\`
 
 \`\`\`cs
@@ -2691,46 +1290,29 @@ output(`**▬▬▬ ﷽ ▬▬▬
 \`\`\`
 
 \`\`\`diff
-اولا : ترقية التالي اسمائهم ادناه من مستوى ( ${from} ) الى مستوى ( ${to} ) اعتباراً من صدور هذا القرار 
-ثانيًا: على مدير قسم السجلات اعتماد اكوادهم الجديده و رفع رتبهم للمستوى المطلوب
-ثالثًا: على مدير قسم الدورات الحاقهم بالدورات المطلوبه
+${body}
 \`\`\`
 
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 
-${people}
+${ids}
 
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 
-مع تمنياتنا لهم بالتوفيق والنجاح  .
+مع تمنياتنا لهم بالتوفيق والنجاح .
 
-توقيع و اعتماد /
-${leader("leaderId")}
-${ROLE2}
-${leader("recordsPromotionId")}
-${ROLE1}
+${sign}
 
-للعلم و الاحاطه /
-|| <@&1404535887643021414> ||**`);
-
+للعلم و الاحاطه :
+||<@&1404535897643021414>||**`)
 }
 
+function genGeneral(){
 
-/* =========================
-ترقيات إشراف عام
-========================= */
-
-function generateGeneralPromotion(){
-
-const people=
-getIds(val("ids"))
-.map(mention)
-.join("\n");
-
-output(`**▬▬▬ ﷽ ▬▬▬
+put(`**▬▬▬ ﷽ ▬▬▬
 
 \`\`\`diff
--الموضوع: ترقيات مستوى 7  
+-الموضوع: ترقيات مستوى 7
 \`\`\`
 
 \`\`\`cs
@@ -2739,185 +1321,101 @@ output(`**▬▬▬ ﷽ ▬▬▬
 
 \`\`\`diff
 أولًا: ترقية التالي اسمائهم ادناه من مستوى ( 7 ) الى مستوى ( 8 )
-ثانيًا: تسليمهم مهام الاشراف العام اعتباراً من صدور هذا القرار 
-ثالثًا: على مدير قسم السجلات اعتماد اكوادهم الجديده و رفع رتبهم للمستوى المطلوب 
+
+ثانيًا: تسليمهم مهام الاشراف العام اعتباراً من صدور هذا القرار
+
+ثالثًا: على مدير قسم السجلات اعتماد اكوادهم الجديده و رفع رتبهم للمستوى المطلوب
 \`\`\`
 
-ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+${ls(v('ids')).map(men).join('\n')}
 
-${people}
-
-ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
-
-مع تمنياتنا لهم بالتوفيق والنجاح  .
+مع تمنياتنا لهم بالتوفيق والنجاح .
 
 توقيع واعتماد /
-${leader("leaderId")}
-${ROLE2}
-${leader("recordsPromotionId")}
-${ROLE1}
+${men(v('m1'))}
+${men(v('m2'))}
+${men(v('m3'))}
+${men(v('m4'))}
 
 للعلم و الاحاطه :
-|| <@&1404535887643021414>  ||**`);
-
+|| <@&1404535887643021414> ||**`)
 }
 
+function genDepartmentReward(){
 
-/* =========================
-ترقيات المعتمدين
-========================= */
+let dept=v('dept');
 
-function generateApprovedPromotion(){
+let reason=v('reason');
 
-const people=
-getIds(val("ids"))
-.map(mention)
-.join("\n");
+if(!reason){
 
-output(`**▬▬▬ ﷽ ▬▬▬
+reason=
+dept==='قسم جرد الترقيات'
+?'تميزهم في مهام قسم مسؤولين جرد الترقيات':
+dept==='قسم شؤون المعتمدين'
+?'تميزهم في مهام قسم شؤون المعتمدين':
+dept==='قسم الدورات'
+?'تميزهم في مهام قسم الدورات':
+'تميزهم في مهام قسم شؤون الاشراف'
+}
+
+put(`*** ▬▬▬ ﷽ ▬▬
 
 \`\`\`diff
--الموضوع: ترقيات المعتمدين مستوى ${val("toLevel")}
+
+الموضوع : مكافأة ماليه
 \`\`\`
 
 \`\`\`cs
-# بعد الاطلاع على نظام التعيينات واحصائيات شؤون المعتمدين الصادر من قبل قيادة الهلال الاحمر والاتفاقيه المعلنه بين قطاع الهلال الاحمر و قسم اللاعب المعتمد قررنا مايلي :
+# بعد الاطلاع على نظام المكافأة الصادر من قيادة الهلال الاحمر قررنا مايلي 
+ 
+: يتم صرف مكافأة ماليه بقيمة ${v('amount')} للمشرفين ادناه
 \`\`\`
 
-\`\`\`diff
-أولًا: ترقية التالي اسمائهم ادناه من مستوى ( ${val("fromLevel")} ) الى مستوى ( ${val("toLevel")} ) اعتباراً من صدور هذا القرار 
-ثانيًا: على مدير قسم السجلات اعتماد مستوياتهم الجديده و رفع رتبهم للمستوى المطلوب 
-ثالثًا: على مسؤول شؤون الدورات الحاقهم بالدورات المستحقه 
-\`\`\`
+${ls(v('persons')).map(men).join('\n')}
 
-ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+\`\`\`وذلك بسبب :  ${reason}  \`\`\`
 
-${people}
+\`يرجى فتح تكت التواصل مع القيادة لاستلام المكافأة خلال 48 ساعه\`
 
-ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+\`اعتماد:\`
+${men(v('app'))}
 
-توقيع / مسؤول شؤون المعتمدين
-${leader("approvedId")}
-${ROLE1}
-
-اعتماد /
-${leader("leaderId")}
-${ROLE2}
-${leader("approvedId")}
-${ROLE1}
-
-للعلم و الاحاطه /
-||<@&1404535887643021414>||**`);
-
+\`يرسل الاصل الى :\`
+*** || ${MR} ||`)
 }
 
+function genReward(who){
 
-/* =========================
-التظلم
-========================= */
-
-function generateGrievance(){
-
-const people=
-getIds(val("ids"))
-.map(mention)
-.join("\n");
-
-output(`**▬▬▬ ﷽ ▬▬▬
+put(`*** ▬▬▬ ﷽ ▬▬
 
 \`\`\`diff
--الموضوع:ترقيات التظلم 
+
+الموضوع : مكافأة ماليه
 \`\`\`
 
 \`\`\`cs
-#بعد الاطلاع على نظام الترقيات و احصائيات السجلات خلال فترة التدريب الصادر من قبل إلادارة الهلال الاحمر الموقره قررنا مايلي 
+# بعد الاطلاع على نظام المكافأة الصادر من قيادة الهلال الاحمر قررنا مايلي 
+ 
+: يتم صرف مكافأة ماليه بقيمة ${v('amount')} لل${who} ادناه
 \`\`\`
 
-\`\`\`diff
-اولا : ترقية التالي اسمائهم من مستوى ${val("fromLevel")} الى مستوى ${val("toLevel")} اعتباراً من صدور هذا القرار
-ثانيا:على مدير قسم السجلات اعتماد اكوادهم الجديده و رفع رتبهم للمستوى المطلوب 
-ثالثاً:على مسؤول شئون الدورات الحاقهم بالدورات المستحقه
-\`\`\`
+${ls(v('persons')).map(men).join('\n')}
 
-${people}
+\`\`\`وذلك بسبب :  ${v('reason')}  \`\`\`
 
-* مع تمنياتنا له بالتوفيق والنجاح  .
+\`يرجى فتح تكت التواصل مع القيادة لاستلام المكافأة خلال 48 ساعه\`
 
-اعتماد /
-${leader("leaderId")}
-${ROLE2}
+\`اعتماد:\`
+${men(v('app'))}
 
-توقيع /
-${leader("recordsPromotionId")}
-${ROLE3}
-
-مسؤول سجل الترقيات
-
-للعلم و الاحاطه :
-<@&1404535887643021414>**`);
-
+\`يرسل الاصل الى :\`
+*** || ${MR} ||`)
 }
 
-
-/* =========================
-الاستثنائية
-========================= */
-
-function generateExceptionalPromotion(){
-
-const people=
-getIds(val("ids"))
-.map(mention)
-.join("\n");
-
-output(`**▬▬▬ ﷽ ▬▬▬
-
-\`\`\`diff
--الموضوع: ترقيات استثنائيه الى مستوى ${val("toLevel")}
-\`\`\`
-
-\`\`\`cs
-#بعد الاطلاع على نظام الترقيات واحصائيات السجلات الصادر من قبل إدارة الهلال الاحمر الموقره قررنا مايلي 
-\`\`\`
-
-\`\`\`diff
-أولًا: ترقية التالي اسمائهم ادناه من مستوى ( ${val("fromLevel")} ) الى مستوى ( ${val("toLevel")} ) اعتباراً من صدور هذا القرار 
-ثانيًا: على مدير قسم السجلات اعتماد اكوادهم الجديده و رفع رتبهم للمستوى المطلوب 
-ثالثًا: على مسؤول شؤون الدورات الحاقهم بالدورات المستحقه 
-\`\`\`
-
-${people}
-
-توقيع / مسؤول قسم السجلات والترقيات
-${leader("recordsPromotionId")}
-${ROLE3}
-
-اعتماد /
-${leader("leaderId")}
-${ROLE2}
-${leader("approvedId")}
-${ROLE1}
-
-للعلم و الاحاطه /
-||<@&1404535887643021414>||**`);
-
+q('modal').onclick=e=>{
+if(e.target.id==='modal')closeF()
 }
-
-
-/* =========================
-إغلاق بالنقر خارج النافذة
-========================= */
-
-document.getElementById("modal")
-.addEventListener("click",function(event){
-
-if(event.target===this){
-
-closeModal();
-
-}
-
-});
 
 </script>
 
